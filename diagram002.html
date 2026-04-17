@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI算力产业链指南</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#F0EFE9;color:#333;max-width:480px;margin:0 auto;padding-bottom:20px}
+.hd{background:linear-gradient(135deg,#1a1a2e,#16213e);padding:18px 16px;color:#fff}
+.hd h1{font-size:17px} .hd p{font-size:12px;color:#aab;margin-top:3px}
+.box{margin:10px 12px;padding:12px 14px;background:#fff;border-radius:10px;border:1px solid #ddd;font-size:12px;line-height:1.8;color:#555}
+.box b{color:#333}
+.step{margin:0 12px 8px;border-radius:10px;border:1px solid #ddd;background:#fff;overflow:hidden}
+.step-h{padding:10px 12px;cursor:pointer;display:flex;align-items:flex-start;gap:8px}
+.step-h .em{font-size:24px;line-height:1}
+.step-h .ti{flex:1}
+.step-h .ti .sn{font-size:10px;color:#999;font-weight:600}
+.step-h .ti .nm{font-size:15px;font-weight:700;color:#1a1a2e}
+.step-h .ti .sb{font-size:11px;color:#888;margin-top:1px}
+.step-h .ar{font-size:18px;color:#ccc;padding-top:6px}
+.step-b{padding:0 12px 12px;font-size:12px;line-height:1.8;color:#444;display:none}
+.step.open .step-b{display:block}
+.step.open .ar{transform:rotate(90deg)}
+.tip{padding:8px 10px;border-radius:7px;margin-bottom:8px;font-size:11px}
+.tip-y{background:#FFF8E1} .tip-b{background:#E3F2FD} .tip-p{background:#F3E5F5}
+.rg{margin-bottom:6px}
+.rg-t{font-size:11px;font-weight:700;color:#1a1a2e;padding:2px 0;border-bottom:1px solid #eee;margin-bottom:3px}
+.mk{font-size:11px;padding:2px 0 2px 8px;border-left:2px solid #E0E0E0}
+.mk b{color:#333} .mk span{color:#888}
+.mk a{color:#1a73e8;text-decoration:none;font-weight:700}
+.mk a:hover{text-decoration:underline}
+details{margin:6px 0;font-size:11px;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+details summary{padding:6px 10px;background:#f9f8f5;cursor:pointer;font-weight:600;color:#555;font-size:11px}
+details summary:hover{background:#f0efe9}
+details>div{padding:8px 10px;font-size:10px;line-height:1.7;color:#555}
+.fl{display:flex;align-items:center;gap:0;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch}
+.fl-i{padding:4px 8px;border-radius:5px;text-align:center;min-width:62px;flex-shrink:0}
+.fl-i .n{font-size:10px;font-weight:700;color:#333} .fl-i .s{font-size:8px;color:#999}
+.fl-a{padding:0 3px;color:#bbb;font-size:11px;font-weight:700;flex-shrink:0}
+.sm{margin:4px 12px 0;padding:12px 14px;background:#1a1a2e;border-radius:10px;color:#ccc;font-size:11px;line-height:2}
+.sm b{color:#fff}
+.c1{color:#D4880F} .c2{color:#2980B9} .c3{color:#C0392B} .c4{color:#E67E22} .c5{color:#16A085} .c6{color:#8E44AD}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <h1>AI 算力硬件产业链</h1>
+  <p>写给零基础读者的完整指南</p>
+</div>
+
+<!-- Big Picture -->
+<div class="box">
+  <b>🏗️ 全景：一台 AI 服务器里有什么？</b><br><br>
+  <span class="c3">① AI 芯片 (GPU)</span> — 最核心的大脑（台积电制造）<br>
+  <span class="c4">② IC载板 / ABF载板</span> — 芯片的"地基"（承载芯片）<br>
+  <span style="color:#888">↕ 封装 = ①+② 合体</span>（台积电 CoWoS 技术，详见 STEP 3.5）<br>
+  <span class="c2">③ PCB 主板 (20-30层)</span> — 服务器"骨架"（芯片焊上去）<br>
+  <span class="c5">④ 光模块 (800G/1.6T)</span> — 和其他服务器"高速通信"<br><br>
+  而<b>覆铜板 (CCL)</b> 是 ②③ 的共同原材料。覆铜板又由<b>铜箔+玻纤布+树脂</b>三大原材料制成。<b>M6-M9</b> 是覆铜板的性能等级。<b>玻璃基板</b>是 ② 的下一代技术。
+</div>
+
+<!-- Two Tracks -->
+<div class="box">
+  <b>📌 两条平行赛道</b><br>
+  <b class="c3">赛道A "装"</b>：覆铜板 → IC载板 → 封装（芯片怎么装）<br>
+  <b class="c2">赛道B "连"</b>：覆铜板 → 高速PCB + 光模块（数据怎么传）<br>
+  两条赛道在 AI 服务器里汇合。
+</div>
+
+<!-- ============ HEATMAP MODULE ============ -->
+<div id="heatmap-section" style="margin:10px 12px;border-radius:10px;border:1px solid #ddd;background:#fff;overflow:hidden">
+  <div style="padding:12px 14px;border-bottom:1px solid #eee">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#1a1a2e">📊 产业链交易热力图</div>
+        <div id="hm-time" style="font-size:10px;color:#999;margin-top:2px">加载中...</div>
+      </div>
+      <div style="display:flex;gap:6px">
+        <button onclick="setMode('chg')" id="btn-chg" style="font-size:10px;padding:4px 10px;border-radius:12px;border:1.5px solid #1a73e8;background:#1a73e8;color:#fff;cursor:pointer">涨跌幅</button>
+        <button onclick="setMode('pe')" id="btn-pe" style="font-size:10px;padding:4px 10px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">PE估值</button>
+      </div>
+    </div>
+  </div>
+  <div id="hm-body" style="padding:8px 10px 12px"></div>
+  <div id="hm-legend" style="padding:0 14px 10px;font-size:9px;color:#999;display:flex;align-items:center;gap:4px"></div>
+  <div id="hm-error" style="display:none;padding:12px 14px;font-size:11px;color:#C0392B"></div>
+</div>
+
+<script>
+// ========== CONFIG: Change this URL to your GitHub Pages JSON ==========
+const DATA_URL = "https://daisypku.github.io/supply-chain-data/supply_chain_heatmap.json";  // e.g. "https://yourusername.github.io/market-daily/supply_chain_heatmap.json"
+// =======================================================================
+
+// JSON Schema (what your GitHub Actions job should produce):
+// {
+//   "updated": "2025-04-08T15:30:00+08:00",
+//   "stocks": [
+//     {
+//       "ticker": "2383.TW",
+//       "name": "台光电子",
+//       "sector": "ccl",          // ccl|pcb|ic_sub|cowos|optical_chip|optical_mod|optical_infra|glass
+//       "price": 450.5,
+//       "change_pct": 2.35,       // daily % change
+//       "pe": 18.7,               // trailing PE, null if N/A
+//       "mkt_cap_b": 12.5,        // market cap in billions (local currency)
+//       "currency": "TWD"
+//     }, ...
+//   ]
+// }
+
+const SECTOR_META = {
+  raw_mat:      {label:"⛏️ 源头原材料", sub:"铜箔/电子布/树脂"},
+  ccl:          {label:"🧱 覆铜板 CCL", sub:""},
+  pcb:          {label:"📟 PCB", sub:"AI服务器板"},
+  ic_sub:       {label:"🔲 IC载板/ABF", sub:""},
+  cowos:        {label:"🧊 先进封装", sub:"CoWoS/OSAT"},
+  optical_chip: {label:"💡 光芯片/光器件", sub:"上游"},
+  optical_mod:  {label:"💡 光模块", sub:"中游制造"},
+  optical_infra:{label:"💡 光纤/设备", sub:"下游"},
+  glass:        {label:"🔮 玻璃基板", sub:"下一代"},
+};
+
+// Demo data (used when DATA_URL is empty or fetch fails)
+const DEMO = {
+  updated: "示例数据 — 请配置 DATA_URL 接入实时数据",
+  stocks: [
+    {ticker:"2383.TW",name:"台光电子",sector:"ccl",price:485,change_pct:2.1,pe:22.3,mkt_cap_b:168,currency:"TWD"},
+    {ticker:"600183.SS",name:"生益科技",sector:"ccl",price:28.5,change_pct:0.7,pe:35.2,mkt_cap_b:168,currency:"CNY"},
+    {ticker:"1888.HK",name:"建滔积层板",sector:"ccl",price:14.2,change_pct:-1.4,pe:9.8,mkt_cap_b:44,currency:"HKD"},
+    {ticker:"6752.T",name:"Panasonic",sector:"ccl",price:1685,change_pct:-0.3,pe:14.1,mkt_cap_b:3950,currency:"JPY"},
+    {ticker:"5706.T",name:"三井金属",sector:"raw_mat",price:5120,change_pct:3.8,pe:15.6,mkt_cap_b:590,currency:"JPY"},
+    {ticker:"3110.T",name:"日东纺",sector:"raw_mat",price:7850,change_pct:4.2,pe:28.4,mkt_cap_b:210,currency:"JPY"},
+    {ticker:"301511.SZ",name:"德福科技",sector:"raw_mat",price:52.3,change_pct:5.1,pe:48.2,mkt_cap_b:28,currency:"CNY"},
+    {ticker:"603256.SS",name:"宏和科技",sector:"raw_mat",price:38.7,change_pct:6.5,pe:62.1,mkt_cap_b:16,currency:"CNY"},
+    {ticker:"002080.SZ",name:"中材科技",sector:"raw_mat",price:19.8,change_pct:3.2,pe:18.5,mkt_cap_b:35,currency:"CNY"},
+    {ticker:"2802.T",name:"味之素",sector:"ic_sub",price:6450,change_pct:0.5,pe:32.1,mkt_cap_b:3400,currency:"JPY"},
+    {ticker:"002463.SZ",name:"沪电股份",sector:"pcb",price:38.2,change_pct:1.8,pe:25.6,mkt_cap_b:72,currency:"CNY"},
+    {ticker:"300476.SZ",name:"胜宏科技",sector:"pcb",price:55.1,change_pct:3.4,pe:32.8,mkt_cap_b:48,currency:"CNY"},
+    {ticker:"688183.SS",name:"生益电子",sector:"pcb",price:24.6,change_pct:2.2,pe:38.5,mkt_cap_b:18,currency:"CNY"},
+    {ticker:"002938.SZ",name:"鹏鼎控股",sector:"pcb",price:32.8,change_pct:-0.5,pe:24.1,mkt_cap_b:75,currency:"CNY"},
+    {ticker:"2368.TW",name:"金像电子",sector:"pcb",price:580,change_pct:1.5,pe:18.9,mkt_cap_b:95,currency:"TWD"},
+    {ticker:"3037.TW",name:"欣兴电子",sector:"ic_sub",price:215,change_pct:0.9,pe:16.5,mkt_cap_b:340,currency:"TWD"},
+    {ticker:"4062.T",name:"Ibiden",sector:"ic_sub",price:5280,change_pct:-0.8,pe:21.3,mkt_cap_b:730,currency:"JPY"},
+    {ticker:"6967.T",name:"Shinko",sector:"ic_sub",price:5950,change_pct:0.2,pe:19.8,mkt_cap_b:310,currency:"JPY"},
+    {ticker:"300308.SZ",name:"中际旭创",sector:"optical_mod",price:420,change_pct:2.8,pe:35.2,mkt_cap_b:580,currency:"CNY"},
+    {ticker:"300502.SZ",name:"新易盛",sector:"optical_mod",price:185,change_pct:3.5,pe:28.6,mkt_cap_b:155,currency:"CNY"},
+    {ticker:"002281.SZ",name:"光迅科技",sector:"optical_mod",price:42.5,change_pct:1.2,pe:45.3,mkt_cap_b:36,currency:"CNY"},
+    {ticker:"300394.SZ",name:"天孚通信",sector:"optical_chip",price:165,change_pct:1.9,pe:42.7,mkt_cap_b:58,currency:"CNY"},
+    {ticker:"688498.SS",name:"源杰科技",sector:"optical_chip",price:88.5,change_pct:4.8,pe:85.2,mkt_cap_b:8,currency:"CNY"},
+    {ticker:"COHR",name:"Coherent",sector:"optical_mod",price:98.5,change_pct:-1.2,pe:52.3,mkt_cap_b:15,currency:"USD"},
+    {ticker:"AVGO",name:"Broadcom",sector:"optical_chip",price:228,change_pct:0.6,pe:38.5,mkt_cap_b:1060,currency:"USD"},
+    {ticker:"LITE",name:"Lumentum",sector:"optical_chip",price:82.3,change_pct:-0.4,pe:null,mkt_cap_b:5.5,currency:"USD"},
+    {ticker:"601869.SS",name:"长飞光纤",sector:"optical_infra",price:32.1,change_pct:1.1,pe:22.8,mkt_cap_b:24,currency:"CNY"},
+    {ticker:"600584.SS",name:"长电科技",sector:"cowos",price:42.8,change_pct:0.9,pe:28.5,mkt_cap_b:76,currency:"CNY"},
+    {ticker:"INTC",name:"Intel",sector:"glass",price:24.5,change_pct:-2.1,pe:null,mkt_cap_b:105,currency:"USD"},
+    {ticker:"009150.KS",name:"三星电机",sector:"glass",price:168000,change_pct:0.3,pe:16.2,mkt_cap_b:12500,currency:"KRW"},
+  ]
+};
+
+let currentMode = 'chg';
+let stockData = null;
+
+function chgColor(pct) {
+  if (pct == null) return '#ccc';
+  if (pct > 5) return '#b71c1c';
+  if (pct > 3) return '#c62828';
+  if (pct > 1) return '#e53935';
+  if (pct > 0) return '#ef9a9a';
+  if (pct > -1) return '#a5d6a7';
+  if (pct > -3) return '#43a047';
+  if (pct > -5) return '#2e7d32';
+  return '#1b5e20';
+}
+function chgText(pct) { return pct == null ? '-' : (pct > 0 ? '+' : '') + pct.toFixed(1) + '%'; }
+
+function peColor(pe) {
+  if (pe == null) return '#ccc';
+  if (pe > 60) return '#4a148c';
+  if (pe > 40) return '#7b1fa2';
+  if (pe > 30) return '#9c27b0';
+  if (pe > 20) return '#ce93d8';
+  if (pe > 15) return '#a5d6a7';
+  if (pe > 10) return '#43a047';
+  return '#2e7d32';
+}
+function peText(pe) { return pe == null ? 'N/A' : pe.toFixed(0) + 'x'; }
+
+function renderHeatmap(data) {
+  stockData = data;
+  document.getElementById('hm-time').textContent = '更新: ' + data.updated;
+
+  const grouped = {};
+  for (const s of data.stocks) {
+    if (!grouped[s.sector]) grouped[s.sector] = [];
+    grouped[s.sector].push(s);
+  }
+
+  const body = document.getElementById('hm-body');
+  const isChg = currentMode === 'chg';
+
+  let html = '';
+  for (const [sec, meta] of Object.entries(SECTOR_META)) {
+    const stocks = grouped[sec];
+    if (!stocks || stocks.length === 0) continue;
+    // Sort: by change_pct desc (chg mode) or pe desc (pe mode)
+    stocks.sort((a, b) => isChg ? (b.change_pct||0) - (a.change_pct||0) : (b.pe||0) - (a.pe||0));
+
+    html += '<div style="margin-bottom:8px">';
+    html += '<div style="font-size:10px;font-weight:600;color:#888;margin-bottom:3px">' + meta.label + (meta.sub ? ' <span style="font-weight:400">' + meta.sub + '</span>' : '') + '</div>';
+    html += '<div style="display:flex;flex-wrap:wrap;gap:3px">';
+    for (const s of stocks) {
+      const bg = isChg ? chgColor(s.change_pct) : peColor(s.pe);
+      const val = isChg ? chgText(s.change_pct) : peText(s.pe);
+      const bright = isChg ? (Math.abs(s.change_pct||0) > 3) : ((s.pe||0) > 40 || (s.pe||0) < 15);
+      const txtCol = bright ? '#fff' : 'rgba(255,255,255,0.9)';
+      const url = 'https://finance.yahoo.com/quote/' + s.ticker + '/';
+      html += '<a href="' + url + '" target="_blank" style="text-decoration:none;display:block;padding:4px 6px;border-radius:4px;background:' + bg + ';min-width:52px;text-align:center;line-height:1.3">';
+      html += '<div style="font-size:9px;color:' + txtCol + ';white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70px">' + s.name + '</div>';
+      html += '<div style="font-size:11px;font-weight:700;color:#fff">' + val + '</div>';
+      html += '</a>';
+    }
+    html += '</div></div>';
+  }
+  body.innerHTML = html;
+
+  // Legend
+  const leg = document.getElementById('hm-legend');
+  if (isChg) {
+    leg.innerHTML = '<span style="display:inline-block;width:10px;height:10px;background:#1b5e20;border-radius:2px"></span>跌5%+ '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#43a047;border-radius:2px"></span>跌1-5% '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#a5d6a7;border-radius:2px"></span>跌0-1% '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#ef9a9a;border-radius:2px"></span>涨0-1% '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#e53935;border-radius:2px"></span>涨1-3% '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#b71c1c;border-radius:2px"></span>涨5%+';
+  } else {
+    leg.innerHTML = '<span style="display:inline-block;width:10px;height:10px;background:#2e7d32;border-radius:2px"></span><10x '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#43a047;border-radius:2px"></span>10-15x '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#a5d6a7;border-radius:2px"></span>15-20x '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#ce93d8;border-radius:2px"></span>20-30x '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#9c27b0;border-radius:2px"></span>30-40x '
+      + '<span style="display:inline-block;width:10px;height:10px;background:#4a148c;border-radius:2px"></span>60x+';
+  }
+}
+
+function setMode(m) {
+  currentMode = m;
+  document.getElementById('btn-chg').style.background = m === 'chg' ? '#1a73e8' : '#fff';
+  document.getElementById('btn-chg').style.color = m === 'chg' ? '#fff' : '#666';
+  document.getElementById('btn-chg').style.borderColor = m === 'chg' ? '#1a73e8' : '#ddd';
+  document.getElementById('btn-pe').style.background = m === 'pe' ? '#7b1fa2' : '#fff';
+  document.getElementById('btn-pe').style.color = m === 'pe' ? '#fff' : '#666';
+  document.getElementById('btn-pe').style.borderColor = m === 'pe' ? '#7b1fa2' : '#ddd';
+  if (stockData) renderHeatmap(stockData);
+}
+
+async function loadData() {
+  if (!DATA_URL) {
+    renderHeatmap(DEMO);
+    document.getElementById('hm-error').style.display = 'block';
+    document.getElementById('hm-error').innerHTML = '⚠️ 当前显示示例数据。如需接入实时数据，请在 HTML 源码顶部的 <code>DATA_URL</code> 中填入你的 GitHub Pages JSON 地址。<br><a href="https://github.com" target="_blank" style="color:#1a73e8">→ 配置指南见 Market Daily 仓库</a>';
+    return;
+  }
+  try {
+    const resp = await fetch(DATA_URL);
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const data = await resp.json();
+    renderHeatmap(data);
+  } catch (e) {
+    console.error('Heatmap fetch failed:', e);
+    renderHeatmap(DEMO);
+    document.getElementById('hm-error').style.display = 'block';
+    document.getElementById('hm-error').textContent = '⚠️ 数据加载失败 (' + e.message + ')，显示示例数据。';
+  }
+}
+
+loadData();
+</script>
+<!-- ============ END HEATMAP ============ -->
+
+<div style="padding:0 16px;font-size:13px;font-weight:700;color:#333;margin:8px 0">📖 逐层详解（点击展开）</div>
+
+<!-- STEP 0: CCL Raw Materials -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">⛏️</div>
+    <div class="ti"><div class="sn">STEP 0 · 源头</div><div class="nm">覆铜板的三大原材料</div><div class="sb">铜箔 + 电子布(玻纤布) + 电子树脂</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>覆铜板 = 铜箔（导电层）+ 玻纤布（骨架）+ 树脂（粘合剂/绝缘层），三者热压合一。就像三明治：铜箔是面包片，玻纤布是肉，树脂是酱。三者成本占比约为 42% : 19% : 26%，合计占覆铜板成本的 87%。</div>
+
+    <div class="tip tip-b"><b>🤖 AI 时代为何重要：</b>AI 服务器要求 M7-M9 级超低损耗，这要求三种材料同时升级：铜箔要极低粗糙度(HVLP)、玻纤布要低介电常数(NE布/Q布)、树脂要从环氧升级到 PPO/碳氢/PTFE 等特种体系。每一种的高端品都存在供应瓶颈。</div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">🔶 材料一：电解铜箔（成本占比 ~42%，最大头）</div>
+    <div style="font-size:11px;color:#555;margin-bottom:6px;line-height:1.7">覆铜板表面的铜层，是电路导电的核心。AI 时代需要 HVLP（极低轮廓）铜箔——表面越平滑，高频信号损耗越小。按粗糙度从高到低分为 HVLP1→2→3→4→5 五代，代数越高越先进。<b>日韩厂商占据 HVLP 市场 85% 以上份额</b>（天风证券），载体铜箔(DTH)则被三井金属垄断约 90%。AI 服务器单台铜箔价值量是传统服务器的 5-8 倍。</div>
+    <div class="rg"><div class="rg-t">🇯🇵 日本 — 绝对主导（HVLP4 代及以上几乎垄断）</div>
+      <div class="mk"><a href="company/?ticker=5706.T" target="_blank">三井金属</a> <span>— 全球高端电子铜箔领导者，HVLP 分代标准制定者。其 VSP 系列为最高端 HVLP 产品，客户覆盖台光、台燿、英伟达。2025 年 VSP 月销量预期 580 吨（同比+58%）。载体铜箔(DTH/MicroThin)全球垄断约 90%。（来源：三井金属财报、天风证券研报）</span></div>
+      <div class="mk"><b>福田金属</b> <span>— 日系第二大 HVLP 供应商，在中国苏州设有工厂（苏州福田），年产约 4000 吨 RTF/HVLP</span></div>
+      <div class="mk"><a href="company/?ticker=5801.T" target="_blank">古河电工</a> <span>— 日系第三，AI 用 HVLP 铜箔核心供应商之一，约 70-80% 产能在台湾工厂生产</span></div>
+      <div class="mk"><b>日矿金属 (JX)</b> <span>— 日系 HVLP 供应商</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇱🇺 卢森堡</div>
+      <div class="mk"><b>CFL (卢森堡铜箔)</b> <span>— HVLP3 独供英伟达，HVLP4/5 计划 2025Q4 量产，较国内领先 2-5 年。2025 年被中国德福科技以 1.74 亿欧元收购，高频高速产品占据全球绝大多数份额。（来源：德福科技公告）</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇰🇷 韩国</div>
+      <div class="mk"><a href="company/?ticker=336370.KS" target="_blank">斗山集团 / 索路思(Solus)</a> <span>— 韩系 HVLP 主要供应商，与日系合占高端市场约 70%（来源：天风证券）</span></div>
+      <div class="mk"><a href="company/?ticker=103590.KS" target="_blank">日进材料 (Iljin)</a> <span>— 韩系电子铜箔厂商</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
+      <div class="mk"><a href="company/?ticker=8358.TW" target="_blank">金居开发</a> <span>— AI 用 HVLP 铜箔台系主力，已率先涨价，专注 PCB/CCL 用铜箔</span></div>
+      <div class="mk"><b>长春集团</b> <span>— 铜箔+环氧树脂垂直整合，电子铜箔产能大</span></div>
+      <div class="mk"><a href="company/?ticker=1303.TW" target="_blank">南亚塑胶</a> <span>— 台塑集团旗下，电子铜箔供应商</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶</div>
+      <div class="mk"><a href="company/?ticker=301511.SZ" target="_blank">德福科技</a> <span>— 收购 CFL 后跃居全球电子铜箔产能第一(19.1 万吨/年)。HVLP1-4 代及 RTF1-3 代 2025 年出货预计达千吨级，HVLP4 量产预计 2026 年。（来源：德福科技公告、天风证券）</span></div>
+      <div class="mk"><a href="company/?ticker=301217.SZ" target="_blank">铜冠铜箔</a> <span>— 较早攻克 HVLP 核心技术，具备 1-4 代生产能力，目前以 2 代出货为主，已进入多家头部 CCL 厂商供应链</span></div>
+      <div class="mk"><a href="company/?ticker=301389.SZ" target="_blank">隆扬电子</a> <span>— 声称具备 HVLP5 能力，2025Q3 目标满产 3 万吨，但量产稳定性和客户认证仍待验证</span></div>
+      <div class="mk"><a href="company/?ticker=002288.SZ" target="_blank">超华科技 / 诺德股份 / 逸豪新材</a> <span>— HVLP 产品已开发，送样验证中，英伟达供应链认证需 12-18 个月</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇭🇰 香港</div>
+      <div class="mk"><a href="company/?ticker=1888.HK" target="_blank">建滔铜箔</a> <span>— 建滔集团旗下，覆铜板+铜箔垂直整合，以中低端为主</span></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px">🔶 材料二：电子级玻纤布 / 电子布（成本占比 ~19%）</div>
+    <div style="font-size:11px;color:#555;margin-bottom:6px;line-height:1.7">由电子纱织成，是覆铜板的"骨架"。AI 时代需要低介电(Low Dk)布，分三代：<b>一代布</b>(NE-glass, Dk≈4.3，用于 5G/初级 AI)→<b>二代布</b>(D-glass, Dk≈3.5，用于 AI 服务器主板)→<b>三代 Q 布</b>(石英纤维, Dk≈2.3，配套 M9/英伟达 Rubin)。<br>
+    据台湾工研院 2024 年数据：<b>低介电布全球份额：日东纺 55%、旭化成 31%、台玻 11%</b>；<b>低热膨胀(LowCTE)布：日东纺 85%、Unitika 14%</b>。日本绝对主导高端。<br>
+    注意：普通电子布（E-glass）产能大陆+台湾占全球约 70%（中国巨石产能全球第一），但<b>高端低介电特种布</b>仍由日系主导。中国巨石在低介电/Q 布领域<b>尚处研发推进阶段</b>，尚未实现低介电布量产（来源：宏和科技招股书、华泰证券研报）。</div>
+    <div class="rg"><div class="rg-t">🇯🇵 日本 — 高端特种布绝对龙头</div>
+      <div class="mk"><a href="company/?ticker=3110.T" target="_blank">日东纺 (Nittobo)</a> <span>— 全球电子布技术领导者，低介电布份额 55%，LowCTE 布份额 85%。1998 年首创 NE-glass，2024 年制定 BigVISION2030 计划开发下一代(NEZ/V/DXII)。计划 2028 年前产能提升至 2025 年三倍。（来源：日东纺官网、台湾工研院、华泰证券）</span></div>
+      <div class="mk"><a href="company/?ticker=3407.T" target="_blank">旭化成</a> <span>— 低介电布全球第二（份额 31%），与日东纺为高端市场双寡头</span></div>
+      <div class="mk"><a href="company/?ticker=3103.T" target="_blank">Unitika</a> <span>— LowCTE 布全球第二（份额 14%）</span></div>
+      <div class="mk"><a href="company/?ticker=4063.T" target="_blank">信越化学</a> <span>— Q 布(石英布)日系主要供应商之一，产量小、价格高</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
+      <div class="mk"><a href="company/?ticker=1802.TW" target="_blank">台玻集团</a> <span>— 低介电布份额约 11%，新产能预计 2026-2027 陆续完成</span></div>
+      <div class="mk"><b>德宏 / 富乔 / 建荣</b> <span>— 台系电子布制造商，建荣已纳入日东纺子公司体系</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶</div>
+      <div class="mk"><a href="company/?ticker=002080.SZ" target="_blank">中材科技 (泰山玻纤)</a> <span>— 大陆特种电子布进度最快。二代低介电布已量产并获英伟达认证(用于GB300)，Q布预计2025底-2026出货。（来源：专家交流纪要、华泰证券）</span></div>
+      <div class="mk"><a href="company/?ticker=603256.SS" target="_blank">宏和科技</a> <span>— 超薄/极薄电子布全球龙头(≤16μm市占率26%)，二代低介电布及LowCTE已通过客户认证(台光、斗山、生益等)，定增9.9亿元扩产。（来源：宏和科技招股书）</span></div>
+      <div class="mk"><a href="company/?ticker=301526.SZ" target="_blank">国际复材</a> <span>— 二代低介电布量产，电子布总产量2.1亿米(2023)，已获英伟达二级供应商认证</span></div>
+      <div class="mk"><a href="company/?ticker=300395.SZ" target="_blank">菲利华</a> <span>— 国内石英布(Q布)主导供应商，拥有"高纯石英砂→石英纤维→石英布"全产业链，技术行业领先</span></div>
+      <div class="mk"><a href="company/?ticker=600176.SS" target="_blank">中国巨石</a> <span>— ⚠️ 全球玻纤产能第一(278万吨)，普通电子布产能达10亿米，但<b>低介电特种布及 Q 布仍处研发推进阶段</b>，尚未量产。二代低介电纱及电子布正在开发推进中。（来源：中国巨石公司公告、华泰证券 2025.2 研报）</span></div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px">🔶 材料三：电子树脂（成本占比 ~26%）</div>
+    <div style="font-size:11px;color:#555;margin-bottom:6px;line-height:1.7">树脂是粘合剂兼绝缘层，决定覆铜板的介电性能(Dk/Df)。传统用环氧树脂(FR-4)，AI 时代需要特种树脂体系。M9 级 CCL 可能采用碳氢(PCH)、PTFE 或混合树脂体系。<a href="company/?ticker=4182.T" target="_blank">三菱瓦斯化学(MGC)</a>在 BT 树脂领域全球最领先，是 IC 载板用 BT 基板材料的开创者和主导者。高端树脂成本占比在高速覆铜板中还在持续提升。</div>
+
+    <details>
+      <summary>📖 展开：为什么要升级？三大特种树脂体系详解</summary>
+      <div>
+        <b style="color:#C0392B">⚡ 为什么必须从环氧树脂升级？（核心矛盾：信号损耗）</b><br>
+        AI 服务器处理的数据量巨大，信号频率极高（如 PCIe 6.0/7.0 协议）。在高频下，电信号在传输线中会产生能量损失，主要由两个参数决定：<br>
+        · <b>介电常数 (Dk)</b>：决定信号传播速度。Dk 越低，速度越快。<br>
+        · <b>介电损耗 (Df)</b>：决定信号转化为热能的比例。Df 越低，发热越小，信号保真度越高。<br><br>
+        环氧树脂虽然便宜、好加工，但它的 Df 通常在 0.01 以上。在 AI 级别的高频下，信号还没传到芯片就"烧"成热量散失了。因此，必须引入以下三种体系：<br><br>
+
+        <b style="color:#1565C0">🔷 PPO (聚苯醚) 体系 —— 当下的绝对主流</b><br>
+        · <b>原理：</b>在环氧树脂中大量添加 PPO/PPE 树脂进行改性<br>
+        · <b>优势：</b>介电性能极佳（Df 可降至 0.002 甚至更低），且机械强度好，易于加工成几十层的 AI 服务器板<br>
+        · <b>应用：</b>AI 训练服务器的主板、加速卡（UBB）、交换机。<b>这是目前 M7、M8 级高速覆铜板的核心配方</b><br>
+        · <b>主要供应商：</b>SABIC（全球最大 PPO 供应商）、东材科技/同宇新材（国产替代）<br><br>
+
+        <b style="color:#C0392B">🔷 PTFE (聚四氟乙烯) 体系 —— 材料界的"性能天花板"</b><br>
+        俗称"特富龙"，就是不粘锅的涂层材料。<br>
+        · <b>原理：</b>它是目前已知介电性能最稳定的固体材料<br>
+        · <b>优势：</b>损耗极低，耐热性极强<br>
+        · <b>劣势：</b>极其难加工——太滑了跟铜箔粘不住，且热膨胀系数(CTE)大，很难做成多层板<br>
+        · <b>应用：</b>主要用于 77GHz 车载雷达、卫星通信等极高频领域。在 AI 服务器中应用受限，除非是极其特殊的射频模块<br>
+        · <b>主要供应商：</b>Rogers 罗杰斯（全球龙头）、Daikin 大金、Chemours 科慕<br><br>
+
+        <b style="color:#27AE60">🔷 碳氢 (Hydrocarbon/PCH) 体系 —— 低成本的高频方案</b><br>
+        · <b>原理：</b>采用聚丁二烯等碳氢树脂<br>
+        · <b>优势：</b>价格比 PPO 体系便宜，在高频下表现尚可<br>
+        · <b>劣势：</b>脆性大，钻孔容易碎，可靠性不如 PPO<br>
+        · <b>应用：</b>常用于基站天线等对成本敏感、层数不高的射频板<br>
+        · <b>主要供应商：</b>圣泉集团（国产碳氢树脂领先）、Rogers<br><br>
+
+        <table style="font-size:9px;border-collapse:collapse;width:100%">
+          <tr style="background:#f5f5f5"><th style="border:1px solid #ddd;padding:3px">体系</th><th style="border:1px solid #ddd;padding:3px">Df 范围</th><th style="border:1px solid #ddd;padding:3px">加工性</th><th style="border:1px solid #ddd;padding:3px">成本</th><th style="border:1px solid #ddd;padding:3px">AI 服务器适用性</th></tr>
+          <tr><td style="border:1px solid #ddd;padding:3px">环氧(FR-4)</td><td style="border:1px solid #ddd;padding:3px">>0.010</td><td style="border:1px solid #ddd;padding:3px">★★★★★</td><td style="border:1px solid #ddd;padding:3px">低</td><td style="border:1px solid #ddd;padding:3px">❌ 不适用</td></tr>
+          <tr style="background:#E3F2FD"><td style="border:1px solid #ddd;padding:3px"><b>PPO改性</b></td><td style="border:1px solid #ddd;padding:3px">0.002-0.005</td><td style="border:1px solid #ddd;padding:3px">★★★★</td><td style="border:1px solid #ddd;padding:3px">中高</td><td style="border:1px solid #ddd;padding:3px">⭐ 主流方案</td></tr>
+          <tr><td style="border:1px solid #ddd;padding:3px">PTFE</td><td style="border:1px solid #ddd;padding:3px"><0.002</td><td style="border:1px solid #ddd;padding:3px">★★</td><td style="border:1px solid #ddd;padding:3px">高</td><td style="border:1px solid #ddd;padding:3px">⚠️ 受限(难多层化)</td></tr>
+          <tr><td style="border:1px solid #ddd;padding:3px">碳氢(PCH)</td><td style="border:1px solid #ddd;padding:3px">0.002-0.004</td><td style="border:1px solid #ddd;padding:3px">★★★</td><td style="border:1px solid #ddd;padding:3px">中</td><td style="border:1px solid #ddd;padding:3px">⚠️ 受限(脆性大)</td></tr>
+        </table>
+      </div>
+    </details>
+    <div class="rg"><div class="rg-t">🇯🇵 日本 — BT 树脂 / 高端特种树脂领先</div>
+      <div class="mk"><a href="company/?ticker=4182.T" target="_blank">三菱瓦斯化学 (MGC)</a> <span>— BT 树脂(双马来酰亚胺三嗪)全球开创者和领导者，IC 载板用 BT 基板的核心材料供应商，虽专利期已过但技术仍最领先</span></div>
+      <div class="mk"><a href="company/?ticker=4188.T" target="_blank">三菱化学 / DIC</a> <span>— 环氧树脂、特种改性树脂</span></div>
+      <div class="mk"><a href="company/?ticker=4631.T" target="_blank">Daikin (大金)</a> <span>— PTFE 氟树脂全球领先（M9 级 PTFE 基 CCL 的关键材料）</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇺🇸 美国 / 🇸🇦 沙特</div>
+      <div class="mk"><b>SABIC</b> <span>— PPO(聚苯醚)树脂全球最大供应商，PPO 用于高速覆铜板体系(M7-M8)</span></div>
+      <div class="mk"><a href="company/?ticker=CC" target="_blank">Chemours (科慕)</a> <span>— PTFE 氟树脂供应商</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 加速国产替代</div>
+      <div class="mk"><a href="company/?ticker=605589.SS" target="_blank">圣泉集团</a> <span>— M6-M8 高速树脂(BMI 等)已量产，M9 级碳氢树脂项目在建。（来源：圣泉集团公告）</span></div>
+      <div class="mk"><a href="company/?ticker=601208.SS" target="_blank">东材科技 / 同宇新材</a> <span>— BMI、PPO、PCH 等特种体系实现量产，打破外资垄断</span></div>
+      <div class="mk"><a href="company/?ticker=603002.SS" target="_blank">宏昌电子</a> <span>— 国内环氧树脂龙头，覆铜板用电子树脂</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
+      <div class="mk"><b>长春集团</b> <span>— 环氧树脂大厂，同时做铜箔，垂直整合</span></div>
+    </div>
+
+    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 小结：</b>三大原材料高端品种均由日系主导——铜箔看<a href="company/?ticker=5706.T" target="_blank">三井金属</a>(HVLP4+/载体铜箔垄断)，电子布看<a href="company/?ticker=3110.T" target="_blank">日东纺</a>(低介电布55%/LowCTE布85%)，BT树脂看<a href="company/?ticker=4182.T" target="_blank">三菱瓦斯(MGC)</a>。大陆在普通品产能占优但高端仍差距明显：铜箔方面德福科技收购CFL是标志性突破；电子布方面中材科技二代布已获英伟达认证，菲利华在Q布领先；中国巨石虽为全球玻纤产能第一但低介电特种布仍在研发中。<br><br>
+    <b>📚 主要资料来源：</b>天风证券《AI铜箔》研报(2025.9)、华泰证券《重识建材八：AI驱动电子纱产业升级》(2025.2)、宏和科技招股书/定增文件(台湾工研院份额数据)、三井金属财报、德福科技公告、中国巨石公司公告、专家交流纪要。</div>
+  </div>
+</div>
+
+<!-- STEP 1: CCL -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">🧱</div>
+    <div class="ti"><div class="sn">STEP 1 · 最上游</div><div class="nm">覆铜板 CCL</div><div class="sb">所有电路板的"面粉"</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>把玻纤布泡在树脂里，两面贴铜箔，热压成一块板——这就是覆铜板。PCB 和 IC 载板都拿它当原材料。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何爆发：</b>AI 服务器需要 M7-M9 超低损耗材料，单价是普通的 5 倍+。材料成本占 PCB 总成本从 20%→45%。</div>
+    <div class="tip tip-p"><b>📊 M6-M9 是什么？</b>覆铜板的信号损耗等级（IPC标准），不是产品名。数字越大→损耗越低→越贵。<br>M6(5G)→M7(AI服务器主流)→M8(高端AI)→M9(6G/超算)</div>
+    <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 覆铜板主要厂商（全球 CR5 超 55%，集中度高）</div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾 — 高端高速领域领先</div>
+      <div class="mk"><a href="company/?ticker=2383.TW" target="_blank">台光电子 TUC</a> <span>— 无卤覆铜板销量自 2013 年连续全球第一。苹果、华为手机第一大基板材料供应商，M6-M9 全系列产品线齐全。2025H1 营收 441.88 亿台币，毛利率 30.4%。正在昆山、中山、美国加州扩产，美国 Arlon EMD 子公司投资 4900 万美元。定位：高端智能手机+AI 服务器双轮驱动。</span></div>
+      <div class="mk"><a href="company/?ticker=6213.TWO" target="_blank">联茂电子</a> <span>— 台系高速覆铜板主力之一，AI 服务器用高速材料供应商，与台光电子、台燿形成台系 CCL 三强。</span></div>
+      <div class="mk"><a href="company/?ticker=6274.TWO" target="_blank">台燿科技</a> <span>— 专注高频高速覆铜板，AI 服务器/5G 基站用高速材料。与台光电子、联茂并称台系 CCL 铁三角。</span></div>
+      <div class="mk"><a href="company/?ticker=1303.TW" target="_blank">南亚塑胶</a> <span>— 台塑集团旗下，覆铜板+铜箔+电子布垂直整合，同时做 ABF 载板（南亚电路板为子公司）。</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 全球产值第一，高端追赶中</div>
+      <div class="mk"><a href="company/?ticker=600183.SS" target="_blank">生益科技</a> <span>— 硬质覆铜板全球第二（Prismark，自 2013 年至今），国内覆铜板龙头。S8/S9 系列高速 CCL 已通过英伟达认证，M7/M8 产品批量供货谷歌、AWS 等海外 ASIC 客户，价格较进口低 15-20%。高速 CCL 全球份额从 18%→27%。子公司生益电子(688183)做 PCB。正在布局 IC 载板用基板材料和 CBF 积层膜（对标 ABF 膜国产替代）。</span></div>
+      <div class="mk"><a href="company/?ticker=603186.SS" target="_blank">华正新材</a> <span>— CBF 积层绝缘膜（对标味之素 ABF 膜）国产替代先锋，已在 FC-BGA 等高端封装场景取得阶段性验证成果。覆铜板产品已在 Mini/Micro LED、Memory、MEMS 等场景批量供货。</span></div>
+      <div class="mk"><b>金安国纪</b> <span>— A 股覆铜板厂商(002636)，以中低端 FR-4 为主，小客户分散出货结构有利于涨价传导。</span></div>
+      <div class="mk"><b>南亚新材</b> <span>— 科创板覆铜板厂商(688519)，高速材料发力中。</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇯🇵 日本 / 🇺🇸 美国 — 特种材料领先</div>
+      <div class="mk"><a href="company/?ticker=6752.T" target="_blank">Panasonic</a> <span>— 高端高速覆铜板领先厂商，Megtron 系列是 AI 服务器用高速 CCL 的标杆产品。在全球高速 CCL 中拥有重要份额，是英伟达/博通等芯片厂的核心 CCL 供应商。</span></div>
+      <div class="mk"><a href="company/?ticker=ROG" target="_blank">Rogers (美)</a> <span>— 高频材料全球龙头，主攻 PTFE/碳氢体系。核心产品用于 77GHz 车载雷达、卫星通信、5G 毫米波天线等极高频领域。在 AI 服务器中应用有限（PTFE 难多层化），但在射频/雷达赛道无可替代。</span></div>
+      <div class="mk"><b>Isola (美)</b> <span>— 高速数通覆铜板材料供应商，Astra 系列服务 AI 服务器。</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇭🇰 香港</div>
+      <div class="mk"><a href="company/?ticker=1888.HK" target="_blank">建滔积层板</a> <span>— 全球覆铜板产量最大（以量计），主攻中低端 FR-4 市场。垂直整合程度高：自有铜箔、玻纤纱、玻纤布、环氧树脂、木浆纸等上游产能。覆铜板行业涨价风向标——建滔发涨价函通常意味着全行业跟涨。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 2: PCB -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">📟</div>
+    <div class="ti"><div class="sn">STEP 2 · 中游</div><div class="nm">PCB 印刷电路板</div><div class="sb">电子产品的"骨架和神经"</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>PCB 就像城市道路网——把所有元器件连接起来让电流流动。传统用 4-8 层，AI 服务器需 20-30 层。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何爆发：</b>AI 服务器单台 PCB 价值量是传统的 3-8 倍（达 8000-10000 美元）。18层+高多层板 2025 增速 41%。高端产能缺口约 30%，订单排到 2026年。</div>
+    <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 AI 服务器 PCB 主要厂商（全球 PCB CR10 约 36%，分散度高）</div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾 — 传统霸主，服务器板核心地位</div>
+      <div class="mk"><a href="company/?ticker=002938.SZ" target="_blank">臻鼎/鹏鼎控股</a> <span>— 全球第一大 PCB 厂（台资，A 股上市）。苹果 iPhone/iPad PCB 最大供应商。AI 时代加速布局高阶 HDI 板，淮安工厂 SLP 板产能提升 50%，适配 AIPC/AI 手机微型化。泰国基地已小批量产。2025 前三季营收 268.55 亿元(+14%)。进入新一轮扩产高峰，资本开支近 50 亿。</span></div>
+      <div class="mk"><a href="company/?ticker=3037.TW" target="_blank">欣兴电子</a> <span>— 全球第二大 PCB 厂，同时也是全球最大 IC 载板厂（ABF 载板份额 ~18%）。56Gbps PCB 已进入微软 Azure 数据中心。在 AI 时代"PCB+IC 载板"双轮驱动，地位独特。</span></div>
+      <div class="mk"><a href="company/?ticker=2368.TW" target="_blank">金像电子</a> <span>— 台湾 AI 服务器 PCB 龙头，2025 年股价曾突破 600 台币。AI 服务器/ASIC 板为核心营收，毛利率站上 35%。2025H2 台湾厂区扩产约 20%，泰国新厂已试产。外资目标价最高喊至 700 台币。</span></div>
+      <div class="mk"><a href="company/?ticker=3044.TW" target="_blank">健鼎科技</a> <span>— 全球前五 PCB 厂，AI 服务器/高阶网通 PCB 重要供应商，与金像电形成比价效应。</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链</div>
+      <div class="mk"><a href="company/?ticker=002463.SZ" target="_blank">沪电股份</a> <span>— 企业通讯市场板营收 100.93 亿元(2024,+72%)，AI/HPC 相关 PCB 占比从 21%→29.5%。英伟达 H200 服务器供应链。投资 43 亿元建设 AI 芯片配套 PCB 项目，泰国布局全球化供应链。主要产品包括 14-38 层企业通信多层板。</span></div>
+      <div class="mk"><a href="company/?ticker=300476.SZ" target="_blank">胜宏科技</a> <span>— 英伟达全球显卡 PCB 第一大供应商（市占率 50%），AI 服务器 PCB 订单已锁定至 2026Q1。2025Q1 净利润同比+339%，单季交付超 20 亿元，AI 占比突破 60%。同时拿下摩尔线程高端 12 层高速 PCB 独家订单，横跨东西方算力链。AI 服务器 PCB 全球份额突破 30%。</span></div>
+      <div class="mk"><a href="company/?ticker=688183.SS" target="_blank">生益电子</a> <span>— 生益科技(600183)控股子公司，A 股首单"A 拆 A"案例(2021 科创板上市)。20-28 层多层板单机价值量达 8000-10000 美元（传统服务器的 3-5 倍）。核心客户包括亚马逊 AWS、Meta，服务器产品销售占比从 49%→持续提升。2025H1 净利润同比预增 432-471%。</span></div>
+      <div class="mk"><a href="company/?ticker=002916.SZ" target="_blank">深南电路</a> <span>— 通信/数通 PCB 第一梯队（与沪电、生益电子并列），同时也做 IC 载板（FCBGA 中高阶产品认证中）。华为、中兴核心 PCB 供应商。</span></div>
+      <div class="mk"><a href="company/?ticker=002815.SZ" target="_blank">崇达技术</a> <span>— 高多层板价格同比涨 12%，HDI 板涨 8%。高端产线产能利用率超 90%，订单交付周期延长至 10 周。</span></div>
+      <div class="mk"><a href="company/?ticker=603228.SS" target="_blank">景旺电子</a> <span>— 全球前三汽车 PCB 供应商（Prismark 2023），同时布局 AI 服务器板。产品覆盖刚性板、柔性板、金属基板等全品类。</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇦🇹🇺🇸 欧美</div>
+      <div class="mk"><a href="company/?ticker=ATS.VI" target="_blank">AT&S (奥地利)</a> <span>— 欧洲最大高端 PCB+IC 载板厂，同时也是 ABF 载板供应商（份额~11%）。嵌入式功率 PCB 已进入西门子工业 AI 服务器。</span></div>
+      <div class="mk"><a href="company/?ticker=TTMI" target="_blank">TTM (美国)</a> <span>— 北美最大 PCB 厂商，航空航天/国防/数据中心为核心客户。</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3: IC Substrate -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">🔲</div>
+    <div class="ti"><div class="sn">STEP 3 · 中游（高端）</div><div class="nm">IC载板 / ABF / BT</div><div class="sb">芯片的"地基"</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>芯片引脚极小，PCB线路相对粗，IC载板是两者之间的"翻译器"。它本质是超高精度PCB（线宽<10μm vs 普通>50μm）。按增层材料分 ABF载板（高端，GPU/CPU）和 BT载板（中端，手机/存储）。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何爆发：</b>每颗AI芯片(H100/B200)必须装在ABF载板上。芯片越来越大 → ABF载板要更大面积、更多层（可达32层）。ABF膜被日本味之素垄断~97%，是最大的卡脖子。</div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾 — ABF份额约45%</div>
+      <div class="mk"><a href="company/?ticker=3037.TW" target="_blank">欣兴电子</a> <span>— 全球最大IC载板厂，ABF可达32层，份额~18%</span></div>
+      <div class="mk"><a href="company/?ticker=8046.TW" target="_blank">南亚电路板</a> <span>— ABF全球第三，台塑集团，份额~13%</span></div>
+      <div class="mk"><a href="company/?ticker=3264.TW" target="_blank">景硕科技</a> <span>— ABF份额~9%</span></div>
+      <div class="mk"><a href="company/?ticker=4958.TW" target="_blank">臻鼎科技</a> <span>— 全球最大PCB厂（母公司），近年积极扩展IC载板/ABF载板业务，客户含英特尔、AMD</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇯🇵 日本 — ABF份额约35%，技术最强</div>
+      <div class="mk"><a href="company/?ticker=4062.T" target="_blank">Ibiden (揖斐电)</a> <span>— ABF全球第一（份额~21%），Intel核心供应商</span></div>
+      <div class="mk"><a href="company/?ticker=6967.T" target="_blank">Shinko (新光电气)</a> <span>— ABF份额~12%，富士通集团</span></div>
+      <div class="mk"><a href="company/?ticker=2802.T" target="_blank">🔴 味之素</a> <span>— ABF膜垄断~97%！一家味精公司卡住全球半导体脖子</span></div>
+      <div class="mk"><a href="company/?ticker=4182.T" target="_blank">三菱瓦斯 MGC</a> <span>— BT树脂全球龙头</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇰🇷 韩国 / 🇦🇹 奥地利</div>
+      <div class="mk"><a href="company/?ticker=009150.KS" target="_blank">三星电机</a> <span>— BT载板主要供应商，份额~9%</span></div>
+      <div class="mk"><a href="company/?ticker=ATS.VI" target="_blank">AT&S</a> <span>— ABF份额~11%，欧洲唯一玩家</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇨🇳 大陆 — ABF仅约6%，起步中</div>
+      <div class="mk"><a href="company/?ticker=002916.SZ" target="_blank">深南电路</a> <span>— FCBGA中高阶认证中</span></div>
+      <div class="mk"><a href="company/?ticker=002436.SZ" target="_blank">兴森科技</a> <span>— ABF载板2025逐步量产</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STEP 3.5: CoWoS -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">🧊</div>
+    <div class="ti"><div class="sn">STEP 3.5 · 先进封装</div><div class="nm">CoWoS 封装技术</div><div class="sb">台积电的核心竞争力</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>CoWoS = Chip on Wafer on Substrate（芯片-晶圆-基板）。想象搭乐高：先把GPU芯片和HBM内存并排放在一块硅"托盘"（中介层）上用微凸块连起来（CoW），再把这个托盘整体焊到ABF载板上（oS）。最终这个封装体再焊到PCB主板上。它是台积电在AI时代最关键的竞争壁垒之一。</div>
+
+    <div class="tip tip-b"><b>🤖 为什么是瓶颈：</b>英伟达 2025 年占台积电 CoWoS 产能的 63%。CoWoS 产能不足曾是 AI 芯片出货量卡关的主因。台积电计划 2025 年底产能达 6.5-7.5 万片/月（同比翻倍），2026 年达 9-11 万片/月。封装基板占 CoWoS 总成本 40%以上。（来源：SemiWiki、TrendForce、光大证券）</div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">📐 CoWoS-S 封装工艺流程（六大环节）</div>
+    <div style="font-size:11px;color:#666;margin-bottom:8px;line-height:1.6">以下是 CoWoS-S（最经典的硅中介层方案）的简化流程。注意：<b>电子布和树脂不直接参与 CoWoS 封装本身</b>，它们通过"覆铜板→ABF载板"间接参与最后的 oS（基板贴合）环节。</div>
+
+    <!-- Step by step -->
+    <div style="border-left:3px solid #7B1FA2;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2">环节❶ 制造硅中介层（Interposer）</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">在空白硅晶圆上制造 TSV（硅通孔）→ 沉积金属互连层(RDL) → 形成微凸块(μBump)焊盘。这一步类似前道晶圆制造，需要光刻、刻蚀、电镀等工艺。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>硅晶圆、铜（电镀）、光刻胶、CMP研磨液、低k介质</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>🇹🇼 台积电（主力）| 🇹🇼 联电（为OSAT代工中介层）| 设备：🇳🇱 ASML(光刻) 🇺🇸 应用材料(沉积/刻蚀) 🇯🇵 东京电子(刻蚀)</div>
+    </div>
+
+    <div style="border-left:3px solid #7B1FA2;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2">环节❷ 芯片贴合 — CoW（Chip on Wafer）</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">将 GPU 芯片和 HBM 内存堆栈倒装（flip chip）贴到中介层晶圆上，通过微凸块(μBump)连接，回流焊固化。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>助焊剂、焊料（SnAg等）</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>🇹🇼 台积电 | 倒装芯片接合机：🇳🇱 BESI 🇯🇵 松下 🇺🇸 Kulicke & Soffa</div>
+    </div>
+
+    <div style="border-left:3px solid #7B1FA2;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2">环节❸ 底部填充（Underfill）+ 塑封（Molding）</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">在芯片与中介层之间的缝隙注入底部填充胶（Underfill），保护微凸块免受机械应力。然后用环氧模塑料（EMC）对顶部芯片进行塑封，CMP磨平表面。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>底部填充胶（Underfill）、环氧模塑料（EMC）</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>🇯🇵 Namics / 信越化学 / 长濑(Underfill) | 🇯🇵 住友电木 / 日立化成(EMC) | 🇹🇼 长春集团</div>
+    </div>
+
+    <div style="border-left:3px solid #7B1FA2;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2">环节❹ 减薄 + 背面凸块</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">翻转中介层，研磨减薄至~100μm 露出 TSV 背面，然后电镀形成 C4 焊料凸点（用于连接下方基板）。最后切割成单颗封装体。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>研磨砂轮、C4 焊料（SnAg）</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>🇯🇵 DISCO(研磨/切割) | 🇯🇵 东京精密 | 电镀设备</div>
+    </div>
+
+    <div style="border-left:3px solid #E65100;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#E65100">环节❺ 贴合基板 — oS（on Substrate）⭐ 电子布/树脂在此间接参与</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">将切割好的 CoW 封装体倒装贴合到 <b>ABF 载板</b>上，通过 C4 焊料凸点连接。ABF 载板的芯板由<b>覆铜板</b>制成，覆铜板的原材料正是<b>电子布（玻纤布）+ 树脂 + 铜箔</b>。所以电子布和树脂是通过"覆铜板→ABF载板→oS贴合"这条链路间接参与 CoWoS 的。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>ABF 载板（含覆铜板芯板 + ABF 膜增层）、C4 焊料、底部填充胶</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>ABF 载板：🇯🇵 Ibiden(份额21%) 🇹🇼 欣兴(18%) 🇹🇼 南亚电路板(13%) 🇯🇵 Shinko(12%)<br>
+      ABF 膜：🇯🇵 味之素(垄断~97%) | 覆铜板芯板：🇹🇼 台光电子 🇨🇳 生益科技 | 铜箔/电子布/树脂：见 STEP 0</div>
+    </div>
+
+    <div style="border-left:3px solid #7B1FA2;padding-left:10px;margin-bottom:6px">
+      <div style="font-size:11px;font-weight:700;color:#7B1FA2">环节❻ 装盖 + 测试</div>
+      <div style="font-size:10px;color:#555;line-height:1.7">在芯片顶部涂覆热界面材料(TIM)，安装金属散热盖(Lid)保护并导热。最终进行电气测试。封装完成后，整个 CoWoS 模块被焊到 AI 服务器的 PCB 主板上。</div>
+      <div style="font-size:10px;color:#888;margin-top:2px"><b>主要材料：</b>热界面材料(TIM)、金属盖(铜/镍)、BGA焊球</div>
+      <div style="font-size:10px;color:#888"><b>关键厂商：</b>🇺🇸 Indium(TIM/焊料) 🇯🇵 千住金属(焊料) | 测试：🇹🇼 日月光 🇺🇸 安靠Amkor 🇨🇳 长电科技</div>
+    </div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">📊 CoWoS 三种变体对比</div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table style="font-size:10px;border-collapse:collapse;width:100%;min-width:320px">
+      <tr style="background:#f5f5f5"><th style="border:1px solid #ddd;padding:4px;text-align:left">类型</th><th style="border:1px solid #ddd;padding:4px">中介层材料</th><th style="border:1px solid #ddd;padding:4px">特点</th><th style="border:1px solid #ddd;padding:4px">代表芯片</th></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-S</b></td><td style="border:1px solid #ddd;padding:4px">硅(TSV)</td><td style="border:1px solid #ddd;padding:4px">最经典，性能最好，但大面积良率低</td><td style="border:1px solid #ddd;padding:4px">H100/A100</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-R</b></td><td style="border:1px solid #ddd;padding:4px">有机RDL</td><td style="border:1px solid #ddd;padding:4px">用有机材料替代硅，柔韧性好，成本低</td><td style="border:1px solid #ddd;padding:4px">部分网络芯片</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-L</b></td><td style="border:1px solid #ddd;padding:4px">LSI硅桥+RDL</td><td style="border:1px solid #ddd;padding:4px">结合S和R优点，面积可更大，未来主流</td><td style="border:1px solid #ddd;padding:4px">B200/B300/Rubin</td></tr>
+    </table>
+    </div>
+
+    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 关键结论：电子布/树脂如何与 CoWoS 发生关系？</b><br>
+    CoWoS 封装本身（环节❶-❹）使用的是<b>半导体工艺材料</b>（硅晶圆、光刻胶、CMP液、焊料、Underfill），与电子布/树脂无直接关系。<br>
+    电子布和树脂的参与点在环节❺ oS——CoW 封装体需要贴合到 <b>ABF 载板</b>上，而 ABF 载板的芯板由<b>覆铜板（铜箔+电子布+树脂）</b>制成。<br>
+    所以完整链条是：<b>电子布+树脂+铜箔 → 覆铜板 → ABF载板(+ABF膜) → CoWoS的"S"(Substrate) → 承载整个封装体</b>。<br>
+    封装基板占 CoWoS 总成本 40%+，这就是为什么 ABF 载板（及其上游覆铜板/电子布/树脂）在 AI 时代如此重要。<br><br>
+    <b>📚 资料来源：</b>SemiAnalysis/知乎译文《一文看懂CoWoS工艺》、台湾大学 CoWoS 流程资料（晶洲装备引用）、TrendForce 产能数据、光大证券/东兴证券 CoWoS 研报、SemiWiki 2025 产能预测。</div>
+  </div>
+</div>
+
+<!-- STEP 4: Optical Communication -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">💡</div>
+    <div class="ti"><div class="sn">STEP 4 · 另一条赛道</div><div class="nm">光通信产业链</div><div class="sb">光芯片 → 光器件 → 光模块 → 数据中心</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>如果说 PCB/IC 载板解决的是"芯片怎么装到板子上"，光通信解决的是"服务器之间的数据怎么传"。光模块把电信号转成光信号，通过光纤高速传输。每颗 AI GPU 需配 6-8 个光模块，未来 CPO 时代 GPU:光引擎比例可达 1:11.5。</div>
+
+    <div class="tip tip-b"><b>🤖 AI 为何爆发：</b>四大云厂(微软/谷歌/Meta/亚马逊) 2025 年资本开支合计超 3300 亿美元(+53%)，主要投向数据中心。800G 光模块 2025 年出货 1800-2100 万只，2026 年达 5000 万只。2025 年是 1.6T 商用元年，出货 300-500 万只。光模块成本中光器件占 ~74%、电芯片占 ~19%。（来源：LightCounting、TrendForce、华经产业研究院）</div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">🔗 光通信产业链全景</div>
+    <div style="font-size:11px;color:#666;margin-bottom:8px;line-height:1.6">光通信不是单一产品，而是一条从材料到系统的完整产业链。下面按上→中→下游逐层拆解。</div>
+
+    <!-- 上游: 光芯片 -->
+    <div style="border-left:3px solid #E65100;padding-left:10px;margin-bottom:8px">
+      <div style="font-size:12px;font-weight:700;color:#E65100">上游① 光芯片 — 整条链的"心脏"（占光模块成本 26-70%）</div>
+      <div style="font-size:10px;color:#555;line-height:1.7;margin:4px 0">光芯片分为<b>激光器芯片</b>（发射端，将电信号转为光信号）和<b>探测器芯片</b>（接收端，将光信号转为电信号）。按技术路线分：<br>
+      · <b>DFB 激光器</b>：25G 以下已基本国产化，25G/50G 国产化率快速提升<br>
+      · <b>EML 激光器</b>：支撑高速长距离传输的核心器件，高端产品(100G/200G PAM4)仍被海外垄断，是最大卡脖子之一<br>
+      · <b>VCSEL</b>：短距离高速传输（数据中心内部），博通主导<br>
+      · <b>硅光芯片</b>：用 CMOS 工艺制造光器件，集成度高、成本低，渗透率 2025 年已突破 40%，是未来主流方向</div>
+      <div class="rg"><div class="rg-t">🇺🇸 美国 — 高端光芯片主导</div>
+        <div class="mk"><a href="company/?ticker=AVGO" target="_blank">Broadcom (博通)</a> <span>— 高速 VCSEL 全球主导，CPO 技术领导者，PAM4 DSP 芯片双寡头之一</span></div>
+        <div class="mk"><a href="company/?ticker=LITE" target="_blank">Lumentum</a> <span>— 高端 EML/DFB 激光器芯片龙头</span></div>
+        <div class="mk"><a href="company/?ticker=COHR" target="_blank">Coherent (贰陆)</a> <span>— 高端光芯片+光模块一体化，全球光模块第二</span></div>
+        <div class="mk"><a href="company/?ticker=MRVL" target="_blank">Marvell (迈威尔)</a> <span>— PAM4 DSP 芯片双寡头之一（原 Inphi）</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇯🇵 日本</div>
+        <div class="mk"><a href="company/?ticker=6503.T" target="_blank">三菱电机</a> <span>— 高端 EML 芯片传统强者</span></div>
+        <div class="mk"><a href="company/?ticker=5802.T" target="_blank">住友电工</a> <span>— 光器件/光芯片老牌供应商</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇨🇳 大陆 — 中低速已国产化，高速追赶中</div>
+        <div class="mk"><a href="company/?ticker=688498.SS" target="_blank">源杰科技</a> <span>— 25G DFB 量产领先，100G PAM4 EML 已通过客户验证，正推 200G EML</span></div>
+        <div class="mk"><a href="company/?ticker=002281.SZ" target="_blank">光迅科技</a> <span>— 全产业链（光芯片→器件→模块→子系统），10G+ 光芯片全自研</span></div>
+        <div class="mk"><b>武汉敏芯(云岭光电)</b> <span>— EML 芯片突破，25G/50G 已量产</span></div>
+        <div class="mk"><a href="company/?ticker=688048.SS" target="_blank">长光华芯</a> <span>— 大功率半导体激光芯片龙头</span></div>
+        <div class="mk"><a href="company/?ticker=688313.SS" target="_blank">仕佳光子</a> <span>— DFB/AWG 芯片，800G 光芯片良率达 90%，供头部模块厂</span></div>
+        <div class="mk"><a href="company/?ticker=600703.SS" target="_blank">三安光电</a> <span>— 化合物半导体平台，光通信芯片布局</span></div>
+        <div class="mk"><b>华为海思</b> <span>— 自研光芯片，但受制裁影响</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
+        <div class="mk"><a href="company/?ticker=3081.TW" target="_blank">联亚光电</a> <span>— 高速 EML/DFB 芯片代工</span></div>
+        <div class="mk"><b>全新光电</b> <span>— 光通信用激光器芯片</span></div>
+      </div>
+      <div style="font-size:10px;color:#C0392B;margin-top:4px"><b>⚠️ 卡脖子提示：</b>高端 PAM4 DSP 芯片几乎被博通和 Marvell 双寡头垄断；200G EML 激光器芯片仍严重依赖 Lumentum/三菱等海外供应商。光芯片供应不足是 2026 年光模块产能的关键瓶颈（野村预计供需缺口 5-15%）。</div>
+    </div>
+
+    <!-- 上游: 光器件/无源器件 -->
+    <div style="border-left:3px solid #E65100;padding-left:10px;margin-bottom:8px">
+      <div style="font-size:12px;font-weight:700;color:#E65100">上游② 光器件 / 光连接器 — 光模块的"骨骼和关节"</div>
+      <div style="font-size:10px;color:#555;line-height:1.7;margin:4px 0">光器件分<b>有源器件</b>（含光芯片，负责光电转换）和<b>无源器件</b>（不涉及光电转换，如连接器、分路器、波分复用器等）。CPO 时代，光纤连接器(FAU/MPO/Fiber Shuffle)的价值量将显著提升。</div>
+      <div class="rg"><div class="rg-t">🇨🇳 大陆</div>
+        <div class="mk"><a href="company/?ticker=300394.SZ" target="_blank">天孚通信</a> <span>— 高精度光纤阵列(FAU)全球份额 30%，隐形冠军。深度绑定英伟达/博通。2025H1 净利 18-21 亿(+40-60%)</span></div>
+        <div class="mk"><a href="company/?ticker=002281.SZ" target="_blank">光迅科技</a> <span>— 全产业链覆盖有源+无源器件，国内云商核心供应商</span></div>
+        <div class="mk"><a href="company/?ticker=688195.SS" target="_blank">腾景科技</a> <span>— 光学元件（滤光片、透镜等）</span></div>
+        <div class="mk"><a href="company/?ticker=300570.SZ" target="_blank">太辰光</a> <span>— MPO 连接器、光纤跳线</span></div>
+        <div class="mk"><a href="company/?ticker=300620.SZ" target="_blank">光库科技</a> <span>— 铌酸锂调制器，突破关键器件壁垒</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇺🇸🇯🇵 美日</div>
+        <div class="mk"><a href="company/?ticker=COHR" target="_blank">II-VI / Coherent (美)</a> <span>— 有源器件龙头</span></div>
+        <div class="mk"><b>US Conec (美)</b> <span>— MPO/MTP 连接器标准制定者</span></div>
+        <div class="mk"><b>京瓷 (日)</b> <span>— 陶瓷套管/陶瓷基板，封装材料高端市场主导</span></div>
+      </div>
+    </div>
+
+    <!-- 中游: 光模块制造 -->
+    <div style="border-left:3px solid #2E7D32;padding-left:10px;margin-bottom:8px">
+      <div style="font-size:12px;font-weight:700;color:#2E7D32">中游 光模块制造 — 中国主导全球（Top10 占 7 席）</div>
+      <div style="font-size:10px;color:#555;line-height:1.7;margin:4px 0">将光芯片、电芯片(DSP)、PCB、光器件、结构件封装成完整光模块。中国厂商凭借制造成本和规模优势已主导全球中游。当前主流 800G，2025 年进入 1.6T 商用元年。三大技术路线并行演进：传统可插拔(DSP) → <b>LPO</b>(去DSP降功耗) → <b>CPO</b>(光引擎与交换芯片共封装，终极形态)。</div>
+      <div class="rg"><div class="rg-t">🇨🇳 大陆 — 全球主导</div>
+        <div class="mk"><a href="company/?ticker=300308.SZ" target="_blank">中际旭创</a> <span>— 全球第一（份额 28%+），800G 份额超 40%。英伟达/谷歌/Meta/AWS 核心供应商。1.6T 量产全球领先，1.6T 市占率 50-70%。硅光+CPO 双路线布局，CPO 原型配合英伟达 Quantum-X 验证。2025 全年预计净利 98-118 亿元。（来源：LightCounting、中际旭创公告）</span></div>
+        <div class="mk"><a href="company/?ticker=300502.SZ" target="_blank">新易盛</a> <span>— 全球前三（份额 25-30%），增速最快(营收+283%/净利+356%)。LPO 技术领先（去 DSP 降功耗 30%），毛利率 47% 高于旭创。经销商持股模式独特(北美经销商为第 4 大股东)。2025 全年预计净利 94-99 亿元。（来源：新易盛公告）</span></div>
+        <div class="mk"><b>华为</b> <span>— 全球第四。自研 400G CPO 交换机已在国内智算中心部署(2025Q3 出货超 2 万台)，自研光芯片</span></div>
+        <div class="mk"><a href="company/?ticker=002281.SZ" target="_blank">光迅科技</a> <span>— 全产业链布局(芯片→器件→模块→子系统)的唯一厂商，硅光模块 2023 年已推出，国内大型云商核心供应商</span></div>
+        <div class="mk"><b>海信宽带</b> <span>— 全球 Top10，电信+数通双栖</span></div>
+        <div class="mk"><b>华工科技(华工正源)</b> <span>— 自研 EML 芯片，成本较竞品低 25-30 美元。高端光模块营收 39.75 亿(2024)</span></div>
+        <div class="mk"><a href="company/?ticker=603083.SS" target="_blank">剑桥科技</a> <span>— 800G+1.6T 年目标产能 500-700 万只，但因硅光引擎交付延迟推迟 1.6T 量产</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇺🇸 美国</div>
+        <div class="mk"><a href="company/?ticker=COHR" target="_blank">Coherent (贰陆)</a> <span>— 全球第二，光芯片+模块垂直整合，传统光通信巨头</span></div>
+        <div class="mk"><a href="company/?ticker=AVGO" target="_blank">Broadcom (博通)</a> <span>— CPO 技术领导者，DSP 芯片双寡头，不直接卖模块但掌控上游芯片命脉</span></div>
+        <div class="mk"><a href="company/?ticker=LITE" target="_blank">Lumentum</a> <span>— 高端光芯片龙头，同时做模块</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">🇨🇳🇺🇸 其他</div>
+        <div class="mk"><b>索尔思光电 (Source Photonics)</b> <span>— 全球 Top10，中美双总部</span></div>
+        <div class="mk"><a href="company/?ticker=301205.SZ" target="_blank">联特科技</a> <span>— 电信+数通光模块</span></div>
+      </div>
+    </div>
+
+    <!-- 下游 -->
+    <div style="border-left:3px solid #1565C0;padding-left:10px;margin-bottom:8px">
+      <div style="font-size:12px;font-weight:700;color:#1565C0">下游 光通信设备 / 光纤光缆</div>
+      <div style="font-size:10px;color:#555;line-height:1.7;margin:4px 0">光模块插入交换机/路由器等设备中使用，设备之间通过光纤光缆连接。</div>
+      <div class="rg"><div class="rg-t">设备商</div>
+        <div class="mk"><b>华为 / 中兴</b> <span>— 全球通信设备龙头</span></div>
+        <div class="mk"><b>Arista / 思科</b> <span>— 数据中心交换机龙头</span></div>
+        <div class="mk"><b>英伟达</b> <span>— 自研网络交换机(Spectrum/Quantum)，AI 集群互联</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">光纤光缆</div>
+        <div class="mk"><a href="company/?ticker=601869.SS" target="_blank">长飞光纤</a> <span>— 全球最大光纤预制棒/光纤/光缆供应商</span></div>
+        <div class="mk"><a href="company/?ticker=600487.SS" target="_blank">亨通光电</a> <span>— 全球 Top5 光纤光缆</span></div>
+        <div class="mk"><a href="company/?ticker=600522.SS" target="_blank">中天科技</a> <span>— 光纤光缆+海缆龙头</span></div>
+        <div class="mk"><a href="company/?ticker=GLW" target="_blank">Corning 康宁 (美)</a> <span>— 光纤技术发明者，全球光纤龙头</span></div>
+      </div>
+      <div class="rg"><div class="rg-t">终端客户</div>
+        <div class="mk"><b>北美四大云厂</b> <span>— 微软/谷歌/Meta/亚马逊，2025 合计 Capex 超 3300 亿美元</span></div>
+        <div class="mk"><b>国内云厂/运营商</b> <span>— 阿里/腾讯/字节/中国移动等</span></div>
+      </div>
+    </div>
+
+    <!-- 前沿技术 -->
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">🔮 三大前沿技术路线</div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table style="font-size:10px;border-collapse:collapse;width:100%;min-width:320px">
+      <tr style="background:#f5f5f5"><th style="border:1px solid #ddd;padding:4px;text-align:left">技术</th><th style="border:1px solid #ddd;padding:4px">原理</th><th style="border:1px solid #ddd;padding:4px">优劣势</th><th style="border:1px solid #ddd;padding:4px">代表厂商</th></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>硅光</b></td><td style="border:1px solid #ddd;padding:4px">用 CMOS 工艺制造光器件</td><td style="border:1px solid #ddd;padding:4px">集成度高、成本低、易扩产；渗透率已超 40%</td><td style="border:1px solid #ddd;padding:4px">中际旭创、光迅、英特尔、Coherent</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>LPO</b></td><td style="border:1px solid #ddd;padding:4px">去掉 DSP 芯片，线性驱动</td><td style="border:1px solid #ddd;padding:4px">功耗降 30%、成本低；但传输距离短(≤500m)</td><td style="border:1px solid #ddd;padding:4px">新易盛(主攻)、旭创、博通</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>CPO</b></td><td style="border:1px solid #ddd;padding:4px">光引擎与交换芯片共封装</td><td style="border:1px solid #ddd;padding:4px">终极形态，GPU:光引擎可达1:11.5；2027 年大规模应用</td><td style="border:1px solid #ddd;padding:4px">英伟达、博通(领导)、旭创、华为</td></tr>
+    </table>
+    </div>
+
+    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 小结：</b>光通信是一条从光芯片到系统设备的垂直产业链。中国厂商在中游光模块制造环节全球主导(Top10 占 7 席)，但上游高端光芯片(EML/DSP)仍严重依赖美日，是最大瓶颈。中际旭创和新易盛走了不同的技术路线(旭创主攻硅光+CPO vs 新易盛主攻 LPO)和商业模式(旭创直销大客户 vs 新易盛经销商模式)，形成差异化竞争。未来 CPO 将重塑整个产业链格局——光模块可能演进为"光引擎"，价值量大幅提升。<br><br>
+    <b>📚 资料来源：</b>LightCounting 2024 全球光模块 Top10 排名、中际旭创/新易盛公告及机构调研纪要、华经产业研究院《2026-2032 中国 AI 光模块行业报告》、中原证券光芯片专题研报(2025.3)、前瞻产业研究院光模块全景图谱(2026.1)、智研咨询数通光模块报告。</div>
+  </div>
+</div>
+
+<!-- STEP 5: Glass -->
+<div class="step" onclick="this.classList.toggle('open')">
+  <div class="step-h">
+    <div class="em">🔮</div>
+    <div class="ti"><div class="sn">STEP 5 · 下一代</div><div class="nm">玻璃基板</div><div class="sb">2026-2030年量产</div></div>
+    <div class="ar">▸</div>
+  </div>
+  <div class="step-b">
+    <div class="tip tip-y"><b>🎯 通俗理解：</b>现在IC载板用塑料做底板（像在泥地盖楼，热了变形）。玻璃基板像换成花岗岩地基——极平、极硬、不怕热，能放更多芯片。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何需要：</b>AI芯片越做越大，有机基板接近物理极限。玻璃互连密度可提升10倍。Intel目标2030年单封装1万亿晶体管。目前仍处研发/试产。</div>
+    <div class="rg"><div class="rg-t">🇺🇸 美国 — 最激进</div>
+      <div class="mk"><a href="company/?ticker=INTC" target="_blank">Intel</a> <span>— 投资10亿+美元，计划2026量产</span></div>
+      <div class="mk"><a href="company/?ticker=AMD" target="_blank">AMD</a> <span>— 评估多家样品，2025-2026导入</span></div>
+      <div class="mk"><a href="company/?ticker=GLW" target="_blank">Corning (康宁)</a> <span>— 玻璃材料供应商</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇰🇷 韩国</div>
+      <div class="mk"><a href="company/?ticker=009150.KS" target="_blank">三星电机</a> <span>— 2026量产目标</span></div>
+      <div class="mk"><b>SK Absolics</b> <span>— 投资6亿美元建厂</span></div>
+    </div>
+    <div class="rg"><div class="rg-t">🇹🇼 台湾 / 🇯🇵 日本</div>
+      <div class="mk"><b>台积电</b> <span>— FOPLP+玻璃芯方案</span></div>
+      <div class="mk"><a href="company/?ticker=7912.T" target="_blank">DNP (日)</a> <span>— 2027年量产目标</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Summary -->
+<div class="sm">
+  <b>🎯 总结：从源头到终端，谁做什么？</b><br><br>
+  <b style="color:#795548">⛏️ 最源头原材料</b><br>
+  铜箔：🇯🇵 三井金属(HVLP龙头) · 🇱🇺 CFL→🇨🇳 德福科技(收购后产能全球第一)<br>
+  电子布：🇯🇵 日东纺(低介电55%+LowCTE85%) · 🇨🇳 中材科技/宏和科技(追赶)<br>
+  树脂：🇯🇵 MGC(BT树脂) · 🇺🇸 SABIC(PPO) · 🇨🇳 圣泉/东材(国产替代)<br><br>
+
+  <b class="c1">🧱 覆铜板 CCL</b><br>
+  🇹🇼 台光电子(无卤第一) · 🇨🇳 生益科技(全球第二,M7/M8过英伟达认证)<br><br>
+
+  <b class="c2">📟 AI 服务器 PCB</b><br>
+  🇹🇼 金像电(服务器板龙头) · 欣兴(全球第二) · 健鼎<br>
+  🇨🇳 沪电(英伟达H200) · 胜宏(英伟达显卡PCB份额50%) · 生益电子(AWS/Meta)<br><br>
+
+  <b class="c3">🔲 IC载板 / ABF载板</b><br>
+  🇯🇵 Ibiden(ABF第一·21%) · Shinko(12%)<br>
+  🇹🇼 欣兴(最大·18%·32层) · 南亚电路板(13%)<br>
+  🇯🇵 <b class="c6">味之素</b> — ABF膜垄断~97%（最大卡脖子）<br><br>
+
+  <b style="color:#7B1FA2">🧊 CoWoS 先进封装</b><br>
+  🇹🇼 台积电(绝对主导·产能占英伟达63%) · 🇺🇸 Intel(Foveros) · 🇰🇷 三星(I-Cube)<br>
+  OSAT：🇹🇼 日月光 · 🇺🇸 安靠Amkor · 🇨🇳 长电科技/通富微电<br><br>
+
+  <b class="c4">💡 光模块（中游制造）</b><br>
+  🇨🇳 中际旭创(全球第一·28%+) · 新易盛(前三·25-30%) · 光迅科技(全产业链)<br>
+  🇺🇸 Coherent(第二) · Broadcom(CPO/DSP芯片)<br><br>
+
+  <b style="color:#E65100">💡 光芯片 / 光器件（上游）</b><br>
+  🇺🇸 Broadcom/Marvell(DSP双寡头) · Lumentum(EML龙头)<br>
+  🇨🇳 源杰科技(DFB/EML突破) · 天孚通信(FAU全球30%) · 光库科技(铌酸锂)<br>
+  🇨🇳 长飞光纤/亨通光电(光纤光缆)<br><br>
+
+  <b class="c5">🔮 下一代技术</b><br>
+  玻璃基板：🇺🇸 Intel(10亿+研发) · 🇰🇷 三星/SK Absolics · 🇹🇼 台积电<br>
+  CPO共封装光学：🇺🇸 英伟达/博通主导 · 🇨🇳 旭创/华为跟进 · 预计2027大规模应用
+</div>
+
+</body>
+</html>
