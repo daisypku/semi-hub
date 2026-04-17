@@ -1,0 +1,1402 @@
+{
+  "generated_from": "diagram002.html",
+  "company_count": 82,
+  "companies": {
+    "002080.SZ": {
+      "ticker": "002080.SZ",
+      "ticker_slug": "002080_SZ",
+      "name": "中材科技 (泰山玻纤)",
+      "description": "大陆特种电子布进度最快。二代低介电布已量产并获英伟达认证(用于GB300)，Q布预计2025底-2026出货。（来源：专家交流纪要、华泰证券）",
+      "yahoo_url": "https://finance.yahoo.com/quote/002080.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "002281.SZ": {
+      "ticker": "002281.SZ",
+      "ticker_slug": "002281_SZ",
+      "name": "光迅科技",
+      "description": "全产业链（光芯片→器件→模块→子系统），10G+ 光芯片全自研 | 全产业链覆盖有源+无源器件，国内云商核心供应商 | 全产业链布局(芯片→器件→模块→子系统)的唯一厂商，硅光模块 2023 年已推出，国内大型云商核心供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/002281.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 中低速已国产化，高速追赶中"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球主导"
+        }
+      ],
+      "has_report": false
+    },
+    "002288.SZ": {
+      "ticker": "002288.SZ",
+      "ticker_slug": "002288_SZ",
+      "name": "超华科技 / 诺德股份 / 逸豪新材",
+      "description": "HVLP 产品已开发，送样验证中，英伟达供应链认证需 12-18 个月",
+      "yahoo_url": "https://finance.yahoo.com/quote/002288.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "002436.SZ": {
+      "ticker": "002436.SZ",
+      "ticker_slug": "002436_SZ",
+      "name": "兴森科技",
+      "description": "ABF载板2025逐步量产",
+      "yahoo_url": "https://finance.yahoo.com/quote/002436.SZ/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — ABF仅约6%，起步中"
+        }
+      ],
+      "has_report": false
+    },
+    "002463.SZ": {
+      "ticker": "002463.SZ",
+      "ticker_slug": "002463_SZ",
+      "name": "沪电股份",
+      "description": "企业通讯市场板营收 100.93 亿元(2024,+72%)，AI/HPC 相关 PCB 占比从 21%→29.5%。英伟达 H200 服务器供应链。投资 43 亿元建设 AI 芯片配套 PCB 项目，泰国布局全球化供应链。主要产品包括 14-38 层企业通信多层板。",
+      "yahoo_url": "https://finance.yahoo.com/quote/002463.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        }
+      ],
+      "has_report": false
+    },
+    "002815.SZ": {
+      "ticker": "002815.SZ",
+      "ticker_slug": "002815_SZ",
+      "name": "崇达技术",
+      "description": "高多层板价格同比涨 12%，HDI 板涨 8%。高端产线产能利用率超 90%，订单交付周期延长至 10 周。",
+      "yahoo_url": "https://finance.yahoo.com/quote/002815.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        }
+      ],
+      "has_report": false
+    },
+    "002916.SZ": {
+      "ticker": "002916.SZ",
+      "ticker_slug": "002916_SZ",
+      "name": "深南电路",
+      "description": "通信/数通 PCB 第一梯队（与沪电、生益电子并列），同时也做 IC 载板（FCBGA 中高阶产品认证中）。华为、中兴核心 PCB 供应商。 | FCBGA中高阶认证中",
+      "yahoo_url": "https://finance.yahoo.com/quote/002916.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — ABF仅约6%，起步中"
+        }
+      ],
+      "has_report": false
+    },
+    "002938.SZ": {
+      "ticker": "002938.SZ",
+      "ticker_slug": "002938_SZ",
+      "name": "臻鼎/鹏鼎控股",
+      "description": "全球第一大 PCB 厂（台资，A 股上市）。苹果 iPhone/iPad PCB 最大供应商。AI 时代加速布局高阶 HDI 板，淮安工厂 SLP 板产能提升 50%，适配 AIPC/AI 手机微型化。泰国基地已小批量产。2025 前三季营收 268.55 亿元(+14%)。进入新一轮扩产高峰，资本开支近 50 亿。",
+      "yahoo_url": "https://finance.yahoo.com/quote/002938.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 传统霸主，服务器板核心地位"
+        }
+      ],
+      "has_report": false
+    },
+    "009150.KS": {
+      "ticker": "009150.KS",
+      "ticker_slug": "009150_KS",
+      "name": "三星电机",
+      "description": "BT载板主要供应商，份额~9% | 2026量产目标",
+      "yahoo_url": "https://finance.yahoo.com/quote/009150.KS/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇰🇷 韩国 / 🇦🇹 奥地利"
+        },
+        {
+          "step_num": "5",
+          "step_name": "玻璃基板",
+          "submaterial": null,
+          "region": "🇰🇷 韩国"
+        }
+      ],
+      "has_report": false
+    },
+    "103590.KS": {
+      "ticker": "103590.KS",
+      "ticker_slug": "103590_KS",
+      "name": "日进材料 (Iljin)",
+      "description": "韩系电子铜箔厂商",
+      "yahoo_url": "https://finance.yahoo.com/quote/103590.KS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇰🇷 韩国"
+        }
+      ],
+      "has_report": false
+    },
+    "1303.TW": {
+      "ticker": "1303.TW",
+      "ticker_slug": "1303_TW",
+      "name": "南亚塑胶",
+      "description": "台塑集团旗下，电子铜箔供应商 | 台塑集团旗下，覆铜板+铜箔+电子布垂直整合，同时做 ABF 载板（南亚电路板为子公司）。",
+      "yahoo_url": "https://finance.yahoo.com/quote/1303.TW/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇹🇼 台湾"
+        },
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "1802.TW": {
+      "ticker": "1802.TW",
+      "ticker_slug": "1802_TW",
+      "name": "台玻集团",
+      "description": "低介电布份额约 11%，新产能预计 2026-2027 陆续完成",
+      "yahoo_url": "https://finance.yahoo.com/quote/1802.TW/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇹🇼 台湾"
+        }
+      ],
+      "has_report": false
+    },
+    "1888.HK": {
+      "ticker": "1888.HK",
+      "ticker_slug": "1888_HK",
+      "name": "建滔铜箔",
+      "description": "建滔集团旗下，覆铜板+铜箔垂直整合，以中低端为主 | 全球覆铜板产量最大（以量计），主攻中低端 FR-4 市场。垂直整合程度高：自有铜箔、玻纤纱、玻纤布、环氧树脂、木浆纸等上游产能。覆铜板行业涨价风向标——建滔发涨价函通常意味着全行业跟涨。",
+      "yahoo_url": "https://finance.yahoo.com/quote/1888.HK/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇭🇰 香港"
+        },
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇭🇰 香港"
+        }
+      ],
+      "has_report": false
+    },
+    "2368.TW": {
+      "ticker": "2368.TW",
+      "ticker_slug": "2368_TW",
+      "name": "金像电子",
+      "description": "台湾 AI 服务器 PCB 龙头，2025 年股价曾突破 600 台币。AI 服务器/ASIC 板为核心营收，毛利率站上 35%。2025H2 台湾厂区扩产约 20%，泰国新厂已试产。外资目标价最高喊至 700 台币。",
+      "yahoo_url": "https://finance.yahoo.com/quote/2368.TW/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 传统霸主，服务器板核心地位"
+        }
+      ],
+      "has_report": false
+    },
+    "2383.TW": {
+      "ticker": "2383.TW",
+      "ticker_slug": "2383_TW",
+      "name": "台光电子 TUC",
+      "description": "无卤覆铜板销量自 2013 年连续全球第一。苹果、华为手机第一大基板材料供应商，M6-M9 全系列产品线齐全。2025H1 营收 441.88 亿台币，毛利率 30.4%。正在昆山、中山、美国加州扩产，美国 Arlon EMD 子公司投资 4900 万美元。定位：高端智能手机+AI 服务器双轮驱动。",
+      "yahoo_url": "https://finance.yahoo.com/quote/2383.TW/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "2802.T": {
+      "ticker": "2802.T",
+      "ticker_slug": "2802_T",
+      "name": "🔴 味之素",
+      "description": "ABF膜垄断~97%！一家味精公司卡住全球半导体脖子",
+      "yahoo_url": "https://finance.yahoo.com/quote/2802.T/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
+    "300308.SZ": {
+      "ticker": "300308.SZ",
+      "ticker_slug": "300308_SZ",
+      "name": "中际旭创",
+      "description": "全球第一（份额 28%+），800G 份额超 40%。英伟达/谷歌/Meta/AWS 核心供应商。1.6T 量产全球领先，1.6T 市占率 50-70%。硅光+CPO 双路线布局，CPO 原型配合英伟达 Quantum-X 验证。2025 全年预计净利 98-118 亿元。（来源：LightCounting、中际旭创公告）",
+      "yahoo_url": "https://finance.yahoo.com/quote/300308.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球主导"
+        }
+      ],
+      "has_report": false
+    },
+    "300394.SZ": {
+      "ticker": "300394.SZ",
+      "ticker_slug": "300394_SZ",
+      "name": "天孚通信",
+      "description": "高精度光纤阵列(FAU)全球份额 30%，隐形冠军。深度绑定英伟达/博通。2025H1 净利 18-21 亿(+40-60%)",
+      "yahoo_url": "https://finance.yahoo.com/quote/300394.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "300395.SZ": {
+      "ticker": "300395.SZ",
+      "ticker_slug": "300395_SZ",
+      "name": "菲利华",
+      "description": "国内石英布(Q布)主导供应商，拥有\"高纯石英砂→石英纤维→石英布\"全产业链，技术行业领先",
+      "yahoo_url": "https://finance.yahoo.com/quote/300395.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "300476.SZ": {
+      "ticker": "300476.SZ",
+      "ticker_slug": "300476_SZ",
+      "name": "胜宏科技",
+      "description": "英伟达全球显卡 PCB 第一大供应商（市占率 50%），AI 服务器 PCB 订单已锁定至 2026Q1。2025Q1 净利润同比+339%，单季交付超 20 亿元，AI 占比突破 60%。同时拿下摩尔线程高端 12 层高速 PCB 独家订单，横跨东西方算力链。AI 服务器 PCB 全球份额突破 30%。",
+      "yahoo_url": "https://finance.yahoo.com/quote/300476.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        }
+      ],
+      "has_report": false
+    },
+    "300502.SZ": {
+      "ticker": "300502.SZ",
+      "ticker_slug": "300502_SZ",
+      "name": "新易盛",
+      "description": "全球前三（份额 25-30%），增速最快(营收+283%/净利+356%)。LPO 技术领先（去 DSP 降功耗 30%），毛利率 47% 高于旭创。经销商持股模式独特(北美经销商为第 4 大股东)。2025 全年预计净利 94-99 亿元。（来源：新易盛公告）",
+      "yahoo_url": "https://finance.yahoo.com/quote/300502.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球主导"
+        }
+      ],
+      "has_report": false
+    },
+    "300570.SZ": {
+      "ticker": "300570.SZ",
+      "ticker_slug": "300570_SZ",
+      "name": "太辰光",
+      "description": "MPO 连接器、光纤跳线",
+      "yahoo_url": "https://finance.yahoo.com/quote/300570.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "300620.SZ": {
+      "ticker": "300620.SZ",
+      "ticker_slug": "300620_SZ",
+      "name": "光库科技",
+      "description": "铌酸锂调制器，突破关键器件壁垒",
+      "yahoo_url": "https://finance.yahoo.com/quote/300620.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "301205.SZ": {
+      "ticker": "301205.SZ",
+      "ticker_slug": "301205_SZ",
+      "name": "联特科技",
+      "description": "电信+数通光模块",
+      "yahoo_url": "https://finance.yahoo.com/quote/301205.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳🇺🇸 其他"
+        }
+      ],
+      "has_report": false
+    },
+    "301217.SZ": {
+      "ticker": "301217.SZ",
+      "ticker_slug": "301217_SZ",
+      "name": "铜冠铜箔",
+      "description": "较早攻克 HVLP 核心技术，具备 1-4 代生产能力，目前以 2 代出货为主，已进入多家头部 CCL 厂商供应链",
+      "yahoo_url": "https://finance.yahoo.com/quote/301217.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "301389.SZ": {
+      "ticker": "301389.SZ",
+      "ticker_slug": "301389_SZ",
+      "name": "隆扬电子",
+      "description": "声称具备 HVLP5 能力，2025Q3 目标满产 3 万吨，但量产稳定性和客户认证仍待验证",
+      "yahoo_url": "https://finance.yahoo.com/quote/301389.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "301511.SZ": {
+      "ticker": "301511.SZ",
+      "ticker_slug": "301511_SZ",
+      "name": "德福科技",
+      "description": "收购 CFL 后跃居全球电子铜箔产能第一(19.1 万吨/年)。HVLP1-4 代及 RTF1-3 代 2025 年出货预计达千吨级，HVLP4 量产预计 2026 年。（来源：德福科技公告、天风证券）",
+      "yahoo_url": "https://finance.yahoo.com/quote/301511.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "301526.SZ": {
+      "ticker": "301526.SZ",
+      "ticker_slug": "301526_SZ",
+      "name": "国际复材",
+      "description": "二代低介电布量产，电子布总产量2.1亿米(2023)，已获英伟达二级供应商认证",
+      "yahoo_url": "https://finance.yahoo.com/quote/301526.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "3037.TW": {
+      "ticker": "3037.TW",
+      "ticker_slug": "3037_TW",
+      "name": "欣兴电子",
+      "description": "全球第二大 PCB 厂，同时也是全球最大 IC 载板厂（ABF 载板份额 ~18%）。56Gbps PCB 已进入微软 Azure 数据中心。在 AI 时代\"PCB+IC 载板\"双轮驱动，地位独特。 | 全球最大IC载板厂，ABF可达32层，份额~18%",
+      "yahoo_url": "https://finance.yahoo.com/quote/3037.TW/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 传统霸主，服务器板核心地位"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — ABF份额约45%"
+        }
+      ],
+      "has_report": false
+    },
+    "3044.TW": {
+      "ticker": "3044.TW",
+      "ticker_slug": "3044_TW",
+      "name": "健鼎科技",
+      "description": "全球前五 PCB 厂，AI 服务器/高阶网通 PCB 重要供应商，与金像电形成比价效应。",
+      "yahoo_url": "https://finance.yahoo.com/quote/3044.TW/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 传统霸主，服务器板核心地位"
+        }
+      ],
+      "has_report": false
+    },
+    "3081.TW": {
+      "ticker": "3081.TW",
+      "ticker_slug": "3081_TW",
+      "name": "联亚光电",
+      "description": "高速 EML/DFB 芯片代工",
+      "yahoo_url": "https://finance.yahoo.com/quote/3081.TW/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇹🇼 台湾"
+        }
+      ],
+      "has_report": false
+    },
+    "3103.T": {
+      "ticker": "3103.T",
+      "ticker_slug": "3103_T",
+      "name": "Unitika",
+      "description": "LowCTE 布全球第二（份额 14%）",
+      "yahoo_url": "https://finance.yahoo.com/quote/3103.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇯🇵 日本 — 高端特种布绝对龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "3110.T": {
+      "ticker": "3110.T",
+      "ticker_slug": "3110_T",
+      "name": "日东纺 (Nittobo)",
+      "description": "全球电子布技术领导者，低介电布份额 55%，LowCTE 布份额 85%。1998 年首创 NE-glass，2024 年制定 BigVISION2030 计划开发下一代(NEZ/V/DXII)。计划 2028 年前产能提升至 2025 年三倍。（来源：日东纺官网、台湾工研院、华泰证券）",
+      "yahoo_url": "https://finance.yahoo.com/quote/3110.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇯🇵 日本 — 高端特种布绝对龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "3264.TW": {
+      "ticker": "3264.TW",
+      "ticker_slug": "3264_TW",
+      "name": "景硕科技",
+      "description": "ABF份额~9%",
+      "yahoo_url": "https://finance.yahoo.com/quote/3264.TW/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — ABF份额约45%"
+        }
+      ],
+      "has_report": false
+    },
+    "336370.KS": {
+      "ticker": "336370.KS",
+      "ticker_slug": "336370_KS",
+      "name": "斗山集团 / 索路思(Solus)",
+      "description": "韩系 HVLP 主要供应商，与日系合占高端市场约 70%（来源：天风证券）",
+      "yahoo_url": "https://finance.yahoo.com/quote/336370.KS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇰🇷 韩国"
+        }
+      ],
+      "has_report": false
+    },
+    "3407.T": {
+      "ticker": "3407.T",
+      "ticker_slug": "3407_T",
+      "name": "旭化成",
+      "description": "低介电布全球第二（份额 31%），与日东纺为高端市场双寡头",
+      "yahoo_url": "https://finance.yahoo.com/quote/3407.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇯🇵 日本 — 高端特种布绝对龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "4062.T": {
+      "ticker": "4062.T",
+      "ticker_slug": "4062_T",
+      "name": "Ibiden (揖斐电)",
+      "description": "ABF全球第一（份额~21%），Intel核心供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/4062.T/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
+    "4063.T": {
+      "ticker": "4063.T",
+      "ticker_slug": "4063_T",
+      "name": "信越化学",
+      "description": "Q 布(石英布)日系主要供应商之一，产量小、价格高",
+      "yahoo_url": "https://finance.yahoo.com/quote/4063.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇯🇵 日本 — 高端特种布绝对龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "4182.T": {
+      "ticker": "4182.T",
+      "ticker_slug": "4182_T",
+      "name": "三菱瓦斯化学 (MGC)",
+      "description": "BT 树脂(双马来酰亚胺三嗪)全球开创者和领导者，IC 载板用 BT 基板的核心材料供应商，虽专利期已过但技术仍最领先 | BT树脂全球龙头",
+      "yahoo_url": "https://finance.yahoo.com/quote/4182.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
+    "4188.T": {
+      "ticker": "4188.T",
+      "ticker_slug": "4188_T",
+      "name": "三菱化学 / DIC",
+      "description": "环氧树脂、特种改性树脂",
+      "yahoo_url": "https://finance.yahoo.com/quote/4188.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
+        }
+      ],
+      "has_report": false
+    },
+    "4631.T": {
+      "ticker": "4631.T",
+      "ticker_slug": "4631_T",
+      "name": "Daikin (大金)",
+      "description": "PTFE 氟树脂全球领先（M9 级 PTFE 基 CCL 的关键材料）",
+      "yahoo_url": "https://finance.yahoo.com/quote/4631.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
+        }
+      ],
+      "has_report": false
+    },
+    "4958.TW": {
+      "ticker": "4958.TW",
+      "ticker_slug": "4958_TW",
+      "name": "臻鼎科技",
+      "description": "全球最大PCB厂（母公司），近年积极扩展IC载板/ABF载板业务，客户含英特尔、AMD",
+      "yahoo_url": "https://finance.yahoo.com/quote/4958.TW/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — ABF份额约45%"
+        }
+      ],
+      "has_report": false
+    },
+    "5706.T": {
+      "ticker": "5706.T",
+      "ticker_slug": "5706_T",
+      "name": "三井金属",
+      "description": "全球高端电子铜箔领导者，HVLP 分代标准制定者。其 VSP 系列为最高端 HVLP 产品，客户覆盖台光、台燿、英伟达。2025 年 VSP 月销量预期 580 吨（同比+58%）。载体铜箔(DTH/MicroThin)全球垄断约 90%。（来源：三井金属财报、天风证券研报）",
+      "yahoo_url": "https://finance.yahoo.com/quote/5706.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇯🇵 日本 — 绝对主导（HVLP4 代及以上几乎垄断）"
+        }
+      ],
+      "has_report": false
+    },
+    "5801.T": {
+      "ticker": "5801.T",
+      "ticker_slug": "5801_T",
+      "name": "古河电工",
+      "description": "日系第三，AI 用 HVLP 铜箔核心供应商之一，约 70-80% 产能在台湾工厂生产",
+      "yahoo_url": "https://finance.yahoo.com/quote/5801.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇯🇵 日本 — 绝对主导（HVLP4 代及以上几乎垄断）"
+        }
+      ],
+      "has_report": false
+    },
+    "5802.T": {
+      "ticker": "5802.T",
+      "ticker_slug": "5802_T",
+      "name": "住友电工",
+      "description": "光器件/光芯片老牌供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/5802.T/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇯🇵 日本"
+        }
+      ],
+      "has_report": false
+    },
+    "600176.SS": {
+      "ticker": "600176.SS",
+      "ticker_slug": "600176_SS",
+      "name": "中国巨石",
+      "description": "⚠️ 全球玻纤产能第一(278万吨)，普通电子布产能达10亿米，但低介电特种布及 Q 布仍处研发推进阶段，尚未量产。二代低介电纱及电子布正在开发推进中。（来源：中国巨石公司公告、华泰证券 2025.2 研报）",
+      "yahoo_url": "https://finance.yahoo.com/quote/600176.SS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "600183.SS": {
+      "ticker": "600183.SS",
+      "ticker_slug": "600183_SS",
+      "name": "生益科技",
+      "description": "硬质覆铜板全球第二（Prismark，自 2013 年至今），国内覆铜板龙头。S8/S9 系列高速 CCL 已通过英伟达认证，M7/M8 产品批量供货谷歌、AWS 等海外 ASIC 客户，价格较进口低 15-20%。高速 CCL 全球份额从 18%→27%。子公司生益电子(688183)做 PCB。正在布局 IC 载板用基板材料和 CBF 积层膜（对标 ABF 膜国产替代）。",
+      "yahoo_url": "https://finance.yahoo.com/quote/600183.SS/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球产值第一，高端追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "600487.SS": {
+      "ticker": "600487.SS",
+      "ticker_slug": "600487_SS",
+      "name": "亨通光电",
+      "description": "全球 Top5 光纤光缆",
+      "yahoo_url": "https://finance.yahoo.com/quote/600487.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "光纤光缆"
+        }
+      ],
+      "has_report": false
+    },
+    "600522.SS": {
+      "ticker": "600522.SS",
+      "ticker_slug": "600522_SS",
+      "name": "中天科技",
+      "description": "光纤光缆+海缆龙头",
+      "yahoo_url": "https://finance.yahoo.com/quote/600522.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "光纤光缆"
+        }
+      ],
+      "has_report": false
+    },
+    "600703.SS": {
+      "ticker": "600703.SS",
+      "ticker_slug": "600703_SS",
+      "name": "三安光电",
+      "description": "化合物半导体平台，光通信芯片布局",
+      "yahoo_url": "https://finance.yahoo.com/quote/600703.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 中低速已国产化，高速追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "601208.SS": {
+      "ticker": "601208.SS",
+      "ticker_slug": "601208_SS",
+      "name": "东材科技 / 同宇新材",
+      "description": "BMI、PPO、PCH 等特种体系实现量产，打破外资垄断",
+      "yahoo_url": "https://finance.yahoo.com/quote/601208.SS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇨🇳 大陆 — 加速国产替代"
+        }
+      ],
+      "has_report": false
+    },
+    "601869.SS": {
+      "ticker": "601869.SS",
+      "ticker_slug": "601869_SS",
+      "name": "长飞光纤",
+      "description": "全球最大光纤预制棒/光纤/光缆供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/601869.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "光纤光缆"
+        }
+      ],
+      "has_report": false
+    },
+    "603002.SS": {
+      "ticker": "603002.SS",
+      "ticker_slug": "603002_SS",
+      "name": "宏昌电子",
+      "description": "国内环氧树脂龙头，覆铜板用电子树脂",
+      "yahoo_url": "https://finance.yahoo.com/quote/603002.SS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇨🇳 大陆 — 加速国产替代"
+        }
+      ],
+      "has_report": false
+    },
+    "603083.SS": {
+      "ticker": "603083.SS",
+      "ticker_slug": "603083_SS",
+      "name": "剑桥科技",
+      "description": "800G+1.6T 年目标产能 500-700 万只，但因硅光引擎交付延迟推迟 1.6T 量产",
+      "yahoo_url": "https://finance.yahoo.com/quote/603083.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球主导"
+        }
+      ],
+      "has_report": false
+    },
+    "603186.SS": {
+      "ticker": "603186.SS",
+      "ticker_slug": "603186_SS",
+      "name": "华正新材",
+      "description": "CBF 积层绝缘膜（对标味之素 ABF 膜）国产替代先锋，已在 FC-BGA 等高端封装场景取得阶段性验证成果。覆铜板产品已在 Mini/Micro LED、Memory、MEMS 等场景批量供货。",
+      "yahoo_url": "https://finance.yahoo.com/quote/603186.SS/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 全球产值第一，高端追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "603228.SS": {
+      "ticker": "603228.SS",
+      "ticker_slug": "603228_SS",
+      "name": "景旺电子",
+      "description": "全球前三汽车 PCB 供应商（Prismark 2023），同时布局 AI 服务器板。产品覆盖刚性板、柔性板、金属基板等全品类。",
+      "yahoo_url": "https://finance.yahoo.com/quote/603228.SS/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        }
+      ],
+      "has_report": false
+    },
+    "603256.SS": {
+      "ticker": "603256.SS",
+      "ticker_slug": "603256_SS",
+      "name": "宏和科技",
+      "description": "超薄/极薄电子布全球龙头(≤16μm市占率26%)，二代低介电布及LowCTE已通过客户认证(台光、斗山、生益等)，定增9.9亿元扩产。（来源：宏和科技招股书）",
+      "yahoo_url": "https://finance.yahoo.com/quote/603256.SS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料二：电子级玻纤布 / 电子布（成本占比 ~19%）",
+          "region": "🇨🇳 大陆 — 普通布产能全球最大，高端特种布快速追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "605589.SS": {
+      "ticker": "605589.SS",
+      "ticker_slug": "605589_SS",
+      "name": "圣泉集团",
+      "description": "M6-M8 高速树脂(BMI 等)已量产，M9 级碳氢树脂项目在建。（来源：圣泉集团公告）",
+      "yahoo_url": "https://finance.yahoo.com/quote/605589.SS/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇨🇳 大陆 — 加速国产替代"
+        }
+      ],
+      "has_report": false
+    },
+    "6213.TWO": {
+      "ticker": "6213.TWO",
+      "ticker_slug": "6213_TWO",
+      "name": "联茂电子",
+      "description": "台系高速覆铜板主力之一，AI 服务器用高速材料供应商，与台光电子、台燿形成台系 CCL 三强。",
+      "yahoo_url": "https://finance.yahoo.com/quote/6213.TWO/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "6274.TWO": {
+      "ticker": "6274.TWO",
+      "ticker_slug": "6274_TWO",
+      "name": "台燿科技",
+      "description": "专注高频高速覆铜板，AI 服务器/5G 基站用高速材料。与台光电子、联茂并称台系 CCL 铁三角。",
+      "yahoo_url": "https://finance.yahoo.com/quote/6274.TWO/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "6503.T": {
+      "ticker": "6503.T",
+      "ticker_slug": "6503_T",
+      "name": "三菱电机",
+      "description": "高端 EML 芯片传统强者",
+      "yahoo_url": "https://finance.yahoo.com/quote/6503.T/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇯🇵 日本"
+        }
+      ],
+      "has_report": false
+    },
+    "6752.T": {
+      "ticker": "6752.T",
+      "ticker_slug": "6752_T",
+      "name": "Panasonic",
+      "description": "高端高速覆铜板领先厂商，Megtron 系列是 AI 服务器用高速 CCL 的标杆产品。在全球高速 CCL 中拥有重要份额，是英伟达/博通等芯片厂的核心 CCL 供应商。",
+      "yahoo_url": "https://finance.yahoo.com/quote/6752.T/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇯🇵 日本 / 🇺🇸 美国 — 特种材料领先"
+        }
+      ],
+      "has_report": false
+    },
+    "688048.SS": {
+      "ticker": "688048.SS",
+      "ticker_slug": "688048_SS",
+      "name": "长光华芯",
+      "description": "大功率半导体激光芯片龙头",
+      "yahoo_url": "https://finance.yahoo.com/quote/688048.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 中低速已国产化，高速追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "688183.SS": {
+      "ticker": "688183.SS",
+      "ticker_slug": "688183_SS",
+      "name": "生益电子",
+      "description": "生益科技(600183)控股子公司，A 股首单\"A 拆 A\"案例(2021 科创板上市)。20-28 层多层板单机价值量达 8000-10000 美元（传统服务器的 3-5 倍）。核心客户包括亚马逊 AWS、Meta，服务器产品销售占比从 49%→持续提升。2025H1 净利润同比预增 432-471%。",
+      "yahoo_url": "https://finance.yahoo.com/quote/688183.SS/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 快速追赶，部分厂商已切入英伟达供应链"
+        }
+      ],
+      "has_report": false
+    },
+    "688195.SS": {
+      "ticker": "688195.SS",
+      "ticker_slug": "688195_SS",
+      "name": "腾景科技",
+      "description": "光学元件（滤光片、透镜等）",
+      "yahoo_url": "https://finance.yahoo.com/quote/688195.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "688313.SS": {
+      "ticker": "688313.SS",
+      "ticker_slug": "688313_SS",
+      "name": "仕佳光子",
+      "description": "DFB/AWG 芯片，800G 光芯片良率达 90%，供头部模块厂",
+      "yahoo_url": "https://finance.yahoo.com/quote/688313.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 中低速已国产化，高速追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "688498.SS": {
+      "ticker": "688498.SS",
+      "ticker_slug": "688498_SS",
+      "name": "源杰科技",
+      "description": "25G DFB 量产领先，100G PAM4 EML 已通过客户验证，正推 200G EML",
+      "yahoo_url": "https://finance.yahoo.com/quote/688498.SS/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 中低速已国产化，高速追赶中"
+        }
+      ],
+      "has_report": false
+    },
+    "6967.T": {
+      "ticker": "6967.T",
+      "ticker_slug": "6967_T",
+      "name": "Shinko (新光电气)",
+      "description": "ABF份额~12%，富士通集团",
+      "yahoo_url": "https://finance.yahoo.com/quote/6967.T/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
+    "7912.T": {
+      "ticker": "7912.T",
+      "ticker_slug": "7912_T",
+      "name": "DNP (日)",
+      "description": "2027年量产目标",
+      "yahoo_url": "https://finance.yahoo.com/quote/7912.T/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "玻璃基板",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 / 🇯🇵 日本"
+        }
+      ],
+      "has_report": false
+    },
+    "8046.TW": {
+      "ticker": "8046.TW",
+      "ticker_slug": "8046_TW",
+      "name": "南亚电路板",
+      "description": "ABF全球第三，台塑集团，份额~13%",
+      "yahoo_url": "https://finance.yahoo.com/quote/8046.TW/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — ABF份额约45%"
+        }
+      ],
+      "has_report": false
+    },
+    "8358.TW": {
+      "ticker": "8358.TW",
+      "ticker_slug": "8358_TW",
+      "name": "金居开发",
+      "description": "AI 用 HVLP 铜箔台系主力，已率先涨价，专注 PCB/CCL 用铜箔",
+      "yahoo_url": "https://finance.yahoo.com/quote/8358.TW/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "region": "🇹🇼 台湾"
+        }
+      ],
+      "has_report": false
+    },
+    "AMD": {
+      "ticker": "AMD",
+      "ticker_slug": "AMD",
+      "name": "AMD",
+      "description": "评估多家样品，2025-2026导入",
+      "yahoo_url": "https://finance.yahoo.com/quote/AMD/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "玻璃基板",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 最激进"
+        }
+      ],
+      "has_report": false
+    },
+    "ATS.VI": {
+      "ticker": "ATS.VI",
+      "ticker_slug": "ATS_VI",
+      "name": "AT&S (奥地利)",
+      "description": "欧洲最大高端 PCB+IC 载板厂，同时也是 ABF 载板供应商（份额~11%）。嵌入式功率 PCB 已进入西门子工业 AI 服务器。 | ABF份额~11%，欧洲唯一玩家",
+      "yahoo_url": "https://finance.yahoo.com/quote/ATS.VI/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇦🇹🇺🇸 欧美"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇰🇷 韩国 / 🇦🇹 奥地利"
+        }
+      ],
+      "has_report": false
+    },
+    "AVGO": {
+      "ticker": "AVGO",
+      "ticker_slug": "AVGO",
+      "name": "Broadcom (博通)",
+      "description": "高速 VCSEL 全球主导，CPO 技术领导者，PAM4 DSP 芯片双寡头之一 | CPO 技术领导者，DSP 芯片双寡头，不直接卖模块但掌控上游芯片命脉",
+      "yahoo_url": "https://finance.yahoo.com/quote/AVGO/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 高端光芯片主导"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国"
+        }
+      ],
+      "has_report": false
+    },
+    "CC": {
+      "ticker": "CC",
+      "ticker_slug": "CC",
+      "name": "Chemours (科慕)",
+      "description": "PTFE 氟树脂供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/CC/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇺🇸 美国 / 🇸🇦 沙特"
+        }
+      ],
+      "has_report": false
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "ticker_slug": "COHR",
+      "name": "Coherent (贰陆)",
+      "description": "高端光芯片+光模块一体化，全球光模块第二 | 有源器件龙头 | 全球第二，光芯片+模块垂直整合，传统光通信巨头",
+      "yahoo_url": "https://finance.yahoo.com/quote/COHR/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 高端光芯片主导"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸🇯🇵 美日"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国"
+        }
+      ],
+      "has_report": false
+    },
+    "GLW": {
+      "ticker": "GLW",
+      "ticker_slug": "GLW",
+      "name": "Corning 康宁 (美)",
+      "description": "光纤技术发明者，全球光纤龙头 | 玻璃材料供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/GLW/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "光纤光缆"
+        },
+        {
+          "step_num": "5",
+          "step_name": "玻璃基板",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 最激进"
+        }
+      ],
+      "has_report": false
+    },
+    "INTC": {
+      "ticker": "INTC",
+      "ticker_slug": "INTC",
+      "name": "Intel",
+      "description": "投资10亿+美元，计划2026量产",
+      "yahoo_url": "https://finance.yahoo.com/quote/INTC/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "玻璃基板",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 最激进"
+        }
+      ],
+      "has_report": false
+    },
+    "LITE": {
+      "ticker": "LITE",
+      "ticker_slug": "LITE",
+      "name": "Lumentum",
+      "description": "高端 EML/DFB 激光器芯片龙头 | 高端光芯片龙头，同时做模块",
+      "yahoo_url": "https://finance.yahoo.com/quote/LITE/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 高端光芯片主导"
+        },
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国"
+        }
+      ],
+      "has_report": false
+    },
+    "MRVL": {
+      "ticker": "MRVL",
+      "ticker_slug": "MRVL",
+      "name": "Marvell (迈威尔)",
+      "description": "PAM4 DSP 芯片双寡头之一（原 Inphi）",
+      "yahoo_url": "https://finance.yahoo.com/quote/MRVL/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 — 高端光芯片主导"
+        }
+      ],
+      "has_report": false
+    },
+    "ROG": {
+      "ticker": "ROG",
+      "ticker_slug": "ROG",
+      "name": "Rogers (美)",
+      "description": "高频材料全球龙头，主攻 PTFE/碳氢体系。核心产品用于 77GHz 车载雷达、卫星通信、5G 毫米波天线等极高频领域。在 AI 服务器中应用有限（PTFE 难多层化），但在射频/雷达赛道无可替代。",
+      "yahoo_url": "https://finance.yahoo.com/quote/ROG/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇯🇵 日本 / 🇺🇸 美国 — 特种材料领先"
+        }
+      ],
+      "has_report": false
+    },
+    "TTMI": {
+      "ticker": "TTMI",
+      "ticker_slug": "TTMI",
+      "name": "TTM (美国)",
+      "description": "北美最大 PCB 厂商，航空航天/国防/数据中心为核心客户。",
+      "yahoo_url": "https://finance.yahoo.com/quote/TTMI/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "PCB 印刷电路板",
+          "submaterial": null,
+          "region": "🇦🇹🇺🇸 欧美"
+        }
+      ],
+      "has_report": false
+    }
+  }
+}
