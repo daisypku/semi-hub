@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>公司详情 · CCL 产业链知识库</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+    background: #f5f5f7;
+    color: #1d1d1f;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .topbar {
+    background: #fff;
+    border-bottom: 1px solid #e5e5ea;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .topbar a.back {
+    color: #1a73e8;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .topbar a.back:hover { text-decoration: underline; }
+
+  .container {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 24px 20px 80px;
+  }
+
+  /* Header card */
+  .header {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e5ea;
+  }
+  .h-name {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0 0 4px;
+    letter-spacing: -0.5px;
+  }
+  .h-ticker {
+    font-size: 14px;
+    color: #6e6e73;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    margin-bottom: 14px;
+  }
+  .h-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    background: #eaf3ff;
+    color: #1a73e8;
+    font-size: 12px;
+    border: 1px solid #d2e3fc;
+  }
+  .tag.step { background: #fff3e0; color: #e67e22; border-color: #ffddb0; }
+  .tag.region { background: #f0f4f8; color: #546e7a; border-color: #d6dee5; }
+  .h-desc {
+    font-size: 14px;
+    color: #3c3c43;
+    line-height: 1.7;
+    padding: 12px 14px;
+    background: #f9f9fb;
+    border-left: 3px solid #1a73e8;
+    border-radius: 0 6px 6px 0;
+    margin-top: 6px;
+  }
+
+  /* External links row */
+  .ext-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .ext-btn {
+    padding: 7px 14px;
+    border-radius: 8px;
+    background: #fff;
+    border: 1px solid #d2d2d7;
+    color: #1d1d1f;
+    font-size: 13px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+  }
+  .ext-btn:hover {
+    background: #f5f5f7;
+    border-color: #1a73e8;
+    color: #1a73e8;
+  }
+  .ext-btn .arr { font-size: 10px; opacity: 0.5; }
+
+  /* Section card */
+  .section {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    border: 1px solid #e5e5ea;
+  }
+  .section h2 {
+    margin: 0 0 16px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  /* Report body (Markdown-rendered) */
+  .report {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #1d1d1f;
+  }
+  .report h1 { font-size: 22px; font-weight: 700; margin: 24px 0 12px; letter-spacing: -0.3px; }
+  .report h2 { font-size: 18px; font-weight: 700; margin: 22px 0 10px; color: #1a73e8; border-bottom: 1px solid #eaeaea; padding-bottom: 6px; }
+  .report h3 { font-size: 15px; font-weight: 600; margin: 18px 0 8px; }
+  .report p { margin: 0 0 12px; }
+  .report ul, .report ol { margin: 8px 0 14px; padding-left: 24px; }
+  .report li { margin: 4px 0; }
+  .report strong, .report b { color: #1d1d1f; font-weight: 600; }
+  .report blockquote {
+    margin: 12px 0;
+    padding: 8px 14px;
+    background: #f9f9fb;
+    border-left: 3px solid #1a73e8;
+    color: #3c3c43;
+  }
+  .report code {
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    background: #f5f5f7;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+  .report pre {
+    background: #f5f5f7;
+    padding: 14px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 13px;
+  }
+  .report pre code {
+    background: none;
+    padding: 0;
+  }
+  .report table {
+    border-collapse: collapse;
+    margin: 12px 0;
+    font-size: 13px;
+    width: 100%;
+  }
+  .report th, .report td {
+    border: 1px solid #e5e5ea;
+    padding: 6px 10px;
+    text-align: left;
+  }
+  .report th { background: #f9f9fb; font-weight: 600; }
+  .report hr { border: none; border-top: 1px solid #e5e5ea; margin: 20px 0; }
+
+  /* Empty state */
+  .empty {
+    padding: 32px 20px;
+    text-align: center;
+    color: #8e8e93;
+    font-size: 14px;
+    background: #f9f9fb;
+    border-radius: 8px;
+    border: 1px dashed #d2d2d7;
+  }
+  .empty .ico { font-size: 30px; display: block; margin-bottom: 8px; }
+  .empty .hint {
+    font-size: 12px;
+    color: #aeaeb2;
+    margin-top: 8px;
+    font-family: "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  /* Error state */
+  .error {
+    background: #fff5f5;
+    border: 1px solid #ffd7d7;
+    color: #c53030;
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+  /* Appearances list (for multi-step companies) */
+  .appearance {
+    margin: 8px 0;
+    padding: 10px 14px;
+    background: #fafbfc;
+    border-radius: 6px;
+    border: 1px solid #ececf0;
+    font-size: 13px;
+  }
+  .appearance .step {
+    display: inline-block;
+    background: #e67e22;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    margin-right: 8px;
+  }
+  .appearance .step-name { font-weight: 600; }
+  .appearance .region { color: #6e6e73; }
+  .appearance .submat { color: #8e8e93; font-size: 12px; margin-top: 3px; }
+
+  @media (max-width: 600px) {
+    .container { padding: 16px 12px 60px; }
+    .header, .section { padding: 18px 20px; }
+    .h-name { font-size: 22px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../diagram002.html" class="back">← 返回 CCL 产业链图谱</a>
+</div>
+
+<div class="container">
+  <div id="content">
+    <div class="empty">
+      <span class="ico">⏳</span>
+      加载中...
+    </div>
+  </div>
+</div>
+
+<!-- Markdown renderer: marked.js -->
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.0/marked.min.js"></script>
+<script>
+(async function() {
+  // 1) 读取 URL 参数
+  const params = new URLSearchParams(window.location.search);
+  const ticker = params.get('ticker');
+
+  const content = document.getElementById('content');
+
+  if (!ticker) {
+    content.innerHTML = '<div class="error">⚠️ 缺少 ticker 参数。正确格式：<code>company/index.html?ticker=600183.SS</code></div>';
+    return;
+  }
+
+  // 2) 加载 companies.json
+  let data;
+  try {
+    const resp = await fetch('./data/companies.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    data = await resp.json();
+  } catch (e) {
+    content.innerHTML = '<div class="error">⚠️ 无法加载公司数据：' + e.message + '<br><br>' +
+      '<small>如果你在本地打开了这个文件（file://），请启动一个本地 HTTP 服务器。例如在项目目录运行：<br>' +
+      '<code>python3 -m http.server 8000</code><br>然后访问 <code>http://localhost:8000/company/?ticker=' + ticker + '</code></small></div>';
+    return;
+  }
+
+  const company = data.companies[ticker];
+  if (!company) {
+    content.innerHTML = '<div class="error">⚠️ 未找到 ticker: <code>' + ticker + '</code></div>';
+    return;
+  }
+
+  // 3) 设置页面标题
+  document.title = company.name + ' · CCL 产业链知识库';
+
+  // 4) 构造外链按钮
+  // Yahoo Finance 一定有。其他根据股票代码后缀判断
+  const extLinks = [
+    { href: company.yahoo_url, label: 'Yahoo Finance', emoji: '📈' }
+  ];
+  const suffix = (ticker.split('.')[1] || '').toUpperCase();
+  const code = ticker.split('.')[0];
+
+  if (suffix === 'SS' || suffix === 'SZ') {
+    // 大陆 A 股
+    const ths = code + (suffix === 'SS' ? '' : '');
+    extLinks.push({
+      href: 'https://basic.10jqka.com.cn/' + code + '/',
+      label: '同花顺 F10', emoji: '📊'
+    });
+    extLinks.push({
+      href: 'https://emweb.eastmoney.com/PC_HSF10/NewFinanceAnalysis/Index?code=' + (suffix === 'SS' ? 'SH' : 'SZ') + code,
+      label: '东方财富 F10', emoji: '💹'
+    });
+  } else if (suffix === 'HK') {
+    extLinks.push({
+      href: 'https://www.aastocks.com/tc/stocks/quote/detail-quote.aspx?symbol=' + code.padStart(5, '0'),
+      label: 'aastocks', emoji: '🇭🇰'
+    });
+  } else if (suffix === 'TW' || suffix === 'TWO') {
+    extLinks.push({
+      href: 'https://tw.stock.yahoo.com/quote/' + code + '.' + suffix,
+      label: 'Yahoo 股市(台)', emoji: '🇹🇼'
+    });
+  } else if (suffix === 'T') {
+    extLinks.push({
+      href: 'https://finance.yahoo.co.jp/quote/' + code + '.T',
+      label: 'Yahoo Finance (JP)', emoji: '🇯🇵'
+    });
+  }
+
+  // 5) 渲染头部
+  const stepTags = (company.appearances || []).map(a =>
+    `<span class="tag step">STEP ${a.step_num} · ${a.step_name}</span>`
+  ).join('');
+
+  // 收集不重复的地区
+  const regions = [...new Set((company.appearances || []).map(a => a.region))];
+  const regionTags = regions.map(r => `<span class="tag region">${r}</span>`).join('');
+
+  const extBtns = extLinks.map(l =>
+    `<a class="ext-btn" href="${l.href}" target="_blank" rel="noopener">${l.emoji} ${l.label} <span class="arr">↗</span></a>`
+  ).join('');
+
+  // 多环节公司的 appearance 详情
+  let appearancesHtml = '';
+  if ((company.appearances || []).length > 1) {
+    appearancesHtml = '<div class="section"><h2>📍 产业链位置</h2>' +
+      company.appearances.map(a =>
+        `<div class="appearance">
+          <span class="step">STEP ${a.step_num}</span>
+          <span class="step-name">${a.step_name}</span> ·
+          <span class="region">${a.region}</span>
+          ${a.submaterial ? `<div class="submat">└ ${a.submaterial}</div>` : ''}
+        </div>`
+      ).join('') + '</div>';
+  }
+
+  content.innerHTML = `
+    <div class="header">
+      <div class="h-name">${company.name}</div>
+      <div class="h-ticker">${company.ticker}</div>
+      <div class="h-tags">${stepTags}${regionTags}</div>
+      <div class="h-desc">${company.description}</div>
+      <div class="ext-links">${extBtns}</div>
+    </div>
+    ${appearancesHtml}
+    <div class="section">
+      <h2>📝 深度研究报告</h2>
+      <div id="report-body">
+        <div class="empty">
+          <span class="ico">⏳</span>
+          加载报告中...
+        </div>
+      </div>
+    </div>
+  `;
+
+  // 6) 尝试加载深度报告 MD
+  const reportBody = document.getElementById('report-body');
+  const mdPath = './data/reports/' + company.ticker_slug + '.md';
+
+  try {
+    const mdResp = await fetch(mdPath);
+    if (mdResp.ok) {
+      const md = await mdResp.text();
+      // 检查是否是有效 Markdown（非 404 页面）
+      if (md.length > 10 && !md.trim().startsWith('<!DOCTYPE')) {
+        reportBody.innerHTML = '<div class="report">' + marked.parse(md) + '</div>';
+        return;
+      }
+    }
+    // 404 或内容无效 → 空状态
+    reportBody.innerHTML = `
+      <div class="empty">
+        <span class="ico">📋</span>
+        深度报告整理中
+        <div class="hint">预期位置: data/reports/${company.ticker_slug}.md</div>
+      </div>
+    `;
+  } catch (e) {
+    reportBody.innerHTML = `
+      <div class="empty">
+        <span class="ico">📋</span>
+        深度报告整理中
+        <div class="hint">预期位置: data/reports/${company.ticker_slug}.md</div>
+      </div>
+    `;
+  }
+})();
+</script>
+
+</body>
+</html>
