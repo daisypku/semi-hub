@@ -1,6 +1,6 @@
 {
   "generated_from": "diagram002.html",
-  "company_count": 82,
+  "company_count": 85,
   "companies": {
     "002080.SZ": {
       "ticker": "002080.SZ",
@@ -620,6 +620,34 @@
       ],
       "has_report": false
     },
+    "4004.T": {
+      "ticker": "4004.T",
+      "ticker_slug": "4004_T",
+      "name": "Resonac (原昭和电工)",
+      "description": "2023 年昭和电工与日立化成合并而成，半导体后段材料全球领先。低介电树脂自研，同时做 CCL 成品，一家公司打通\"树脂→CCL\"双环节。（来源：Resonac IR） | 依托旧日立化成的 CCL 设计能力 + 旧昭和电工的低介电树脂技术，在 5G/AI 服务器高速 CCL 领域是日系第二梯队代表。高速 CCL 主要竞争者之一。 | 半导体封装用积层膜主要玩家之一（GX 系列），IC 封装用环氧模塑料(EMC)、Underfill 填充料、裸片贴装材料领先。AI 后段封装材料龙头。",
+      "yahoo_url": "https://finance.yahoo.com/quote/4004.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
+        },
+        {
+          "step_num": "1",
+          "step_name": "覆铜板 CCL",
+          "submaterial": null,
+          "region": "🇯🇵 日本 / 🇺🇸 美国 — 特种材料领先"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
     "4062.T": {
       "ticker": "4062.T",
       "ticker_slug": "4062_T",
@@ -677,8 +705,8 @@
     "4188.T": {
       "ticker": "4188.T",
       "ticker_slug": "4188_T",
-      "name": "三菱化学 / DIC",
-      "description": "环氧树脂、特种改性树脂",
+      "name": "三菱化学",
+      "description": "环氧树脂、特种改性树脂，配套日系 CCL 厂",
       "yahoo_url": "https://finance.yahoo.com/quote/4188.T/",
       "appearances": [
         {
@@ -690,11 +718,33 @@
       ],
       "has_report": false
     },
+    "4203.T": {
+      "ticker": "4203.T",
+      "ticker_slug": "4203_T",
+      "name": "住友电木 Sumitomo Bakelite",
+      "description": "半导体环氧模塑料 (EMC) 全球龙头，BT 树脂主要供应商之一，同时也做覆铜板。近年持续整合封装基板材料业务。 | IC 封装用 EMC（环氧模塑料）全球份额第一，BT 基板材料供应商之一。AI 芯片先进封装环节的核心材料商。",
+      "yahoo_url": "https://finance.yahoo.com/quote/4203.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
+        },
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": null,
+          "region": "🇯🇵 日本 — ABF份额约35%，技术最强"
+        }
+      ],
+      "has_report": false
+    },
     "4631.T": {
       "ticker": "4631.T",
       "ticker_slug": "4631_T",
-      "name": "Daikin (大金)",
-      "description": "PTFE 氟树脂全球领先（M9 级 PTFE 基 CCL 的关键材料）",
+      "name": "DIC Corporation",
+      "description": "环氧树脂、PPS 等特种工程塑料供应商",
       "yahoo_url": "https://finance.yahoo.com/quote/4631.T/",
       "appearances": [
         {
@@ -1006,6 +1056,22 @@
           "step_name": "覆铜板 CCL",
           "submaterial": null,
           "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "6367.T": {
+      "ticker": "6367.T",
+      "ticker_slug": "6367_T",
+      "name": "Daikin (大金)",
+      "description": "PTFE 氟树脂全球领先（M9 级 PTFE 基 CCL 的关键材料）",
+      "yahoo_url": "https://finance.yahoo.com/quote/6367.T/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "覆铜板的三大原材料",
+          "submaterial": "材料三：电子树脂（成本占比 ~26%）",
+          "region": "🇯🇵 日本 — BT 树脂 / 高端特种树脂领先"
         }
       ],
       "has_report": false
