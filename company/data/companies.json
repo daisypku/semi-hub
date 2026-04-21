@@ -1,6 +1,6 @@
 {
   "generated_from": "diagram002.html",
-  "company_count": 85,
+  "company_count": 93,
   "companies": {
     "002080.SZ": {
       "ticker": "002080.SZ",
@@ -58,6 +58,22 @@
           "step_name": "覆铜板的三大原材料",
           "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
           "region": "🇨🇳 大陆 — 产能大，HVLP1-3 开始量产，HVLP4+ 仍在追赶"
+        }
+      ],
+      "has_report": false
+    },
+    "002428.SZ": {
+      "ticker": "002428.SZ",
+      "ticker_slug": "002428_SZ",
+      "name": "云南锗业",
+      "description": "国内锗基片与 InP 衬底先行者，国产替代核心标的之一",
+      "yahoo_url": "https://finance.yahoo.com/quote/002428.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
         }
       ],
       "has_report": false
@@ -274,6 +290,22 @@
           "step_name": "覆铜板 CCL",
           "submaterial": null,
           "region": "🇹🇼 台湾 — 高端高速领域领先"
+        }
+      ],
+      "has_report": false
+    },
+    "2455.TW": {
+      "ticker": "2455.TW",
+      "ticker_slug": "2455_TW",
+      "name": "全新光电",
+      "description": "台系 InP 外延片主力，Lumentum/II-VI 等海外光芯片厂核心供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/2455.TW/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 外延片代工"
         }
       ],
       "has_report": false
@@ -772,6 +804,38 @@
       ],
       "has_report": false
     },
+    "4971.TW": {
+      "ticker": "4971.TW",
+      "ticker_slug": "4971_TW",
+      "name": "英特磊",
+      "description": "台系另一家 InP/GaAs 外延片厂商，VCSEL 外延重要供应商",
+      "yahoo_url": "https://finance.yahoo.com/quote/4971.TW/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇹🇼 台湾 — 外延片代工"
+        }
+      ],
+      "has_report": false
+    },
+    "5016.T": {
+      "ticker": "5016.T",
+      "ticker_slug": "5016_T",
+      "name": "JX 金属",
+      "description": "日系 InP 衬底主要供应商，高纯度材料技术领先",
+      "yahoo_url": "https://finance.yahoo.com/quote/5016.T/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇯🇵 日本"
+        }
+      ],
+      "has_report": false
+    },
     "5706.T": {
       "ticker": "5706.T",
       "ticker_slug": "5706_T",
@@ -1252,6 +1316,22 @@
       ],
       "has_report": false
     },
+    "AAOI": {
+      "ticker": "AAOI",
+      "ticker_slug": "AAOI",
+      "name": "Applied Optoelectronics (AAOI)",
+      "description": "北美光模块第三极，垂直整合（自研激光器→模块）。LPO 方案先锋，去 DSP 降功耗 50%。800G/1.6T 斩获 $250M+ 订单（2026 Q1）",
+      "yahoo_url": "https://finance.yahoo.com/quote/AAOI/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国"
+        }
+      ],
+      "has_report": false
+    },
     "AMD": {
       "ticker": "AMD",
       "ticker_slug": "AMD",
@@ -1312,6 +1392,22 @@
       ],
       "has_report": false
     },
+    "AXTI": {
+      "ticker": "AXTI",
+      "ticker_slug": "AXTI",
+      "name": "AXT Inc (美)",
+      "description": "美系 InP/GaAs 衬底主要供应商，全球 InP 衬底龙头之一",
+      "yahoo_url": "https://finance.yahoo.com/quote/AXTI/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 / 🇬🇧 英国 — InP 衬底与外延"
+        }
+      ],
+      "has_report": false
+    },
     "CC": {
       "ticker": "CC",
       "ticker_slug": "CC",
@@ -1356,6 +1452,22 @@
       ],
       "has_report": false
     },
+    "FN": {
+      "ticker": "FN",
+      "ticker_slug": "FN",
+      "name": "Fabrinet",
+      "description": "全球光模块代工龙头，中际旭创/新易盛/Lumentum/Coherent 的代工伙伴。光通信 EMS 行业隐形王者",
+      "yahoo_url": "https://finance.yahoo.com/quote/FN/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国"
+        }
+      ],
+      "has_report": false
+    },
     "GLW": {
       "ticker": "GLW",
       "ticker_slug": "GLW",
@@ -1390,6 +1502,22 @@
           "step_name": "玻璃基板",
           "submaterial": null,
           "region": "🇺🇸 美国 — 最激进"
+        }
+      ],
+      "has_report": false
+    },
+    "IQE.L": {
+      "ticker": "IQE.L",
+      "ticker_slug": "IQE_L",
+      "name": "IQE (英)",
+      "description": "全球最大化合物半导体外延片供应商（InP/GaAs），Lumentum 长期战略合作伙伴",
+      "yahoo_url": "https://finance.yahoo.com/quote/IQE.L/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "光通信产业链",
+          "submaterial": null,
+          "region": "🇺🇸 美国 / 🇬🇧 英国 — InP 衬底与外延"
         }
       ],
       "has_report": false
