@@ -421,10 +421,13 @@ loadHeatmap();
   <div class="step-b">
     <div class="tip tip-y"><b>🎯 通俗理解:</b>把玻纤布泡在树脂里,两面贴铜箔,热压成一块板——这就是覆铜板。CCL是PCB和IC载板的<b>共同上游原材料</b>(并列下游),但供PCB和供IC载板的CCL规格完全不同——本STEP讲的是供AI服务器PCB用的高速CCL,封装载板用的BT基材CCL见STEP 1.5。</div>
     <div class="tip tip-b"><b>🤖 AI 为何爆发:</b>AI 服务器需要 M7-M9 超低损耗材料,单价是普通的 5 倍+。材料成本占 PCB 总成本从 20%→45%。</div>
-    <div class="tip tip-p"><b>📊 M6-M9 是什么?</b>覆铜板的信号损耗等级(IPC标准),不是产品名。数字越大→损耗越低→越贵。<br>M6(5G)→M7(AI服务器主流)→M8(高端AI)→M9(6G/超算)<br>注意:M6-M9主要适用于"AI server PCB高速CCL",封装载板用CCL是另一套评价体系(看Tg、CTE、Df、机械强度)。</div>
+    <div class="tip tip-p"><b>📊 M6-M9(Megtron 6-9)等级体系是什么?</b><br>这套等级源自<b>Panasonic的Megtron产品系列</b>(M=Megtron),后来成为AI server CCL的行业事实标准。等级越高,Df/Dk/CTE指标越严格,价格越贵。<br>
+    <b>M6</b>(普通服务器/5G)→ <b>M7</b>(Nvidia Hopper/Blackwell主流,Df 0.003-0.008)→ <b>M8</b>(Nvidia Rubin compute tray,Df 0.0011-0.0019)→ <b>M9</b>(Rubin Kyber/mid-plane/下一代,Df ≤0.001)<br>
+    <b>价格跳跃极大</b>:M6→M7→M8→M9每一级单价跳一倍以上(根据Macquarie数据,Doosan blended ASP从US$40涨到Blackwell M7级的US$100+,Rubin M8级再涨到US$170-180)。<br>
+    <b>关键差异</b>:同样是M8级,GPU compute tray对<b>CTE(热稳定性)</b>的要求远比switch tray严苛(Rubin GPU TDP接近2000W),这就是为什么Doosan在compute tray独占——它的CTE指标行业最佳。</div>
     <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 覆铜板主要厂商(全球 CR5 超 55%,集中度高)</div>
     <div class="rg"><div class="rg-t">🇹🇼 台湾 — 高端高速领域领先</div>
-      <div class="mk"><a href="company/?ticker=2383.TW" target="_blank">台光电子 EMC</a> <span>— 无卤覆铜板销量自 2013 年连续全球第一。苹果、华为手机第一大基板材料供应商,M6-M9 全系列产品线齐全。2025H1 营收 441.88 亿台币,毛利率 30.4%。正在昆山、中山、美国加州扩产,美国 Arlon EMD 子公司投资 4900 万美元。定位:高端智能手机+AI 服务器双轮驱动。</span></div>
+      <div class="mk"><a href="company/?ticker=2383.TW" target="_blank">台光电子 EMC</a> <span>— <b>全球高端CCL双雄之一(与Doosan并列),AI server CCL最纯弹性标的</b>。无卤CCL销量自2013年连续全球第一,苹果/华为手机第一大基板材料供应商。<b>业绩爆发性增长</b>:2025年营收NT$94.3bn(+46%),2026E NT$164bn(+74%),2027E NT$270bn(+64%),净利润CAGR约80%。<b>产品组合快速向AI迁移</b>:Infrastructure(AI/网络)收入占比从2025年68%→2028年92%(纯AI弹性);M7+占比从2025年>50%→2026年>70%;M9占比2027年达double digit。<b>毛利率持续扩张</b>:2025年29.8%→2027年35.4%。<b>产能激进扩张</b>:2024年4.35M shts/月→2027年9.45M shts/月(翻倍),布局昆山/中山/槟城/观音/Arlon US。Macquarie目标价NT$5,700(2027E PE 35x)。</span></div>
       <div class="mk"><a href="company/?ticker=6213.TWO" target="_blank">联茂电子</a> <span>— 台系高速覆铜板主力之一,AI 服务器用高速材料供应商,与台光电子、台燿形成台系 CCL 三强。</span></div>
       <div class="mk"><a href="company/?ticker=6274.TWO" target="_blank">台燿科技</a> <span>— 专注高频高速覆铜板,AI 服务器/5G 基站用高速材料。与台光电子、联茂并称台系 CCL 铁三角。</span></div>
       <div class="mk"><a href="company/?ticker=1303.TW" target="_blank">南亚塑胶</a> <span>— 台塑集团旗下,覆铜板+铜箔+电子布垂直整合,同时做 ABF 载板(南亚电路板为子公司)。</span></div>
@@ -471,7 +474,7 @@ loadHeatmap();
       <div class="mk"><a href="company/?ticker=4004.T" target="_blank">力森诺科 (Resonac,原日立化成)</a> <span>— MCL系列CCL,CPU服务器FCBGA载板用CCL龙头,与Intel供应链深度绑定。封装载板用CCL全球份额25-30%。在coreless载板用材料、底部填充料、贴片材料等"配套封装材料"上同样领先。日立化成2023年与昭和电工合并成立Resonac。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 — AI server高速CCL最强</div>
-      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— DS-7409等系列,AI server高速CCL主打,封装载板用CCL全球份额15-20%。深度绑定三星电子、SK Hynix(韩国本土供应优势)和三星电机(SEMCO)。客户向Unimicron等台湾载板厂扩展中。在M7/M8/M9 AI server CCL上是与EMC、TUC、Panasonic并列的第一梯队。</span></div>
+      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 1974年开始CCL业务,50年经验,产品线覆盖GPU/PC/Mobile/Substrate全应用。<b>2024年11月起几乎独占Nvidia Blackwell compute tray CCL供应(~100%份额)</b>,DS-7409DY/DQ/DV系列服务AI server。<b>同时是Samsung和SK Hynix memory substrate CCL的70-80%份额垄断者</b>(DS-7409HG系列)。2025年1H营收结构:Network CCL占55%、Package CCL(memory) 15%、FCCL 11%、其他低端19%。<b>2025E营业利润率约27%,远高于同业(EMC 20%、Shengyi 16%、TUC 15%)</b>,反映其在Nvidia独占地位的溢价。Macquarie预测2026E/2027E CCL营业利润同比+89%/+60%,2028E产能将再翻倍(新greenfield)。<b>核心技术壁垒:CTE(热膨胀系数)指标是同行的一半</b>(a1=25 ppm/°C vs 同行40-50),这在AI compute tray高热负载下是决定性优势。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇨🇳 大陆 — 高端突破中</div>
       <div class="mk"><a href="company/?ticker=600183.SS" target="_blank">生益科技</a> <span>— 封装载板用CCL正在认证中,国产替代希望。同时是STEP 1通用CCL龙头。</span></div>
@@ -481,7 +484,15 @@ loadHeatmap();
     <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
       <div class="mk"><a href="company/?ticker=1303.TW" target="_blank">南亚塑胶</a> <span>— NPGN系列CCL,是"日韩三家"之外重要的BT基材CCL供应商,服务台塑系内的南亚电路板等载板厂。</span></div>
     </div>
-
+    <div class="tip tip-p" style="margin-top:8px"><b>🔬 关键技术指标:为什么CTE比Df更决定AI compute tray胜负?</b><br>
+    传统认知关注Df(信号损耗),但AI compute tray的真正瓶颈是<b>CTE(热膨胀系数)</b>。Compute tray承载40+颗芯片(GPU+HBM+CPU+LPDDR),热负担极大(Rubin GPU TDP~2000W),CCL受热膨胀会导致PCB翘曲变形,直接影响硬件稳定性。<br>
+    <b>头部厂商M9级CCL的CTE对比</b>(a1=Tg以下,a2=Tg以上,数值越低越好):<br>
+    · <b>Doosan DS-7409DYQ:a1=25, a2=150 ✅ 行业最佳</b><br>
+    · EMC EM-896K3:a1=35-40, a2=130-150<br>
+    · TUC Thunderclad 5Q:a1=40, a2=150<br>
+    · Panasonic Megtron 9:a1=50, a2=270<br>
+    · Shengyi:a1=50, a2=210<br>
+    Doosan的CTE指标是同行的1/2-1/3,这就是为什么它在Nvidia compute tray几乎独占——这种"低Df + 低CTE同时满足"的recipe是Doosan 50年CCL技术积累 + memory substrate经验的复合产物,极难被复制。</div>
     <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 投资视角:</b>"日韩三家"在封装载板用CCL环节的护城河深度被市场低估。但三家的"AI弹性"差异巨大:<b>斗山</b>(AI server高速CCL主打,弹性最大,但综合控股结构稀释)>><b>MGC</b>(BT树脂垄断 + 半导体多产品线,稳定但弹性中等)>><b>Resonac</b>(石墨电极业务拖累,纯AI弹性最弱)。<br><br>
     <b>📚 资料来源:</b>MGC/Resonac/斗山公司财报、各公司产品页面、行业研报关于BT基材CCL市场份额的估算。</div>
   </div>
@@ -799,7 +810,7 @@ loadHeatmap();
   <b style="color:#16A085">🧬 封装载板用CCL(BT基材,"日韩三家"主导75-90%)</b><br>
   🇯🇵 MGC(BT树脂垄断 + HL832,35-40%份额)<br>
   🇯🇵 Resonac(MCL系列,CPU服务器载板专用,25-30%)<br>
-  🇰🇷 斗山电子(DS系列,AI server高速CCL主打,15-20%)<br>
+  🇰🇷 斗山电子(DS系列,Nvidia Blackwell compute tray CCL ~100%独占供应,Samsung/Hynix memory substrate CCL 70-80%份额,2025E OPM 27%行业最高)<br>
   🇨🇳 生益/华正新材(国产替代起步)<br><br>
 
   <b class="c2">📟 AI 服务器 PCB(CCL下游分支A)</b><br>
