@@ -620,17 +620,17 @@
       ],
       "has_report": false
     },
-    "336370.KS": {
-      "ticker": "336370.KS",
-      "ticker_slug": "336370_KS",
-      "name": "斗山集团 / 索路思(Solus)",
-      "description": "韩系 HVLP 主要供应商，与日系合占高端市场约 70%（来源：天风证券）",
-      "yahoo_url": "https://finance.yahoo.com/quote/336370.KS/",
+    "000150.KS": {
+      "ticker": "000150.KS",
+      "ticker_slug": "000150_KS",
+      "name": "斗山集团",
+      "description": "韩系CCL/封装载板CCL",
+      "yahoo_url": "https://finance.yahoo.com/quote/000150.KS/",
       "appearances": [
         {
-          "step_num": "0",
-          "step_name": "覆铜板的三大原材料",
-          "submaterial": "材料一：电解铜箔（成本占比 ~42%，最大头）",
+          "step_num": "1.5",
+          "step_name": "载板CCL",
+          "submaterial": "substrate",
           "region": "🇰🇷 韩国"
         }
       ],
