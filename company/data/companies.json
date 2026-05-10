@@ -1,6 +1,6 @@
 {
   "generated_from": "diagram002.html",
-  "company_count": 93,
+  "company_count": 95,
   "companies": {
     "002080.SZ": {
       "ticker": "002080.SZ",
@@ -634,8 +634,42 @@
           "region": "🇰🇷 韩国"
         }
       ],
+      "has_report": true
+    },
+    
+    "222800.KQ": {
+      "ticker": "222800.KQ",
+      "ticker_slug": "222800_KQ",
+      "name": "Simmtech",
+      "description": "韩国 HBM/存储 IC 载板供应商，SK Hynix 主要供应链之一",
+      "yahoo_url": "https://finance.yahoo.com/quote/222800.KQ/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": "HBM载板",
+          "region": "🇰🇷 韩国"
+        }
+      ],
       "has_report": false
     },
+    "353200.KQ": {
+      "ticker": "353200.KQ",
+      "ticker_slug": "353200_KQ",
+      "name": "Daeduck",
+      "description": "韩国 HBM/IC 载板供应商，Samsung 本土供应链之一",
+      "yahoo_url": "https://finance.yahoo.com/quote/353200.KQ/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "IC载板 / ABF / BT",
+          "submaterial": "HBM载板",
+          "region": "🇰🇷 韩国"
+        }
+      ],
+      "has_report": false
+    }
+
     "3407.T": {
       "ticker": "3407.T",
       "ticker_slug": "3407_T",
