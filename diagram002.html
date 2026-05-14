@@ -78,9 +78,11 @@ details>div{padding:8px 10px;font-size:10px;line-height:1.7;color:#555}
         <div style="font-size:14px;font-weight:700;color:#1a1a2e">📊 产业链交易热力图</div>
         <div id="hm-time" style="font-size:10px;color:#999;margin-top:2px">加载中...</div>
       </div>
-      <div style="display:flex;gap:6px">
-        <button onclick="setMode('chg')" id="btn-chg" style="font-size:10px;padding:4px 10px;border-radius:12px;border:1.5px solid #1a73e8;background:#1a73e8;color:#fff;cursor:pointer">涨跌幅</button>
-        <button onclick="setMode('pe')" id="btn-pe" style="font-size:10px;padding:4px 10px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">PE估值</button>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">
+        <button onclick="setMode('chg')" id="btn-chg" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #1a73e8;background:#1a73e8;color:#fff;cursor:pointer">日涨跌</button>
+        <button onclick="setMode('mtd')" id="btn-mtd" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">月内</button>
+        <button onclick="setMode('ytd')" id="btn-ytd" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">年内</button>
+        <button onclick="setMode('pe')" id="btn-pe" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">PE</button>
       </div>
     </div>
   </div>
@@ -104,6 +106,8 @@ const DATA_URL = "https://daisypku.github.io/supply-chain-data/supply_chain_heat
 //       "sector": "ccl",          // ccl|pcb|ic_sub|cowos|optical_chip|optical_mod|optical_infra|glass
 //       "price": 450.5,
 //       "change_pct": 2.35,       // daily % change
+//       "mtd_pct": 12.4,          // month-to-date % change, null if N/A
+//       "ytd_pct": 58.9,          // year-to-date % change, null if N/A
 //       "pe": 18.7,               // trailing PE, null if N/A
 //       "mkt_cap_b": 12.5,        // market cap in billions (local currency)
 //       "currency": "TWD"
@@ -164,13 +168,28 @@ let currentData = null;
 
 function setMode(mode){
   currentMode = mode;
-  document.getElementById('btn-chg').style.background = mode==='chg'?'#1a73e8':'#fff';
-  document.getElementById('btn-chg').style.color = mode==='chg'?'#fff':'#666';
-  document.getElementById('btn-chg').style.borderColor = mode==='chg'?'#1a73e8':'#ddd';
-  document.getElementById('btn-pe').style.background = mode==='pe'?'#1a73e8':'#fff';
-  document.getElementById('btn-pe').style.color = mode==='pe'?'#fff':'#666';
-  document.getElementById('btn-pe').style.borderColor = mode==='pe'?'#1a73e8':'#ddd';
+  ['chg','mtd','ytd','pe'].forEach(m => {
+    const btn = document.getElementById('btn-' + m);
+    const active = mode === m;
+    btn.style.background = active ? '#1a73e8' : '#fff';
+    btn.style.color = active ? '#fff' : '#666';
+    btn.style.borderColor = active ? '#1a73e8' : '#ddd';
+  });
   if(currentData) renderHeatmap(currentData);
+}
+
+function getMetricValue(s){
+  if(currentMode === 'chg') return s.change_pct;
+  if(currentMode === 'mtd') return s.mtd_pct;
+  if(currentMode === 'ytd') return s.ytd_pct;
+  return s.pe;
+}
+
+function getMetricLabel(){
+  if(currentMode === 'chg') return '日';
+  if(currentMode === 'mtd') return '月';
+  if(currentMode === 'ytd') return '年';
+  return 'PE';
 }
 
 function getColorForChange(pct){
@@ -230,10 +249,11 @@ function renderHeatmap(data){
     html += `<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:4px;padding:0 2px">${meta.label} <span style="color:#999;font-weight:normal">${meta.sub}</span></div>`;
     html += `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">`;
     stocks.forEach(s => {
-      const value = currentMode === 'chg' ? s.change_pct : s.pe;
-      const color = currentMode === 'chg' ? getColorForChange(s.change_pct) : getColorForPE(s.pe);
-      const display = currentMode === 'chg' ? fmtPct(s.change_pct) : (s.pe === null ? 'N/A' : 'PE '+fmtNum(s.pe));
-      const isLight = (currentMode === 'chg' && Math.abs(s.change_pct||0) < 0.5) || (currentMode === 'pe' && s.pe !== null && s.pe >= 30 && s.pe < 50);
+      const value = getMetricValue(s);
+      const isReturnMode = currentMode === 'chg' || currentMode === 'mtd' || currentMode === 'ytd';
+      const color = isReturnMode ? getColorForChange(value) : getColorForPE(value);
+      const display = isReturnMode ? `${getMetricLabel()} ${fmtPct(value)}` : (value === null || value === undefined ? 'N/A' : 'PE '+fmtNum(value));
+      const isLight = (isReturnMode && Math.abs(value||0) < 0.5) || (currentMode === 'pe' && value !== null && value !== undefined && value >= 30 && value < 50);
       const textColor = isLight ? '#333' : '#fff';
       html += `<a href="company/?ticker=${s.ticker}" target="_blank" style="background:${color};color:${textColor};padding:6px 4px;border-radius:5px;text-decoration:none;display:block;text-align:center">`;
       html += `<div style="font-size:10px;font-weight:700;line-height:1.2">${s.name}</div>`;
@@ -245,7 +265,7 @@ function renderHeatmap(data){
   
   body.innerHTML = html;
   
-  if(currentMode === 'chg'){
+  if(currentMode === 'chg' || currentMode === 'mtd' || currentMode === 'ytd'){
     legend.innerHTML = `<span>跌</span>
       <div style="background:#2E7D32;width:18px;height:10px;border-radius:2px"></div>
       <div style="background:#43A047;width:18px;height:10px"></div>
@@ -318,7 +338,7 @@ loadHeatmap();
       <div class="mk"><b>CFL (卢森堡铜箔)</b> <span>— HVLP3 独供英伟达,HVLP4/5 计划 2025Q4 量产,较国内领先 2-5 年。2025 年被中国德福科技以 1.74 亿欧元收购,高频高速产品占据全球绝大多数份额。(来源:德福科技公告)</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国</div>
-      <div class="mk"><a href="company/?ticker=336370.KS" target="_blank">斗山集团 / 索路思(Solus)</a> <span>— 韩系 HVLP 主要供应商,与日系合占高端市场约 70%(来源:天风证券)</span></div>
+      <div class="mk"><a href="company/?ticker=336370.KS" target="_blank">索路思高新材料 (Solus)</a> <span>— 原斗山体系分拆出的韩系铜箔厂商,为 HVLP/电子铜箔重要供应商之一。</span></div>
       <div class="mk"><a href="company/?ticker=103590.KS" target="_blank">日进材料 (Iljin)</a> <span>— 韩系电子铜箔厂商</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇹🇼 台湾</div>
@@ -462,7 +482,7 @@ loadHeatmap();
     <div class="ar">▸</div>
   </div>
   <div class="step-b">
-    <div class="tip tip-y"><b>🎯 通俗理解:</b>不是所有CCL都能做IC载板。封装载板需要专门的高端CCL——耐温更高(Tg 200-250°C)、热膨胀系数更低(CTE<10 ppm/°C)、与mSAP/SAP工艺兼容。这层CCL是连接"通用CCL(STEP 1)"和"IC载板成品(STEP 3)"的桥梁,但市场关注度远低于两端。</div>
+    <div class="tip tip-y"><b>🎯 通俗理解:</b>不是所有CCL都能做IC载板。封装载板需要专门的高端CCL——耐温更高(Tg 200-250°C)、热膨胀系数更低(CTE<10 ppm/°C)、与mSAP/SAP工艺兼容。它不是由"通用高速CCL"再升级而来,而是与AI服务器PCB用高速CCL平行的另一套高端专用材料体系,市场关注度远低于两端。</div>
 
     <div class="tip tip-b"><b>🤖 AI 为何爆发:</b>英伟达GB200/Rubin的ABF载板核心层(core)用的就是这种CCL。HBM载板更是几乎100%用BT基材CCL。这层CCL的供应商高度集中,被市场称为"日韩三家"——MGC、Resonac、斗山合计占全球75-90%份额,毛利率30-45%。</div>
 
@@ -474,7 +494,7 @@ loadHeatmap();
       <div class="mk"><a href="company/?ticker=4004.T" target="_blank">力森诺科 (Resonac,原日立化成)</a> <span>— MCL系列CCL,CPU服务器FCBGA载板用CCL龙头,与Intel供应链深度绑定。封装载板用CCL全球份额25-30%。在coreless载板用材料、底部填充料、贴片材料等"配套封装材料"上同样领先。日立化成2023年与昭和电工合并成立Resonac。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 — AI server高速CCL最强</div>
-      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 1974年开始CCL业务,50年经验,产品线覆盖GPU/PC/Mobile/Substrate全应用。<b>2024年11月起几乎独占Nvidia Blackwell compute tray CCL供应(~100%份额)</b>,DS-7409DY/DQ/DV系列服务AI server。<b>同时是Samsung和SK Hynix memory substrate CCL的70-80%份额垄断者</b>(DS-7409HG系列)。2025年1H营收结构:Network CCL占55%、Package CCL(memory) 15%、FCCL 11%、其他低端19%。<b>2025E营业利润率约27%,远高于同业(EMC 20%、Shengyi 16%、TUC 15%)</b>,反映其在Nvidia独占地位的溢价。Macquarie预测2026E/2027E CCL营业利润同比+89%/+60%,2028E产能将再翻倍(新greenfield)。<b>核心技术壁垒:CTE(热膨胀系数)指标是同行的一半</b>(a1=25 ppm/°C vs 同行40-50),这在AI compute tray高热负载下是决定性优势。</span></div>
+      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 1974年开始CCL业务,50年经验,产品线覆盖GPU/PC/Mobile/Substrate全应用。据Macquarie等产业链口径,<b>2024年11月起在Nvidia Blackwell compute tray高端CCL供应中占据极高份额</b>,DS-7409DY/DQ/DV系列服务AI server。<b>同时是Samsung和SK Hynix memory substrate CCL的重要供应商</b>(DS-7409HG系列)。2025年1H营收结构:Network CCL占55%、Package CCL(memory) 15%、FCCL 11%、其他低端19%。<b>2025E营业利润率约27%,远高于同业(EMC 20%、Shengyi 16%、TUC 15%)</b>,反映其在AI高端CCL中的溢价。Macquarie预测2026E/2027E CCL营业利润同比+89%/+60%,2028E产能将再翻倍(新greenfield)。<b>核心技术壁垒:CTE(热膨胀系数)指标明显优于多数同行</b>(a1=25 ppm/°C vs 同行40-50),这在AI compute tray高热负载下是决定性优势。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇨🇳 大陆 — 高端突破中</div>
       <div class="mk"><a href="company/?ticker=600183.SS" target="_blank">生益科技</a> <span>— 封装载板用CCL正在认证中,国产替代希望。同时是STEP 1通用CCL龙头。</span></div>
@@ -492,7 +512,7 @@ loadHeatmap();
     · TUC Thunderclad 5Q:a1=40, a2=150<br>
     · Panasonic Megtron 9:a1=50, a2=270<br>
     · Shengyi:a1=50, a2=210<br>
-    Doosan的CTE指标是同行的1/2-1/3,这就是为什么它在Nvidia compute tray几乎独占——这种"低Df + 低CTE同时满足"的recipe是Doosan 50年CCL技术积累 + memory substrate经验的复合产物,极难被复制。</div>
+    Doosan的CTE指标明显优于多数同行,这也是它在Nvidia compute tray高端CCL中份额突出的关键原因——这种"低Df + 低CTE同时满足"的recipe是Doosan 50年CCL技术积累 + memory substrate经验的复合产物,极难被复制。</div>
     <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 投资视角:</b>"日韩三家"在封装载板用CCL环节的护城河深度被市场低估。但三家的"AI弹性"差异巨大:<b>斗山</b>(AI server高速CCL主打,弹性最大,但综合控股结构稀释)>><b>MGC</b>(BT树脂垄断 + 半导体多产品线,稳定但弹性中等)>><b>Resonac</b>(石墨电极业务拖累,纯AI弹性最弱)。<br><br>
     <b>📚 资料来源:</b>MGC/Resonac/斗山公司财报、各公司产品页面、行业研报关于BT基材CCL市场份额的估算。</div>
   </div>
@@ -555,7 +575,7 @@ loadHeatmap();
     <div class="rg"><div class="rg-t">🇯🇵 日本 — ABF份额约35%,技术最强</div>
       <div class="mk"><a href="company/?ticker=4062.T" target="_blank">Ibiden (揖斐电)</a> <span>— ABF全球第一(份额~21%),Intel CPU服务器载板核心供应商,同时是Nvidia GPU FCBGA主供应商。FCBGA技术金标准。</span></div>
       <div class="mk"><a href="company/?ticker=6967.T" target="_blank">Shinko (新光电气)</a> <span>— ABF份额~12%,富士通集团,Apple Mac M系列芯片主供应商。Apple收购传闻持续。</span></div>
-      <div class="mk"><a href="company/?ticker=2802.T" target="_blank">🔴 味之素</a> <span>— ABF膜垄断~97%!一家味精公司卡住全球半导体脖子。FCBGA载板的最深护城河。</span></div>
+      <div class="mk"><a href="company/?ticker=2802.T" target="_blank">🔴 味之素</a> <span>— 注意它不是载板厂,而是ABF膜核心材料商。ABF膜份额约97%,是FCBGA载板最深的材料护城河。</span></div>
       <div class="mk"><a href="company/?ticker=4203.T" target="_blank">住友电木 Sumitomo Bakelite</a> <span>— IC 封装用 EMC(环氧模塑料)全球份额第一,BT 基板材料供应商之一。AI 芯片先进封装环节的核心材料商。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 / 🇦🇹 奥地利</div>
@@ -568,10 +588,10 @@ loadHeatmap();
     </div>
 
     <div style="font-size:12px;font-weight:700;color:#333;margin:14px 0 6px">🔶 HBM载板(BT-based高端,韩国主导)</div>
-    <div style="font-size:11px;color:#555;margin-bottom:6px;line-height:1.7">HBM载板属于BT阵营,但因为HBM传输速率极高(1024 GB/s+),工艺已经接近ABF载板的复杂度——12-16层、用mSAP工艺、用T-glass或NER布、毛利率30-40%。这是"BT阵营里的贵族化产品"。</div>
+    <div style="font-size:11px;color:#555;margin-bottom:6px;line-height:1.7">HBM载板属于BT阵营,但因为HBM传输速率极高(1024 GB/s+),复杂度明显上移,部分工艺指标接近高端封装载板——12-16层、用mSAP工艺、用T-glass或NER布、毛利率30-40%。这是"BT阵营里的贵族化产品"。</div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 — HBM载板主导(本土供应SK Hynix和Samsung)</div>
       <div class="mk"><a href="company/?ticker=222800.KQ" target="_blank">Simmtech (222800.KQ)</a> <span>— SK Hynix主供应商,HBM载板核心玩家,从普通DDR载板向HBM载板升级,业绩弹性巨大。</span></div>
-      <div class="mk"><a href="company/?ticker=353200.KQ" target="_blank">Daeduck (353200.KQ)</a> <span>— Samsung主供应商,HBM载板第二玩家。</span></div>
+      <div class="mk"><a href="company/?ticker=353200.KS" target="_blank">Daeduck (353200.KS)</a> <span>— Samsung主供应商,HBM载板第二玩家。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇯🇵 日本 / 🇹🇼 台湾 — 也参与HBM载板竞争</div>
       <div class="mk"><a href="company/?ticker=4062.T" target="_blank">Ibiden / Shinko</a> <span>— 既做FCBGA也做HBM载板,产能在两个市场之间分配。</span></div>

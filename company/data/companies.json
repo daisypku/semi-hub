@@ -653,12 +653,12 @@
       ],
       "has_report": false
     },
-    "353200.KQ": {
-      "ticker": "353200.KQ",
-      "ticker_slug": "353200_KQ",
+    "353200.KS": {
+      "ticker": "353200.KS",
+      "ticker_slug": "353200_KS",
       "name": "Daeduck",
       "description": "韩国 HBM/IC 载板供应商，Samsung 本土供应链之一",
-      "yahoo_url": "https://finance.yahoo.com/quote/353200.KQ/",
+      "yahoo_url": "https://finance.yahoo.com/quote/353200.KS/",
       "appearances": [
         {
           "step_num": "3",
