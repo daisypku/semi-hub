@@ -108,7 +108,8 @@ const DATA_URL = "https://daisypku.github.io/supply-chain-data/supply_chain_heat
 //       "change_pct": 2.35,       // daily % change
 //       "mtd_pct": 12.4,          // month-to-date % change, null if N/A
 //       "ytd_pct": 58.9,          // year-to-date % change, null if N/A
-//       "pe": 18.7,               // trailing PE, null if N/A
+//       "pe": 18.7,               // PE, null if N/A
+//       "pe_type": "forward",     // forward|trailing|null
 //       "mkt_cap_b": 12.5,        // market cap in billions (local currency)
 //       "currency": "TWD"
 //     }, ...
@@ -227,6 +228,12 @@ function fmtPct(p){
   return (p > 0 ? '+' : '') + p.toFixed(1) + '%';
 }
 
+function fmtPeType(type){
+  if(type === 'forward') return 'FWD';
+  if(type === 'trailing') return 'TTM';
+  return '';
+}
+
 function renderHeatmap(data){
   const body = document.getElementById('hm-body');
   const legend = document.getElementById('hm-legend');
@@ -252,10 +259,12 @@ function renderHeatmap(data){
       const value = getMetricValue(s);
       const isReturnMode = currentMode === 'chg' || currentMode === 'mtd' || currentMode === 'ytd';
       const color = isReturnMode ? getColorForChange(value) : getColorForPE(value);
-      const display = isReturnMode ? `${getMetricLabel()} ${fmtPct(value)}` : (value === null || value === undefined ? 'N/A' : 'PE '+fmtNum(value));
+      const peType = fmtPeType(s.pe_type);
+      const display = isReturnMode ? `${getMetricLabel()} ${fmtPct(value)}` : (value === null || value === undefined ? 'N/A' : `PE ${fmtNum(value)}${peType ? ' '+peType : ''}`);
+      const title = currentMode === 'pe' && peType ? `${s.name} ${fmtNum(value)} ${peType}` : s.name;
       const isLight = (isReturnMode && Math.abs(value||0) < 0.5) || (currentMode === 'pe' && value !== null && value !== undefined && value >= 30 && value < 50);
       const textColor = isLight ? '#333' : '#fff';
-      html += `<a href="company/?ticker=${s.ticker}" target="_blank" style="background:${color};color:${textColor};padding:6px 4px;border-radius:5px;text-decoration:none;display:block;text-align:center">`;
+      html += `<a href="company/?ticker=${s.ticker}" target="_blank" title="${title}" style="background:${color};color:${textColor};padding:6px 4px;border-radius:5px;text-decoration:none;display:block;text-align:center">`;
       html += `<div style="font-size:10px;font-weight:700;line-height:1.2">${s.name}</div>`;
       html += `<div style="font-size:9px;line-height:1.2;margin-top:2px;opacity:0.95">${display}</div>`;
       html += `</a>`;
