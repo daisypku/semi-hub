@@ -59,13 +59,13 @@ details>div{padding:8px 10px;font-size:10px;line-height:1.7;color:#555}
   <span class="c2">③ PCB 主板 (20-30层)</span> — 服务器"骨架"(封装好的芯片焊上去)<br>
   <span class="c5">④ 光模块 (800G/1.6T)</span> — 和其他服务器"高速通信"<br><br>
   <b>关键关系:PCB(③)和IC载板(②)是"并列"而非"上下游"</b>——两者都用<b>覆铜板(CCL)</b>作原材料,但是完全不同的产品。载板把芯片封装好,然后整体焊到PCB主板上。<br><br>
-  覆铜板(CCL)又由<b>铜箔+玻纤布+树脂</b>三大原材料制成。<b>M6-M9</b> 是高速PCB CCL的性能等级;封装载板用的是另一种CCL(BT基材CCL),由"日韩三家"(MGC、Resonac、斗山)主导。<b>玻璃基板</b>是 ② 的下一代技术。
+  覆铜板(CCL)又由<b>铜箔+玻纤布+树脂</b>三大原材料制成。<b>M6-M9</b> 是高速PCB CCL的性能等级;IC载板内部还要再拆:GPU/CPU/ASIC大芯片多用<b>ABF增层载板</b>,核心瓶颈是味之素ABF膜+高阶载板制造;HBM/FC-CSP/部分存储封装则更多使用<b>BT基材体系</b>,其上游材料由MGC、Resonac、斗山等主导。<b>玻璃基板</b>是 ② 的下一代候选技术。
 </div>
 
 <!-- Two Tracks -->
 <div class="box">
   <b>📌 两条平行赛道</b><br>
-  <b class="c3">赛道A "装"</b>:CCL → 封装载板用CCL → IC载板 → 封装(芯片怎么装到载板上)<br>
+  <b class="c3">赛道A "装"</b>:ABF膜/BT基材/载板芯板 → IC载板 → 先进封装(芯片怎么装到载板上)<br>
   <b class="c2">赛道B "连"</b>:CCL → 高速PCB + 光模块(数据怎么在板间传输)<br>
   两条赛道在 AI 服务器里汇合:封装好的芯片焊到PCB上,通过光模块与其他服务器互联。
 </div>
@@ -448,15 +448,15 @@ loadHeatmap();
     <div class="ar">▸</div>
   </div>
   <div class="step-b">
-    <div class="tip tip-y"><b>🎯 通俗理解:</b>把玻纤布泡在树脂里,两面贴铜箔,热压成一块板——这就是覆铜板。CCL是PCB和IC载板的<b>共同上游原材料</b>(并列下游),但供PCB和供IC载板的CCL规格完全不同——本STEP讲的是供AI服务器PCB用的高速CCL,封装载板用的BT基材CCL见STEP 1.5。</div>
+    <div class="tip tip-y"><b>🎯 通俗理解:</b>把玻纤布泡在树脂里,两面贴铜箔,热压成一块板——这就是覆铜板。本STEP讲的是供AI服务器PCB用的高速CCL;IC载板材料体系更复杂,大芯片FCBGA看ABF膜+载板制造,HBM/FC-CSP等看BT基材/芯板材料,见STEP 1.5和STEP 3。</div>
     <div class="tip tip-b"><b>🤖 AI 为何爆发:</b>AI 服务器需要 M7-M9 超低损耗材料,单价是普通的 5 倍+。材料成本占 PCB 总成本从 20%→45%。</div>
     <div class="tip tip-p"><b>📊 M6-M9(Megtron 6-9)等级体系是什么?</b><br>这套等级源自<b>Panasonic的Megtron产品系列</b>(M=Megtron),后来成为AI server CCL的行业事实标准。等级越高,Df/Dk/CTE指标越严格,价格越贵。<br>
-    <b>M6</b>(普通服务器/5G)→ <b>M7</b>(Nvidia Hopper/Blackwell主流,Df 0.003-0.008)→ <b>M8</b>(Nvidia Rubin compute tray,Df 0.0011-0.0019)→ <b>M9</b>(Rubin Kyber/mid-plane/下一代,Df ≤0.001)<br>
-    <b>价格跳跃极大</b>:M6→M7→M8→M9每一级单价跳一倍以上(根据Macquarie数据,Doosan blended ASP从US$40涨到Blackwell M7级的US$100+,Rubin M8级再涨到US$170-180)。<br>
-    <b>关键差异</b>:同样是M8级,GPU compute tray对<b>CTE(热稳定性)</b>的要求远比switch tray严苛(Rubin GPU TDP接近2000W),这就是为什么Doosan在compute tray独占——它的CTE指标行业最佳。</div>
+    <b>M6</b>(普通服务器/5G)→ <b>M7</b>(Hopper/Blackwell主流高速板材)→ <b>M8/M8.5</b>(下一代compute tray更高损耗/热稳定要求)→ <b>M9</b>(Rubin/Kyber及mid-plane等下一代互联的产业链预期规格)<br>
+    <b>价格跳跃极大</b>:M6→M7→M8/M9每一级单价通常明显上台阶。Macquarie等外资报告曾用Doosan ASP从US$40级别升至Blackwell/Rubin高阶材料来说明这种弹性,但具体平台使用的CCL等级仍取决于Nvidia/ODM最终设计。<br>
+    <b>关键差异</b>:越靠近GPU compute tray,对<b>CTE(热稳定性)</b>、翘曲控制和低损耗的综合要求越高;switch tray/mid-plane则更偏高速互联和大尺寸稳定性。Doosan、台光、Panasonic、台燿、生益等都在不同平台/部位竞争,M8/M9规格与单一公司并不存在简单一一对应关系。</div>
     <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 覆铜板主要厂商(全球 CR5 超 55%,集中度高)</div>
     <div class="rg"><div class="rg-t">🇹🇼 台湾 — 高端高速领域领先</div>
-      <div class="mk"><a href="company/?ticker=2383.TW" target="_blank">台光电子 EMC</a> <span>— <b>全球高端CCL双雄之一(与Doosan并列),AI server CCL最纯弹性标的</b>。无卤CCL销量自2013年连续全球第一,苹果/华为手机第一大基板材料供应商。<b>业绩爆发性增长</b>:2025年营收NT$94.3bn(+46%),2026E NT$164bn(+74%),2027E NT$270bn(+64%),净利润CAGR约80%。<b>产品组合快速向AI迁移</b>:Infrastructure(AI/网络)收入占比从2025年68%→2028年92%(纯AI弹性);M7+占比从2025年>50%→2026年>70%;M9占比2027年达double digit。<b>毛利率持续扩张</b>:2025年29.8%→2027年35.4%。<b>产能激进扩张</b>:2024年4.35M shts/月→2027年9.45M shts/月(翻倍),布局昆山/中山/槟城/观音/Arlon US。Macquarie目标价NT$5,700(2027E PE 35x)。</span></div>
+      <div class="mk"><a href="company/?ticker=2383.TW" target="_blank">台光电子 EMC</a> <span>— <b>全球高端高速CCL核心玩家,AI server CCL弹性最纯的台系标的之一</b>。无卤CCL销量自2013年连续全球第一,苹果/华为手机第一大基板材料供应商。市场预期其M7/M8产品在AI服务器、交换机和加速卡中持续放量,并积极布局M9/下一代低损耗材料。具体到Rubin/Kyber平台的份额仍需以客户认证和量产拆解验证。</span></div>
       <div class="mk"><a href="company/?ticker=6213.TWO" target="_blank">联茂电子</a> <span>— 台系高速覆铜板主力之一,AI 服务器用高速材料供应商,与台光电子、台燿形成台系 CCL 三强。</span></div>
       <div class="mk"><a href="company/?ticker=6274.TWO" target="_blank">台燿科技</a> <span>— 专注高频高速覆铜板,AI 服务器/5G 基站用高速材料。与台光电子、联茂并称台系 CCL 铁三角。</span></div>
       <div class="mk"><a href="company/?ticker=1303.TW" target="_blank">南亚塑胶</a> <span>— 台塑集团旗下,覆铜板+铜箔+电子布垂直整合,同时做 ABF 载板(南亚电路板为子公司)。</span></div>
@@ -474,7 +474,7 @@ loadHeatmap();
       <div class="mk"><b>Isola (美)</b> <span>— 高速数通覆铜板材料供应商,Astra 系列服务 AI 服务器。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 — AI高速CCL核心玩家(被市场低估)</div>
-      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 斗山集团旗下电子材料事业部(BG),韩国第一大高速CCL厂商。M7/M8级AI server CCL已进入英伟达供应链,M9级产品认证中。同时也是封装载板用BT基材CCL的全球Top 3(详见STEP 1.5)。2025年宣布CCL设备投资增加3倍以应对AI需求。</span></div>
+      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 斗山集团旗下电子材料事业部(BG),韩国第一大高速CCL厂商。M7/M8级AI server CCL已进入英伟达供应链,M9级产品认证中。同时也是BT-based封装基板材料的重要供应商(详见STEP 1.5)。2025年宣布CCL设备投资增加3倍以应对AI需求。</span></div>
       <div class="mk"><a href="company/?ticker=336370.KS" target="_blank">索路思高新材料 (Solus Advanced Materials)</a> <span>— 韩系HVLP铜箔主要供应商之一(STEP 0已提),也涉足部分CCL材料业务。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇭🇰 香港</div>
@@ -487,23 +487,23 @@ loadHeatmap();
 <div class="step" onclick="this.classList.toggle('open')">
   <div class="step-h">
     <div class="em">🧬</div>
-    <div class="ti"><div class="sn">STEP 1.5 · CCL高端分支</div><div class="nm">封装载板用CCL (BT基材CCL)</div><div class="sb">"日韩三家"主导75-90%份额</div></div>
+    <div class="ti"><div class="sn">STEP 1.5 · 载板材料分支</div><div class="nm">BT基材 / 载板芯板材料</div><div class="sb">HBM/FC-CSP/部分载板芯板</div></div>
     <div class="ar">▸</div>
   </div>
   <div class="step-b">
-    <div class="tip tip-y"><b>🎯 通俗理解:</b>不是所有CCL都能做IC载板。封装载板需要专门的高端CCL——耐温更高(Tg 200-250°C)、热膨胀系数更低(CTE<10 ppm/°C)、与mSAP/SAP工艺兼容。它不是由"通用高速CCL"再升级而来,而是与AI服务器PCB用高速CCL平行的另一套高端专用材料体系,市场关注度远低于两端。</div>
+    <div class="tip tip-y"><b>🎯 通俗理解:</b>IC载板不是一种材料,而是一类超高精度小型PCB。它可以分成两套材料逻辑:大芯片FCBGA/ABF载板靠<b>ABF膜+高阶增层工艺</b>把线路做得极细;HBM、FC-CSP和部分存储封装则更多依赖<b>BT基材/BT树脂体系</b>。所以这里讲的"封装载板用CCL"更准确地说是载板芯板/BT基材材料的一部分,不能等同于整个ABF载板。</div>
 
-    <div class="tip tip-b"><b>🤖 AI 为何爆发:</b>英伟达GB200/Rubin的ABF载板核心层(core)用的就是这种CCL。HBM载板更是几乎100%用BT基材CCL。这层CCL的供应商高度集中,被市场称为"日韩三家"——MGC、Resonac、斗山合计占全球75-90%份额,毛利率30-45%。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何爆发:</b>AI GPU/ASIC把FCBGA载板面积、层数和良率要求推到极限,核心瓶颈主要在ABF膜、载板制造良率和大尺寸翘曲控制;HBM和存储封装则带动BT-based载板升级。MGC、Resonac、斗山等在载板芯板/BT基材材料上份额高,但与Ibiden、欣兴、Shinko、SEMCO这些"载板制造商"不是同一个环节。</div>
 
-    <div class="tip tip-p"><b>📊 与STEP 1通用CCL的区别:</b>STEP 1(台光、生益)主要做"AI server PCB高速CCL",对应M6-M9等级;STEP 1.5(MGC、Resonac、斗山)主要做"封装载板用BT基材CCL",评价体系是Tg/CTE/Df/机械强度。两类CCL客户、规格、应用完全不同,不要混淆。</div>
+    <div class="tip tip-p"><b>📊 与STEP 1通用CCL的区别:</b>STEP 1(台光、生益、台燿、Panasonic等)主要做"AI server PCB高速CCL",对应M6-M9等级;STEP 1.5讲的是"封装载板材料体系中的BT基材/芯板材料",评价体系是Tg/CTE/Df/机械强度以及与SAP/mSAP/ABF增层的匹配。两类客户、认证路径和价值驱动完全不同。</div>
 
-    <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 封装载板用CCL主要厂商("日韩三家"主导)</div>
+    <div style="font-size:12px;font-weight:700;color:#333;margin:8px 0 6px">🏭 BT基材/载板芯板材料主要厂商</div>
     <div class="rg"><div class="rg-t">🇯🇵 日本 — 全球主导</div>
       <div class="mk"><a href="company/?ticker=4182.T" target="_blank">三菱瓦斯化学 (MGC)</a> <span>— BT树脂的发明者(1980年代)和绝对垄断者(全球70%+份额)。HL832/HL832NSF系列CCL是HBM载板和高端BT-based FCBGA载板的核心供应商。封装载板用CCL全球份额35-40%。客户覆盖Ibiden、Shinko、Unimicron、Simmtech、SEMCO等几乎所有载板厂。同时垄断双氧水(半导体清洗关键化学品)。</span></div>
       <div class="mk"><a href="company/?ticker=4004.T" target="_blank">力森诺科 (Resonac,原日立化成)</a> <span>— MCL系列CCL,CPU服务器FCBGA载板用CCL龙头,与Intel供应链深度绑定。封装载板用CCL全球份额25-30%。在coreless载板用材料、底部填充料、贴片材料等"配套封装材料"上同样领先。日立化成2023年与昭和电工合并成立Resonac。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇰🇷 韩国 — AI server高速CCL最强</div>
-      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 1974年开始CCL业务,50年经验,产品线覆盖GPU/PC/Mobile/Substrate全应用。据Macquarie等产业链口径,<b>2024年11月起在Nvidia Blackwell compute tray高端CCL供应中占据极高份额</b>,DS-7409DY/DQ/DV系列服务AI server。<b>同时是Samsung和SK Hynix memory substrate CCL的重要供应商</b>(DS-7409HG系列)。2025年1H营收结构:Network CCL占55%、Package CCL(memory) 15%、FCCL 11%、其他低端19%。<b>2025E营业利润率约27%,远高于同业(EMC 20%、Shengyi 16%、TUC 15%)</b>,反映其在AI高端CCL中的溢价。Macquarie预测2026E/2027E CCL营业利润同比+89%/+60%,2028E产能将再翻倍(新greenfield)。<b>核心技术壁垒:CTE(热膨胀系数)指标明显优于多数同行</b>(a1=25 ppm/°C vs 同行40-50),这在AI compute tray高热负载下是决定性优势。</span></div>
+      <div class="mk"><a href="company/?ticker=000150.KS" target="_blank">斗山电子 (Doosan Electro-Materials)</a> <span>— 1974年开始CCL业务,50年经验,产品线覆盖GPU/PC/Mobile/Substrate全应用。据Macquarie等产业链口径,斗山在Blackwell/Rubin相关高端AI server CCL中具备显著份额和技术溢价,DS-7409DY/DQ/DV系列服务AI server。<b>同时是Samsung和SK Hynix memory substrate CCL的重要供应商</b>(DS-7409HG系列)。2025年1H营收结构:Network CCL占55%、Package CCL(memory) 15%、FCCL 11%、其他低端19%。<b>核心看点是低Df+低CTE的综合能力</b>,在高热负载compute tray和高层数高速板中更有价值。具体平台份额仍需按量产拆解和客户认证动态跟踪。</span></div>
     </div>
     <div class="rg"><div class="rg-t">🇨🇳 大陆 — 高端突破中</div>
       <div class="mk"><a href="company/?ticker=600183.SS" target="_blank">生益科技</a> <span>— 封装载板用CCL正在认证中,国产替代希望。同时是STEP 1通用CCL龙头。</span></div>
@@ -516,14 +516,14 @@ loadHeatmap();
     <div class="tip tip-p" style="margin-top:8px"><b>🔬 关键技术指标:为什么CTE比Df更决定AI compute tray胜负?</b><br>
     传统认知关注Df(信号损耗),但AI compute tray的真正瓶颈是<b>CTE(热膨胀系数)</b>。Compute tray承载40+颗芯片(GPU+HBM+CPU+LPDDR),热负担极大(Rubin GPU TDP~2000W),CCL受热膨胀会导致PCB翘曲变形,直接影响硬件稳定性。<br>
     <b>头部厂商M9级CCL的CTE对比</b>(a1=Tg以下,a2=Tg以上,数值越低越好):<br>
-    · <b>Doosan DS-7409DYQ:a1=25, a2=150 ✅ 行业最佳</b><br>
+    · <b>Doosan DS-7409DYQ:a1=25, a2=150 ✅ 产业链资料显示处于领先区间</b><br>
     · EMC EM-896K3:a1=35-40, a2=130-150<br>
     · TUC Thunderclad 5Q:a1=40, a2=150<br>
     · Panasonic Megtron 9:a1=50, a2=270<br>
     · Shengyi:a1=50, a2=210<br>
-    Doosan的CTE指标明显优于多数同行,这也是它在Nvidia compute tray高端CCL中份额突出的关键原因——这种"低Df + 低CTE同时满足"的recipe是Doosan 50年CCL技术积累 + memory substrate经验的复合产物,极难被复制。</div>
-    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 投资视角:</b>"日韩三家"在封装载板用CCL环节的护城河深度被市场低估。但三家的"AI弹性"差异巨大:<b>斗山</b>(AI server高速CCL主打,弹性最大,但综合控股结构稀释)>><b>MGC</b>(BT树脂垄断 + 半导体多产品线,稳定但弹性中等)>><b>Resonac</b>(石墨电极业务拖累,纯AI弹性最弱)。<br><br>
-    <b>📚 资料来源:</b>MGC/Resonac/斗山公司财报、各公司产品页面、行业研报关于BT基材CCL市场份额的估算。</div>
+    Doosan的CTE指标在产业链资料中明显优于多数同行,这也是市场认为它在AI compute tray高端CCL中份额突出的关键原因之一。但下一代平台的份额仍会受客户认证、产能、价格和不同部位材料组合影响,应视为"领先候选/高份额预期",而非确定性独占。</div>
+    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 投资视角:</b>载板材料要拆开看:ABF膜是味之素的深护城河;BT树脂/BT基材和芯板材料由MGC、Resonac、斗山等主导;真正把材料做成载板的是Ibiden、欣兴、Shinko、SEMCO、Simmtech、Daeduck等制造商。斗山的AI弹性更多来自高速AI server CCL+memory substrate材料的组合,不是简单等同于"ABF载板厂"。<br><br>
+    <b>📚 资料来源:</b>MGC/Resonac/斗山公司财报、各公司产品页面、行业研报关于BT基材/载板芯板材料市场份额的估算。</div>
   </div>
 </div>
 
@@ -684,9 +684,11 @@ loadHeatmap();
       <tr style="background:#f5f5f5"><th style="border:1px solid #ddd;padding:4px;text-align:left">类型</th><th style="border:1px solid #ddd;padding:4px">中介层材料</th><th style="border:1px solid #ddd;padding:4px">特点</th><th style="border:1px solid #ddd;padding:4px">代表芯片</th></tr>
       <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-S</b></td><td style="border:1px solid #ddd;padding:4px">硅(TSV)</td><td style="border:1px solid #ddd;padding:4px">最经典,性能最好,但大面积良率低</td><td style="border:1px solid #ddd;padding:4px">H100/A100</td></tr>
       <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-R</b></td><td style="border:1px solid #ddd;padding:4px">有机RDL</td><td style="border:1px solid #ddd;padding:4px">用有机材料替代硅,柔韧性好,成本低</td><td style="border:1px solid #ddd;padding:4px">部分网络芯片</td></tr>
-      <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-L</b></td><td style="border:1px solid #ddd;padding:4px">LSI硅桥+RDL</td><td style="border:1px solid #ddd;padding:4px">结合S和R优点,面积可更大,未来主流</td><td style="border:1px solid #ddd;padding:4px">B200/B300/Rubin</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>CoWoS-L</b></td><td style="border:1px solid #ddd;padding:4px">LSI硅桥+RDL</td><td style="border:1px solid #ddd;padding:4px">结合S和R优点,面积可更大,适合超大封装</td><td style="border:1px solid #ddd;padding:4px">B200/B300/Rubin等高端AI平台</td></tr>
     </table>
     </div>
+
+    <div class="tip tip-p" style="margin-top:8px"><b>📌 注意:S/R/L不是简单代际替代。</b>CoWoS-S性能最强、工艺成熟;CoWoS-R更强调成本和大面积RDL;CoWoS-L用局部硅桥解决超大封装互联,更适合AI GPU+HBM继续放大的趋势。未来更可能是按芯片尺寸、成本、功耗和良率并行选择,而不是L完全取代S/R。</div>
 
     <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 关键结论:电子布/树脂如何与 CoWoS 发生关系?</b><br>
     CoWoS 封装本身(环节❶-❹)使用的是<b>半导体工艺材料</b>(硅晶圆、光刻胶、CMP液、焊料、Underfill),与电子布/树脂无直接关系。<br>
@@ -802,25 +804,45 @@ loadHeatmap();
 <div class="step" onclick="this.classList.toggle('open')">
   <div class="step-h">
     <div class="em">🔮</div>
-    <div class="ti"><div class="sn">STEP 5 · 下一代</div><div class="nm">玻璃基板</div><div class="sb">2026-2030年量产</div></div>
+    <div class="ti"><div class="sn">STEP 5 · 下一代</div><div class="nm">玻璃基板</div><div class="sb">2026-2030导入验证</div></div>
     <div class="ar">▸</div>
   </div>
   <div class="step-b">
-    <div class="tip tip-y"><b>🎯 通俗理解:</b>现在IC载板用塑料做底板(像在泥地盖楼,热了变形)。玻璃基板像换成花岗岩地基——极平、极硬、不怕热,能放更多芯片。</div>
-    <div class="tip tip-b"><b>🤖 AI 为何需要:</b>AI芯片越做越大,有机基板接近物理极限。玻璃互连密度可提升10倍。Intel目标2030年单封装1万亿晶体管。目前仍处研发/试产。</div>
-    <div class="rg"><div class="rg-t">🇺🇸 美国 — 最激进</div>
-      <div class="mk"><a href="company/?ticker=INTC" target="_blank">Intel</a> <span>— 投资10亿+美元,计划2026量产</span></div>
-      <div class="mk"><a href="company/?ticker=AMD" target="_blank">AMD</a> <span>— 评估多家样品,2025-2026导入</span></div>
-      <div class="mk"><a href="company/?ticker=GLW" target="_blank">Corning (康宁)</a> <span>— 玻璃材料供应商</span></div>
+    <div class="tip tip-y"><b>🎯 通俗理解:</b>现在高端IC载板多用有机材料做"地基",大尺寸封装受热会翘曲、尺寸稳定性有限。玻璃基板像把地基换成更平、更硬、热膨胀更可控的玻璃芯,可以支撑更大封装面积、更细线路和更多芯片/小芯片互联。</div>
+    <div class="tip tip-b"><b>🤖 AI 为何需要:</b>AI GPU+HBM越做越大,有机ABF载板面临翘曲、层数、线宽线距、功耗和良率压力。Intel官方提出玻璃基板可带来更高互连密度、更好的机械/热稳定性,目标支持2030年单封装1万亿晶体管级别。注意:它是<b>长期替代/补充方向</b>,不是2026立刻全面取代ABF。</div>
+    <div class="tip tip-p"><b>📊 和ABF载板是什么关系?</b>玻璃基板不是把CoWoS里的硅中介层直接换掉,更准确说是替代或增强封装载板里的<b>core substrate / carrier</b>。短中期更可能出现"玻璃芯+有机RDL/ABF增层"的混合方案,长期才可能在超大尺寸AI/HPC封装中扩大占比。</div>
+
+    <div style="font-size:12px;font-weight:700;color:#333;margin:10px 0 6px">🔶 技术路线:从有机ABF到玻璃芯</div>
+    <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
+    <table style="font-size:10px;border-collapse:collapse;width:100%;min-width:340px">
+      <tr style="background:#f5f5f5"><th style="border:1px solid #ddd;padding:4px;text-align:left">路线</th><th style="border:1px solid #ddd;padding:4px">核心变化</th><th style="border:1px solid #ddd;padding:4px">价值</th><th style="border:1px solid #ddd;padding:4px">难点</th></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>有机ABF</b></td><td style="border:1px solid #ddd;padding:4px">ABF膜增层+有机芯板</td><td style="border:1px solid #ddd;padding:4px">成熟、供应链完整</td><td style="border:1px solid #ddd;padding:4px">超大面积翘曲/层数/良率压力上升</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>玻璃芯+有机增层</b></td><td style="border:1px solid #ddd;padding:4px">玻璃core承载,上面继续做RDL/ABF-like增层</td><td style="border:1px solid #ddd;padding:4px">平整度、热稳定、线宽线距和大尺寸能力提升</td><td style="border:1px solid #ddd;padding:4px">玻璃钻孔/TGV、电镀、切割、可靠性和成本</td></tr>
+      <tr><td style="border:1px solid #ddd;padding:4px"><b>玻璃载板/面板级封装</b></td><td style="border:1px solid #ddd;padding:4px">向panel-level、chiplet大封装延伸</td><td style="border:1px solid #ddd;padding:4px">适合超大HPC/AI封装和更高I/O密度</td><td style="border:1px solid #ddd;padding:4px">生态未成熟,设备/材料/设计规则需重建</td></tr>
+    </table>
     </div>
-    <div class="rg"><div class="rg-t">🇰🇷 韩国</div>
-      <div class="mk"><a href="company/?ticker=009150.KS" target="_blank">三星电机</a> <span>— 2026量产目标</span></div>
-      <div class="mk"><b>SK Absolics</b> <span>— 投资6亿美元建厂</span></div>
+
+    <div class="rg" style="margin-top:8px"><div class="rg-t">🇺🇸 美国 — Intel最激进,材料商配套</div>
+      <div class="mk"><a href="company/?ticker=INTC" target="_blank">Intel</a> <span>— 最早系统性公开玻璃基板路线,强调其机械/热稳定性和互连密度优势,目标服务AI、数据中心、图形等大尺寸高性能封装。更适合写成2026-2030逐步导入验证,而非立即大规模替代。</span></div>
+      <div class="mk"><a href="company/?ticker=AMD" target="_blank">AMD</a> <span>— 作为AI/HPC大芯片客户,市场预期会评估玻璃基板样品;但具体导入时间仍需等平台选择和供应链验证。</span></div>
+      <div class="mk"><a href="company/?ticker=GLW" target="_blank">Corning (康宁)</a> <span>— 高端玻璃材料龙头,潜在供应玻璃core/载板材料。优势在玻璃配方、平整度和量产能力。</span></div>
+      <div class="mk"><b>SCHOTT (肖特)</b> <span>— 德国特种玻璃龙头,提供Advanced IC Packaging用超薄玻璃、玻璃载板和TGV相关材料方案,是玻璃基板生态里容易被忽略的重要材料商。</span></div>
     </div>
-    <div class="rg"><div class="rg-t">🇹🇼 台湾 / 🇯🇵 日本</div>
-      <div class="mk"><b>台积电</b> <span>— FOPLP+玻璃芯方案</span></div>
-      <div class="mk"><a href="company/?ticker=7912.T" target="_blank">DNP (日)</a> <span>— 2027年量产目标</span></div>
+
+    <div class="rg"><div class="rg-t">🇰🇷 韩国 — 产业化最积极</div>
+      <div class="mk"><a href="company/?ticker=009150.KS" target="_blank">三星电机</a> <span>— 将玻璃基板视为下一代封装基板重点方向,目标围绕AI/HPC大尺寸封装推进样品和试产;并与住友化学集团推进Glass Core合资合作,补强玻璃芯材料与量产工艺。</span></div>
+      <div class="mk"><b>SK Absolics</b> <span>— SKC旗下玻璃基板公司,在美国佐治亚建设玻璃基板工厂,定位高性能半导体封装用glass core substrate,是韩国路线最清晰的产业化平台之一。</span></div>
+      <div class="mk"><b>LG Innotek</b> <span>— 评估进入玻璃基板/下一代封装基板,若切入成功,可能成为韩系第三个重要玩家。</span></div>
     </div>
+
+    <div class="rg"><div class="rg-t">🇹🇼 台湾 / 🇯🇵 日本 — 封装与材料能力储备</div>
+      <div class="mk"><b>台积电</b> <span>— 重点在先进封装平台整合,市场关注FOPLP、CoWoS-L和玻璃芯方案的长期组合。台积电是否大规模采用玻璃,取决于良率、成本和客户芯片设计。</span></div>
+      <div class="mk"><a href="company/?ticker=7912.T" target="_blank">DNP (日)</a> <span>— 日本精密加工/封装材料厂商,布局玻璃芯与下一代封装材料,目标服务高密度封装。</span></div>
+      <div class="mk"><b>AGC / NEG</b> <span>— 日本玻璃材料厂商,在显示/电子玻璃和特种玻璃上有基础,可能参与玻璃core材料竞争。</span></div>
+    </div>
+
+    <div class="tip" style="background:#F1F8E9;margin-top:8px"><b>📌 小结:</b>玻璃基板的投资逻辑不是"马上替代ABF",而是AI/HPC封装继续放大后,有机载板在翘曲、线宽线距和面积上的边际成本越来越高,玻璃core提供新的物理上限。短期看样品/试产/客户验证,中期看TGV、电镀、切割、可靠性和面板级良率,长期才看是否成为超大AI封装主流。</div>
+    <div class="tip" style="background:#FFF8E1;margin-top:8px"><b>📚 资料来源:</b>Intel glass substrates官方材料、Samsung Electro-Mechanics玻璃基板新闻、SK Absolics公开资料、SCHOTT Advanced IC Packaging资料、产业链关于玻璃core substrate/TGV的公开报道。</div>
   </div>
 </div>
 
@@ -836,10 +858,10 @@ loadHeatmap();
   🇹🇼 台光电子(无卤第一) · 🇨🇳 生益科技(全球第二,M7/M8过英伟达认证)<br>
   🇯🇵 Panasonic(Megtron) · 🇰🇷 斗山(AI server高速CCL进入英伟达供应链)<br><br>
 
-  <b style="color:#16A085">🧬 封装载板用CCL(BT基材,"日韩三家"主导75-90%)</b><br>
+  <b style="color:#16A085">🧬 BT基材 / 载板芯板材料(HBM/FC-CSP/部分载板芯板)</b><br>
   🇯🇵 MGC(BT树脂垄断 + HL832,35-40%份额)<br>
   🇯🇵 Resonac(MCL系列,CPU服务器载板专用,25-30%)<br>
-  🇰🇷 斗山电子(DS系列,Nvidia Blackwell compute tray CCL ~100%独占供应,Samsung/Hynix memory substrate CCL 70-80%份额,2025E OPM 27%行业最高)<br>
+  🇰🇷 斗山电子(DS系列,AI server高速CCL高份额预期 + Samsung/Hynix memory substrate材料重要供应商)<br>
   🇨🇳 生益/华正新材(国产替代起步)<br><br>
 
   <b class="c2">📟 AI 服务器 PCB(CCL下游分支A)</b><br>
@@ -866,7 +888,7 @@ loadHeatmap();
   🇨🇳 长飞光纤/亨通光电(光纤光缆)<br><br>
 
   <b class="c5">🔮 下一代技术</b><br>
-  玻璃基板:🇺🇸 Intel(10亿+研发) · 🇰🇷 三星/SK Absolics · 🇹🇼 台积电<br>
+  玻璃基板:🇺🇸 Intel路线最清晰 · 🇰🇷 三星/SK Absolics产业化积极 · 🇺🇸 Corning/🇩🇪 SCHOTT材料关键 · 🇹🇼 台积电评估先进封装整合<br>
   CPO共封装光学:🇺🇸 英伟达/博通主导 · 🇨🇳 旭创/华为跟进 · 预计2027大规模应用
 </div>
 
