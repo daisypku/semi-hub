@@ -1,0 +1,702 @@
+{
+  "generated_from": "diagram002.html",
+  "company_count": 43,
+  "companies": {
+    "002460.SZ": {
+      "ticker": "002460.SZ",
+      "ticker_slug": "002460_SZ",
+      "name": "赣锋锂业",
+      "description": "全球最大锂化合物生产商之一，拥有完整的锂矿-锂盐-电池回收产业链，氢氧化锂产能全球第一，锂资源布局覆盖澳大利亚、阿根廷、中国等地",
+      "yahoo_url": "https://finance.yahoo.com/quote/002460.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "锂资源",
+          "region": "🇨🇳 大陆 — 锂盐加工全球领先"
+        }
+      ],
+      "has_report": false
+    },
+    "002466.SZ": {
+      "ticker": "002466.SZ",
+      "ticker_slug": "002466_SZ",
+      "name": "天齐锂业",
+      "description": "控股澳大利亚泰利森Greenbushes锂矿（全球品位最高），拥有奎纳纳锂加工厂，锂资源自给率极高，布局固态电池材料",
+      "yahoo_url": "https://finance.yahoo.com/quote/002466.SZ/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "锂资源",
+          "region": "🇨🇳 大陆 — 锂矿资源龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "603799.SH": {
+      "ticker": "603799.SH",
+      "ticker_slug": "603799_SH",
+      "name": "华友钴业",
+      "description": "全球最大的钴冶炼企业，同时布局镍资源和三元前驱体，旗下华友循环布局动力电池回收+梯次利用，从钴镍矿到正极材料一体化",
+      "yahoo_url": "https://finance.yahoo.com/quote/603799.SH/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "钴镍资源",
+          "region": "🇨🇳 大陆 — 全球钴冶炼第一"
+        },
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "三元前驱体",
+          "region": "🇨🇳 大陆"
+        },
+        {
+          "step_num": "10",
+          "step_name": "电池回收",
+          "submaterial": null,
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "ALB.N": {
+      "ticker": "ALB.N",
+      "ticker_slug": "ALB_N",
+      "name": "雅保（Albemarle）",
+      "description": "全球最大锂资源生产商之一，拥有智利Atacama盐湖和澳洲Greenbushes矿场权益，锂盐产能全球前三",
+      "yahoo_url": "https://finance.yahoo.com/quote/ALB/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "锂资源",
+          "region": "🇺🇸 美股 — 全球锂业巨头"
+        }
+      ],
+      "has_report": false
+    },
+    "SQM.N": {
+      "ticker": "SQM.N",
+      "ticker_slug": "SQM_N",
+      "name": "SQM（智利矿业化工）",
+      "description": "全球第二大锂生产商，拥有智利Atacama盐湖资源，锂盐产能持续扩产中，同时生产钾肥和碘",
+      "yahoo_url": "https://finance.yahoo.com/quote/SQM/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "锂资源",
+          "region": "🇨🇱 美股 — 盐湖锂资源巨头"
+        }
+      ],
+      "has_report": false
+    },
+    "300073.SZ": {
+      "ticker": "300073.SZ",
+      "ticker_slug": "300073_SZ",
+      "name": "当升科技",
+      "description": "国内高镍正极（NCM811/NCA）龙头，海外客户占比高（LG、SKI、三星），技术路线聚焦高能量密度，固态电池正极材料储备丰富",
+      "yahoo_url": "https://finance.yahoo.com/quote/300073.SZ/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "正极材料（高镍三元）",
+          "region": "🇨🇳 大陆 — 高镍正极出口标杆"
+        }
+      ],
+      "has_report": false
+    },
+    "300769.SZ": {
+      "ticker": "300769.SZ",
+      "ticker_slug": "300769_SZ",
+      "name": "德方纳米",
+      "description": "磷酸铁锂正极材料龙头（市占率约20%），自研液相法技术，深度绑定宁德时代、比亚迪等电池厂，布局补锂剂和锰铁锂",
+      "yahoo_url": "https://finance.yahoo.com/quote/300769.SZ/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "正极材料（磷酸铁锂）",
+          "region": "🇨🇳 大陆 — LFP正极龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "688005.SH": {
+      "ticker": "688005.SH",
+      "ticker_slug": "688005_SH",
+      "name": "容百科技",
+      "description": "高镍三元正极龙头（NCM8系、9系），全球首推超高镍单晶正极，深度配套宁德时代、中创新航，韩国产能2025年释放",
+      "yahoo_url": "https://finance.yahoo.com/quote/688005.SH/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "正极材料（超高镍）",
+          "region": "🇨🇳 大陆 — 高镍正极龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "002812.SZ": {
+      "ticker": "002812.SZ",
+      "ticker_slug": "002812_SZ",
+      "name": "恩捷股份",
+      "description": "全球湿法隔膜龙头（全球份额超30%），产能布局全球（上海、无锡、匈牙利），技术壁垒高（涂覆专利），深度绑定宁德时代、LG新能源",
+      "yahoo_url": "https://finance.yahoo.com/quote/002812.SZ/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "隔膜",
+          "region": "🇨🇳 大陆 — 湿法隔膜全球第一"
+        }
+      ],
+      "has_report": false
+    },
+    "002709.SZ": {
+      "ticker": "002709.SZ",
+      "ticker_slug": "002709_SZ",
+      "name": "天赐材料",
+      "description": "全球电解液龙头（市占率约35%），一体化布局六氟磷酸锂（LiPF6）、添加剂，成本优势显著，海外客户（LG、特斯拉）占比持续提升",
+      "yahoo_url": "https://finance.yahoo.com/quote/002709.SZ/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "电解液",
+          "region": "🇨🇳 大陆 — 电解液全球第一"
+        }
+      ],
+      "has_report": false
+    },
+    "002407.SZ": {
+      "ticker": "002407.SZ",
+      "ticker_slug": "002407_SZ",
+      "name": "多氟多",
+      "description": "六氟磷酸锂（电解液核心溶质）龙头，钠离子电池电解质和新型锂盐（LiFSI）布局领先，半导体级氢氟酸业务形成第二增长曲线",
+      "yahoo_url": "https://finance.yahoo.com/quote/002407.SZ/",
+      "appearances": [
+        {
+          "step_num": "1",
+          "step_name": "电池材料",
+          "submaterial": "电解液（LiPF6）",
+          "region": "🇨🇳 大陆 — 六氟磷酸锂龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "300750.SZ": {
+      "ticker": "300750.SZ",
+      "ticker_slug": "300750_SZ",
+      "name": "宁德时代",
+      "description": "全球动力电池龙头（2024年全球份额37%），技术路线涵盖磷酸铁锂、三元、钠离子、凝聚态、固态等全体系，客户覆盖特斯拉、宝马、大众、蔚来、理想等全球主流车企",
+      "yahoo_url": "https://finance.yahoo.com/quote/300750.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "电芯+电池包+BMS",
+          "region": "🇨🇳 大陆 — 全球动力电池绝对龙头"
+        }
+      ],
+      "has_report": true
+    },
+    "06821.HK": {
+      "ticker": "06821.HK",
+      "ticker_slug": "06821_HK",
+      "name": "中创新航",
+      "description": "国内第三大动力电池厂商（2024年份额约8%），广汽埃安核心供应商，OS电池（高安全、高体积利用率）技术独特，布局储能赛道",
+      "yahoo_url": "https://finance.yahoo.com/quote/06821.HK/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "电芯+系统",
+          "region": "🇭🇰 港股 — 国内第三大电池厂"
+        }
+      ],
+      "has_report": false
+    },
+    "LGRD.N": {
+      "ticker": "LGRD.N",
+      "ticker_slug": "LGRD_N",
+      "name": "LG新能源",
+      "description": "全球第三大动力电池厂商（韩系第一），技术路线领先（软包+圆柱），深度配套特斯拉、通用、大众，北美产能布局领先",
+      "yahoo_url": "https://finance.yahoo.com/quote/LGRD.N/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": null,
+          "region": "🇰🇷 美股 — 全球第三动力电池"
+        }
+      ],
+      "has_report": false
+    },
+    "6752.T": {
+      "ticker": "6752.T",
+      "ticker_slug": "6752_T",
+      "name": "松下电池",
+      "description": "全球圆柱电池先行者（1865/2170/4680），特斯拉核心电池供应商之一，NCA正极技术领先，布局北美和日本产线",
+      "yahoo_url": "https://finance.yahoo.com/quote/6752.T/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "圆柱电池",
+          "region": "🇯🇵 东京 — 圆柱电池先驱"
+        }
+      ],
+      "has_report": false
+    },
+    "300124.SZ": {
+      "ticker": "300124.SZ",
+      "ticker_slug": "300124_SZ",
+      "name": "汇川技术",
+      "description": "国内电驱系统龙头（市占率约25%），专注于电驱（电机+电控+减速器）三合一集成方案，深度配套小鹏、理想等新势力，工业自动化业务同步增长",
+      "yahoo_url": "https://finance.yahoo.com/quote/300124.SZ/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "电驱系统",
+          "submaterial": "电驱三合一",
+          "region": "🇨🇳 大陆 — 电驱系统龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "002196.SZ": {
+      "ticker": "002196.SZ",
+      "ticker_slug": "002196_SZ",
+      "name": "方正电机",
+      "description": "国内主要新能源驱动电机供应商，配套上汽通用五菱、吉利、零跑等，主攻紧凑型/经济型车型，扁线电机技术量产",
+      "yahoo_url": "https://finance.yahoo.com/quote/002196.SZ/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "电驱系统",
+          "submaterial": "驱动电机",
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "688187.SH": {
+      "ticker": "688187.SH",
+      "ticker_slug": "688187_SH",
+      "name": "时代电气",
+      "description": "中车旗下车规级IGBT/SiC模块龙头，国产替代核心标的，已批量配套特斯拉、比亚迪等，产品覆盖电驱逆变器、OBC、DC-DC等",
+      "yahoo_url": "https://finance.yahoo.com/quote/688187.SH/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "电驱系统",
+          "submaterial": "IGBT/SiC功率模块",
+          "region": "🇨🇳 大陆 — IGBT国产替代龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "600741.SH": {
+      "ticker": "600741.SH",
+      "ticker_slug": "600741_SH",
+      "name": "华域汽车",
+      "description": "上汽系大型零部件集团，覆盖电驱系统、热管理、智能驾驶、照明、内外饰等多环节，体量大（年营收超1500亿）但增速稳健",
+      "yahoo_url": "https://finance.yahoo.com/quote/600741.SH/",
+      "appearances": [
+        {
+          "step_num": "3",
+          "step_name": "电驱系统",
+          "submaterial": "电驱+热管理",
+          "region": "🇨🇳 大陆 — 大型零部件集团"
+        }
+      ],
+      "has_report": false
+    },
+    "002050.SZ": {
+      "ticker": "002050.SZ",
+      "ticker_slug": "002050_SZ",
+      "name": "三花智控",
+      "description": "全球热管理核心零部件龙头（电子膨胀阀、水冷板、热泵系统），深度配套特斯拉、大众、比亚迪，储能热管理和机器人业务打开新空间",
+      "yahoo_url": "https://finance.yahoo.com/quote/002050.SZ/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "热管理 & 电子电气",
+          "submaterial": "热管理核心零部件",
+          "region": "🇨🇳 大陆 — 热管理全球龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "601689.SH": {
+      "ticker": "601689.SH",
+      "ticker_slug": "601689_SH",
+      "name": "拓普集团",
+      "description": "底盘+热管理+轻量化一体化供应商，Tier0.5模式深度绑定特斯拉、华为系，产品覆盖副车架、控制臂、空悬、热泵总成等",
+      "yahoo_url": "https://finance.yahoo.com/quote/601689.SH/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "热管理 & 电子电气",
+          "submaterial": "热管理+底盘",
+          "region": "🇨🇳 大陆"
+        },
+        {
+          "step_num": "7",
+          "step_name": "车身 & 底盘",
+          "submaterial": "轻量化底盘",
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "600885.SH": {
+      "ticker": "600885.SH",
+      "ticker_slug": "600885_SH",
+      "name": "宏发股份",
+      "description": "全球继电器龙头，新能源汽车高压继电器（HV relay）国内份额超30%，产品通过UL、TÜV认证，配套特斯拉、比亚迪、大众等",
+      "yahoo_url": "https://finance.yahoo.com/quote/600885.SH/",
+      "appearances": [
+        {
+          "step_num": "4",
+          "step_name": "热管理 & 电子电气",
+          "submaterial": "高压继电器",
+          "region": "🇨🇳 大陆 — 继电器全球龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "HSAI.N": {
+      "ticker": "HSAI.N",
+      "ticker_slug": "HSAI_N",
+      "name": "禾赛科技（Hesai）",
+      "description": "全球最大车载激光雷达供应商（2024年市占率约40%），AT128超半固态雷达获理想、长安等车企定点，ADAS远距激光雷达FT120已批量交付",
+      "yahoo_url": "https://finance.yahoo.com/quote/HSAI/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "智能驾驶",
+          "submaterial": "激光雷达",
+          "region": "🇨🇳 美股 — 激光雷达全球第一"
+        }
+      ],
+      "has_report": false
+    },
+    "NVDA.N": {
+      "ticker": "NVDA.N",
+      "ticker_slug": "NVDA_N",
+      "name": "英伟达（NVIDIA）",
+      "description": "全球智能驾驶芯片龙头，Orin/Thor芯片广泛搭载于蔚来、小鹏、理想、比亚迪等高端车型，DriveOS平台生态完善",
+      "yahoo_url": "https://finance.yahoo.com/quote/NVDA/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "智能驾驶",
+          "submaterial": "智驾芯片（SoC）",
+          "region": "🇺🇸 美股 — 智驾芯片绝对龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "QCOM.N": {
+      "ticker": "QCOM.N",
+      "ticker_slug": "QCOM_N",
+      "name": "高通（Qualcomm）",
+      "description": "智能驾驶+座舱芯片双线布局，Snapdragon Ride平台和8295座舱芯片市占率领先，全球超3亿辆车搭载骁龙数字底盘",
+      "yahoo_url": "https://finance.yahoo.com/quote/QCOM/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "智能驾驶",
+          "submaterial": "智驾芯片+座舱芯片",
+          "region": "🇺🇸 美股"
+        },
+        {
+          "step_num": "6",
+          "step_name": "智能座舱",
+          "submaterial": "座舱芯片",
+          "region": "🇺🇸 美股"
+        }
+      ],
+      "has_report": false
+    },
+    "002920.SZ": {
+      "ticker": "002920.SZ",
+      "ticker_slug": "002920_SZ",
+      "name": "德赛西威",
+      "description": "国内智能座舱龙头，量产第三代智能座舱域控（高通8295平台），深度配套理想、小鹏、大众，智能驾驶域控制器IPU04批量出货",
+      "yahoo_url": "https://finance.yahoo.com/quote/002920.SZ/",
+      "appearances": [
+        {
+          "step_num": "6",
+          "step_name": "智能座舱 & 车联网",
+          "submaterial": "智能座舱域控",
+          "region": "🇨🇳 大陆 — 座舱龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "300496.SZ": {
+      "ticker": "300496.SZ",
+      "ticker_slug": "300496_SZ",
+      "name": "中科创达",
+      "description": "全球智能座舱OS和中间件领导者，提供Android Automotive、QNX等底层系统集成与优化服务，深度绑定高通、ARM等芯片厂",
+      "yahoo_url": "https://finance.yahoo.com/quote/300496.SZ/",
+      "appearances": [
+        {
+          "step_num": "6",
+          "step_name": "智能座舱 & 车联网",
+          "submaterial": "座舱OS",
+          "region": "🇨🇳 大陆 — 座舱OS龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "002405.SZ": {
+      "ticker": "002405.SZ",
+      "ticker_slug": "002405_SZ",
+      "name": "四维图新",
+      "description": "高精地图和高精度定位龙头，覆盖中国90%高速公路高精地图数据，同时布局智能座舱芯片（杰发科技）和自动驾驶解决方案",
+      "yahoo_url": "https://finance.yahoo.com/quote/002405.SZ/",
+      "appearances": [
+        {
+          "step_num": "6",
+          "step_name": "智能座舱 & 车联网",
+          "submaterial": "高精地图",
+          "region": "🇨🇳 大陆 — 高精地图龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "002101.SZ": {
+      "ticker": "002101.SZ",
+      "ticker_slug": "002101_SZ",
+      "name": "广东鸿图",
+      "description": "国内大型压铸龙头，6000T-9000T超大吨位一体化压铸技术领先，为特斯拉Cybertruck、蔚来等供应后底板/前机舱，超大型一体压铸先行者",
+      "yahoo_url": "https://finance.yahoo.com/quote/002101.SZ/",
+      "appearances": [
+        {
+          "step_num": "7",
+          "step_name": "车身 & 底盘",
+          "submaterial": "一体化压铸",
+          "region": "🇨🇳 大陆 — 压铸龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "600933.SH": {
+      "ticker": "600933.SH",
+      "ticker_slug": "600933_SH",
+      "name": "爱柯迪",
+      "description": "汽车铝合金精密压铸龙头，新能源车身/底盘大型一体化铸件（三电壳体、副车架）客户覆盖大众、特斯拉，全球产能布局",
+      "yahoo_url": "https://finance.yahoo.com/quote/600933.SH/",
+      "appearances": [
+        {
+          "step_num": "7",
+          "step_name": "车身 & 底盘",
+          "submaterial": "铝合金压铸",
+          "region": "🇨🇳 大陆 — 铝压铸龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "TSLA.N": {
+      "ticker": "TSLA.N",
+      "ticker_slug": "TSLA_N",
+      "name": "特斯拉（Tesla）",
+      "description": "全球纯电动车销量第一（2024年约210万辆），技术领先（4680电池、FSD自动驾驶、一体化压铸），正在从EV公司向AI+机器人公司转型",
+      "yahoo_url": "https://finance.yahoo.com/quote/TSLA/",
+      "appearances": [
+        {
+          "step_num": "8",
+          "step_name": "整车制造",
+          "submaterial": "纯电乘用车",
+          "region": "🇺🇸 美股 — 全球纯电标杆"
+        }
+      ],
+      "has_report": false
+    },
+    "1211.HK": {
+      "ticker": "1211.HK",
+      "ticker_slug": "1211_HK",
+      "name": "比亚迪股份（BYD）",
+      "description": "全球新能源乘用车销量第二（2024年约190万辆），覆盖王朝、海洋、腾势、仰望、方程豹全价格带，自研三电+IGBT/SiC全栈垂直整合",
+      "yahoo_url": "https://finance.yahoo.com/quote/1211.HK/",
+      "appearances": [
+        {
+          "step_num": "8",
+          "step_name": "整车制造",
+          "submaterial": "新能源乘用车",
+          "region": "🇭🇰 港股 — 全球新能源车亚军"
+        }
+      ],
+      "has_report": true
+    },
+    "9866.HK": {
+      "ticker": "9866.HK",
+      "ticker_slug": "9866_HK",
+      "name": "蔚来（NIO）",
+      "description": "中国高端纯电品牌代表（均价约45万元），换电模式独特优势（全球最大换电网络），自研Banyan智能座舱和NIO Aquila智能驾驶系统",
+      "yahoo_url": "https://finance.yahoo.com/quote/9866.HK/",
+      "appearances": [
+        {
+          "step_num": "8",
+          "step_name": "整车制造",
+          "submaterial": "高端纯电",
+          "region": "🇭🇰 港股 — 高端换电"
+        }
+      ],
+      "has_report": false
+    },
+    "2015.HK": {
+      "ticker": "2015.HK",
+      "ticker_slug": "2015_HK",
+      "name": "理想汽车（Li Auto）",
+      "description": "中国增程式新能源车销量第一（2024年约50万辆），精准聚焦家庭SUV市场，自研增程系统+智能驾驶全栈，毛利率行业领先",
+      "yahoo_url": "https://finance.yahoo.com/quote/2015.HK/",
+      "appearances": [
+        {
+          "step_num": "8",
+          "step_name": "整车制造",
+          "submaterial": "增程式SUV",
+          "region": "🇭🇰 港股 — 增程车第一"
+        }
+      ],
+      "has_report": false
+    },
+    "300001.SZ": {
+      "ticker": "300001.SZ",
+      "ticker_slug": "300001_SZ",
+      "name": "特锐德",
+      "description": "旗下特来电是中国最大充电运营商（公共充电桩市占率约30%），充电桩覆盖360+城市，运营数据行业领先，布局光储充一体化",
+      "yahoo_url": "https://finance.yahoo.com/quote/300001.SZ/",
+      "appearances": [
+        {
+          "step_num": "9",
+          "step_name": "充电 & 换电",
+          "submaterial": "充电运营",
+          "region": "🇨🇳 大陆 — 充电桩运营第一"
+        }
+      ],
+      "has_report": false
+    },
+    "688663.SH": {
+      "ticker": "688663.SH",
+      "ticker_slug": "688663_SH",
+      "name": "科士达",
+      "description": "国内充电桩模块和整桩龙头，同时布局储能和光伏逆变器（光储充一体化方案），出口欧洲/中东市场快速增长",
+      "yahoo_url": "https://finance.yahoo.com/quote/688663.SH/",
+      "appearances": [
+        {
+          "step_num": "9",
+          "step_name": "充电 & 换电",
+          "submaterial": "充电桩设备",
+          "region": "🇨🇳 大陆 — 充电桩设备龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "300457.SZ": {
+      "ticker": "300457.SZ",
+      "ticker_slug": "300457_SZ",
+      "name": "格林美",
+      "description": "国内最大动力电池回收企业，年回收处理量超10万吨，三元前驱体原材料自给率约30%，构建钴镍锰锂全回收产业链",
+      "yahoo_url": "https://finance.yahoo.com/quote/300457.SZ/",
+      "appearances": [
+        {
+          "step_num": "10",
+          "step_name": "电池回收",
+          "submaterial": null,
+          "region": "🇨🇳 大陆 — 电池回收龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "002594.SZ": {
+      "ticker": "002594.SZ",
+      "ticker_slug": "002594_SZ",
+      "name": "比亚迪（A股）",
+      "description": "全球第二大动力电池生产商（市占率约16%），自研刀片电池（CTP结构），垂直一体化模规模效应显著，动力电池业务独立估值空间大",
+      "yahoo_url": "https://finance.yahoo.com/quote/002594.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "刀片电池",
+          "region": "🇨🇳 大陆 — 全球第二动力电池"
+        }
+      ],
+      "has_report": false
+    },
+    "002074.SZ": {
+      "ticker": "002074.SZ",
+      "ticker_slug": "002074_SZ",
+      "name": "国轩高科",
+      "description": "电池+热管理+系统集成一体化，大众股东背景（大众中国持股约26%），磷酸铁锂和固态电池技术储备丰富，海外布局德国、印度",
+      "yahoo_url": "https://finance.yahoo.com/quote/002074.SZ/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "电芯+系统",
+          "region": "🇨🇳 大陆 — 大众系电池厂"
+        }
+      ],
+      "has_report": false
+    },
+    "09690.HK": {
+      "ticker": "09690.HK",
+      "ticker_slug": "09690_HK",
+      "name": "国鸿氢能",
+      "description": "中国最大的燃料电池电堆供应商之一，布局商用车燃料电池系统（重卡、物流车），京津冀/长三角/大湾区示范城市群核心",
+      "yahoo_url": "https://finance.yahoo.com/quote/09690.HK/",
+      "appearances": [
+        {
+          "step_num": "2",
+          "step_name": "动力电池",
+          "submaterial": "燃料电池",
+          "region": "🇭🇰 港股 — 氢能龙头"
+        }
+      ],
+      "has_report": false
+    },
+    "600516.SH": {
+      "ticker": "600516.SH",
+      "ticker_slug": "600516_SH",
+      "name": "方大炭素",
+      "description": "国内石墨电极龙头，布局天然石墨和特种石墨，锂电池负极材料原料（针状焦）供应商，受益于新能源车负极材料需求增长",
+      "yahoo_url": "https://finance.yahoo.com/quote/600516.SH/",
+      "appearances": [
+        {
+          "step_num": "0",
+          "step_name": "上游原材料",
+          "submaterial": "石墨材料",
+          "region": "🇨🇳 大陆"
+        }
+      ],
+      "has_report": false
+    },
+    "HTHT.N": {
+      "ticker": "HTHT.N",
+      "ticker_slug": "HTHT_N",
+      "name": "Mobileye",
+      "description": "全球ADAS视觉方案领导者，EyeQ系列芯片全球装机量超1.5亿，L2+/L4级方案技术成熟（SuperVision/Chauffeur），英特尔子公司",
+      "yahoo_url": "https://finance.yahoo.com/quote/HTHT.N/",
+      "appearances": [
+        {
+          "step_num": "5",
+          "step_name": "智能驾驶",
+          "submaterial": "ADAS视觉方案",
+          "region": "🇮🇱 美股 — ADAS芯片龙头"
+        }
+      ],
+      "has_report": false
+    }
+  }
+}
