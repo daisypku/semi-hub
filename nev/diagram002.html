@@ -1,0 +1,445 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|<meta charset="UTF-8">
+     5|<meta name="viewport" content="width=device-width,initial-scale=1">
+     6|<title>新能源汽车产业链指南</title>
+     7|<style>
+     8|*{margin:0;padding:0;box-sizing:border-box}
+     9|body{font-family:system-ui,-apple-system,sans-serif;background:#F0EFE9;color:#333;max-width:480px;margin:0 auto;padding-bottom:20px}
+    10|.hd{background:linear-gradient(135deg,#0a3d2e,#1a5e40);padding:18px 16px;color:#fff}
+    11|.hd h1{font-size:17px} .hd p{font-size:12px;color:#aab;margin-top:3px}
+    12|.box{margin:10px 12px;padding:12px 14px;background:#fff;border-radius:10px;border:1px solid #ddd;font-size:12px;line-height:1.8;color:#555}
+    13|.box b{color:#333}
+    14|.step{margin:0 12px 8px;border-radius:10px;border:1px solid #ddd;background:#fff;overflow:hidden}
+    15|.step-h{padding:10px 12px;cursor:pointer;display:flex;align-items:flex-start;gap:8px}
+    16|.step-h .em{font-size:24px;line-height:1}
+    17|.step-h .ti{flex:1}
+    18|.step-h .ti .sn{font-size:10px;color:#999;font-weight:600}
+    19|.step-h .ti .nm{font-size:15px;font-weight:700;color:#1a1a2e}
+    20|.step-h .ti .sb{font-size:11px;color:#888;margin-top:1px}
+    21|.step-h .ar{font-size:18px;color:#ccc;padding-top:6px}
+    22|.step-b{padding:0 12px 12px;font-size:12px;line-height:1.8;color:#444;display:none}
+    23|.step.open .step-b{display:block}
+    24|.step.open .ar{transform:rotate(90deg)}
+    25|.tip{padding:8px 10px;border-radius:7px;margin-bottom:8px;font-size:11px}
+    26|.tip-y{background:#FFF8E1} .tip-b{background:#E3F2FD} .tip-p{background:#F3E5F5} .tip-g{background:#E8F5E9}
+    27|.rg{margin-bottom:6px}
+    28|.rg-t{font-size:11px;font-weight:700;color:#1a1a2e;padding:2px 0;border-bottom:1px solid #eee;margin-bottom:3px}
+    29|.mk{font-size:11px;padding:2px 0 2px 8px;border-left:2px solid #E0E0E0}
+    30|.mk b{color:#333} .mk span{color:#888}
+    31|.mk a{color:#1a73e8;text-decoration:none;font-weight:700}
+    32|.mk a:hover{text-decoration:underline}
+    33|details{margin:6px 0;font-size:11px;border:1px solid #ddd;border-radius:6px;overflow:hidden}
+    34|details summary{padding:6px 10px;background:#f9f8f5;cursor:pointer;font-weight:600;color:#555;font-size:11px}
+    35|details>div{padding:8px 10px;font-size:10px;line-height:1.7;color:#555}
+    36|.sm{margin:4px 12px 0;padding:12px 14px;background:#0a3d2e;border-radius:10px;color:#ccc;font-size:11px;line-height:2}
+    37|.sm b{color:#fff}
+    38|.c1{color:#D4880F} .c2{color:#2980B9} .c3{color:#C0392B} .c4{color:#E67E22} .c5{color:#16A085} .c6{color:#8E44AD}
+    39|</style>
+    40|</head>
+    41|<body>
+    42|
+    43|<div class="hd">
+    44|  <h1>新能源汽车产业链</h1>
+    45|  <p>写给初学读者的完整指南</p>
+    46|</div>
+    47|
+    48|<!-- Big Picture -->
+    49|<div class="box">
+    50|  <b>🏗️ 全景：一台电动车里有什么？</b><br><br>
+    51|  <span class="c3">① 动力电池</span> — 最核心部件（成本占比约40%），决定续航和安全<br>
+    52|  <span class="c4">② 电驱系统（电机+电控）</span> — 车的"发动机"，决定加速和能耗<br>
+    53|  <span style="color:#888">↕ 机电一体化</span>（三合一电驱总成是趋势）<br>
+    54|  <span class="c2">③ 热管理系统</span> — 电池/电机/座舱的热量管理和温控<br>
+    55|  <span class="c5">④ 智能驾驶 & 座舱</span> — 芯片+传感器+算法，车的"大脑"<br>
+    56|  <span class="c6">⑤ 车身 & 底盘</span> — 轻量化+一体化压铸，降低重量和成本<br><br>
+    57|  <b>关键链条：</b>锂/钴/镍矿 → 正极/负极/电解液/隔膜 → 电芯（宁德/比亚迪）→ 电池包 → 装车<br>
+    58|  电池成本从2015年约1000元/Wh降至2024年约350元/Wh，降幅65%，但仍为整车最贵部件。<b>中国在电池、材料环节全球领先（产能占70%+）</b>，但在高端智驾芯片、SiC功率器件上仍依赖海外。
+    59|</div>
+    60|
+    61|</div>
+
+<!-- ============ HEATMAP MODULE ============ -->
+<div id="heatmap-section" style="margin:10px 12px;border-radius:10px;border:1px solid #ddd;background:#fff;overflow:hidden">
+  <div style="padding:12px 14px;border-bottom:1px solid #eee">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <div>
+        <div style="font-size:14px;font-weight:700;color:#1a1a2e">📊 新能源汽车热力图</div>
+        <div id="hm-time" style="font-size:10px;color:#999;margin-top:2px">加载中...</div>
+      </div>
+      <div style="display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end">
+        <button onclick="setMode('chg')" id="btn-chg" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #1a73e8;background:#1a73e8;color:#fff;cursor:pointer">日涨跌</button>
+        <button onclick="setMode('pe')" id="btn-pe" style="font-size:10px;padding:4px 8px;border-radius:12px;border:1.5px solid #ddd;background:#fff;color:#666;cursor:pointer">PE</button>
+      </div>
+    </div>
+  </div>
+  <div id="hm-body" style="padding:8px 10px 12px"></div>
+  <div id="hm-legend" style="padding:0 14px 10px;font-size:9px;color:#999;display:flex;align-items:center;gap:4px"></div>
+  <div id="hm-error" style="display:none;padding:12px 14px;font-size:11px;color:#C0392B"></div>
+</div>
+
+<script>
+const DATA_URL = "https://daisypku.github.io/supply-chain-data/new_energy_heatmap.json";
+const NEV_SECTORS = ["锂资源","钴镍","正极","负极","电解液","隔膜","辅材","动力电池","消费电池","燃料电池"];
+let currentMode = 'chg';
+let currentData = null;
+
+function setMode(mode){
+  currentMode = mode;
+  ['chg','pe'].forEach(function(m){
+    var btn = document.getElementById('btn-' + m);
+    var active = mode === m;
+    btn.style.background = active ? '#1a73e8' : '#fff';
+    btn.style.color = active ? '#fff' : '#666';
+    btn.style.borderColor = active ? '#1a73e8' : '#ddd';
+  });
+  if(currentData) renderHeatmap(currentData);
+}
+
+function getMetricValue(s){
+  if(currentMode === 'chg') return s.change_pct;
+  return s.pe;
+}
+
+function getColorForChange(pct){
+  if(pct === null || pct === undefined) return '#f0f0f0';
+  if(pct >= 5) return '#C62828';
+  if(pct >= 2) return '#E53935';
+  if(pct >= 0.5) return '#EF5350';
+  if(pct > 0) return '#FFCDD2';
+  if(pct > -0.5) return '#C8E6C9';
+  if(pct > -2) return '#66BB6A';
+  if(pct > -5) return '#43A047';
+  return '#2E7D32';
+}
+
+function getColorForPE(pe){
+  if(pe === null || pe === undefined) return '#f0f0f0';
+  if(pe < 10) return '#1565C0';
+  if(pe < 15) return '#1976D2';
+  if(pe < 20) return '#42A5F5';
+  if(pe < 30) return '#90CAF9';
+  if(pe < 50) return '#FFE082';
+  if(pe < 80) return '#FFB74D';
+  return '#F57C00';
+}
+
+function fmtPct(p){
+  if(p === null || p === undefined) return '&#8212;';
+  return (p > 0 ? '+' : '') + p.toFixed(1) + '%';
+}
+
+function fmtNum(n){
+  if(n === null || n === undefined) return '&#8212;';
+  if(Math.abs(n) >= 1000) return (n/1000).toFixed(1)+'k';
+  if(Math.abs(n) >= 100) return Math.round(n);
+  return n.toFixed(1);
+}
+
+function renderHeatmap(data){
+  var body = document.getElementById('hm-body');
+  var legend = document.getElementById('hm-legend');
+  var time = document.getElementById('hm-time');
+  time.textContent = '更新时间: ' + (data.updated || '未知');
+  var filtered = data.stocks.filter(function(s){ return NEV_SECTORS.indexOf(s.sector) >= 0; });
+  var grouped = {};
+  filtered.forEach(function(s){
+    if(!grouped[s.sector]) grouped[s.sector] = [];
+    grouped[s.sector].push(s);
+  });
+  var keys = Object.keys(grouped);
+  // 按NEV_SECTORS排序
+  keys.sort(function(a,b){ return NEV_SECTORS.indexOf(a) - NEV_SECTORS.indexOf(b); });
+  var html = '';
+  keys.forEach(function(sec){
+    var stocks = grouped[sec];
+    html += '<div style="margin-bottom:10px">';
+    html += '<div style="font-size:11px;font-weight:700;color:#333;margin-bottom:4px;padding:0 2px">' + sec + '</div>';
+    html += '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px">';
+    stocks.forEach(function(s){
+      var value = getMetricValue(s);
+      var isReturnMode = currentMode === 'chg';
+      var color = isReturnMode ? getColorForChange(value) : getColorForPE(value);
+      var display = isReturnMode ? '日 ' + fmtPct(value) : 'PE ' + fmtNum(value);
+      var isLight = (isReturnMode && Math.abs(value||0) < 0.5) || (!isReturnMode && value !== null && value !== undefined && value >= 30 && value < 50);
+      var textColor = isLight ? '#333' : '#fff';
+      html += '<a href="nev/company/?ticker=' + s.ticker + '" target="_blank" style="background:' + color + ';color:' + textColor + ';padding:6px 4px;border-radius:5px;text-decoration:none;display:block;text-align:center">';
+      html += '<div style="font-size:10px;font-weight:700;line-height:1.2">' + s.name + '</div>';
+      html += '<div style="font-size:9px;line-height:1.2;margin-top:2px;opacity:0.95">' + display + '</div>';
+      html += '</a>';
+    });
+    html += '</div></div>';
+  });
+  body.innerHTML = html;
+  if(currentMode === 'chg'){
+    legend.innerHTML = '<span>跌</span><div style="background:#2E7D32;width:18px;height:10px;border-radius:2px"></div><div style="background:#43A047;width:18px;height:10px"></div><div style="background:#66BB6A;width:18px;height:10px"></div><div style="background:#C8E6C9;width:18px;height:10px"></div><div style="background:#FFCDD2;width:18px;height:10px"></div><div style="background:#EF5350;width:18px;height:10px"></div><div style="background:#E53935;width:18px;height:10px"></div><div style="background:#C62828;width:18px;height:10px;border-radius:2px"></div><span>涨</span>';
+  } else {
+    legend.innerHTML = '<span>低估</span><div style="background:#1565C0;width:18px;height:10px;border-radius:2px"></div><div style="background:#1976D2;width:18px;height:10px"></div><div style="background:#42A5F5;width:18px;height:10px"></div><div style="background:#90CAF9;width:18px;height:10px"></div><div style="background:#FFE082;width:18px;height:10px"></div><div style="background:#FFB74D;width:18px;height:10px"></div><div style="background:#F57C00;width:18px;height:10px;border-radius:2px"></div><span>高估</span>';
+  }
+}
+
+async function loadHeatmap(){
+  try{
+    var res = await fetch(DATA_URL, {cache: 'no-cache'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    var data = await res.json();
+    currentData = data;
+    renderHeatmap(data);
+  } catch(e) {
+    var errDiv = document.getElementById('hm-error');
+    errDiv.style.display = 'block';
+    errDiv.textContent = '⚠️ 热力图数据加载失败: ' + e.message;
+  }
+}
+loadHeatmap();
+</script>
+<!-- ============ END HEATMAP ============ -->
+
+<div style="padding:0 16px;font-size:13px;font-weight:700;color:#333;margin:8px 0">📖 逐层详解(点击展开)</div>
+    62|
+    63|<!-- STEP 0: Raw Materials -->
+    64|<div class="step" onclick="this.classList.toggle('open')">
+    65|  <div class="step-h">
+    66|    <div class="em">⛏️</div>
+    67|    <div class="ti"><div class="sn">STEP 0 · 源头</div><div class="nm">上游原材料</div><div class="sb">锂 · 钴 · 镍 · 稀土 · 石墨</div></div>
+    68|    <div class="ar">▸</div>
+    69|  </div>
+    70|  <div class="step-b">
+    71|    <div class="tip tip-y"><b>🎯 通俗理解：</b>电池的"粮食"——没有锂、钴、镍就没有动力电池。锂是电池的核心元素（每kWh约需0.16kg碳酸锂），钴提升电池稳定性但价格昂贵且刚果金供应有风险，镍提高能量密度。</div>
+    72|    <div class="tip tip-b"><b>🤖 中国角色的两面性：</b>中国拥有全球约60%的锂盐加工产能，但优质锂矿（南美盐湖/澳洲锂辉石）依赖进口。钴的刚果金储量占全球70%，中国通过华友钴业等企业深度绑定了刚果金钴矿资源。</div>
+    73|    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 锂盐加工全球领先</div>
+    74|      <div class="mk"><a href="nev/company/?ticker=002460.SZ" target="_blank">赣锋锂业</a> <span>— 全球最大锂化合物生产商，氢氧化锂产能全球第一，阿根廷盐湖+澳洲锂矿资源布局</span></div>
+    75|      <div class="mk"><a href="nev/company/?ticker=002466.SZ" target="_blank">天齐锂业</a> <span>— 控股Greenbushes（全球品位最高锂矿），奎纳纳锂加工厂，锂资源自给率极高</span></div>
+    76|      <div class="mk"><a href="nev/company/?ticker=603799.SH" target="_blank">华友钴业</a> <span>— 全球最大钴冶炼企业，同时布局镍矿+三元前驱体+电池回收全链路</span></div>
+    77|    </div>
+    78|    <div class="rg"><div class="rg-t">🇺🇸🇨🇱 海外 — 全球锂矿资源巨头</div>
+    79|      <div class="mk"><a href="nev/company/?ticker=ALB.N" target="_blank">雅保（Albemarle）</a> <span>— 全球最大锂资源商之一，掌控智利Atacama盐湖+澳洲Greenbushes权益</span></div>
+    80|      <div class="mk"><a href="nev/company/?ticker=SQM.N" target="_blank">SQM（智利矿业化工）</a> <span>— 全球第二大锂生产商，Atacama盐湖锂资源储量巨大</span></div>
+    81|    </div>
+    82|  </div>
+    83|</div>
+    84|
+    85|<!-- STEP 1: Battery Materials -->
+    86|<div class="step" onclick="this.classList.toggle('open')">
+    87|  <div class="step-h">
+    88|    <div class="em">🧪</div>
+    89|    <div class="ti"><div class="sn">STEP 1 · 中上游</div><div class="nm">电池材料</div><div class="sb">正极 · 负极 · 电解液 · 隔膜</div></div>
+    90|    <div class="ar">▸</div>
+    91|  </div>
+    92|  <div class="step-b">
+    93|    <div class="tip tip-y"><b>🎯 通俗理解：</b>动力电池由四大材料组成——正极（决定能量密度和成本）、负极（影响充电速度）、电解液（锂离子传输介质）、隔膜（安全屏障）。<b>四个环节中国均全球领先</b>，合计供应全球约75%的电池材料。</div>
+    94|    <div class="tip tip-b"><b>🤖 技术路线之争：</b>磷酸铁锂（LFP）vs 三元（NCM/NCA）。LFP更安全、更便宜（每Wh约低30%），在中国EV渗透率达70%+；三元能量密度更高（280Wh/kg+），用于长续航高端车型。美国/欧洲因宁德时代LFP技术授权渗透率持续提升。</div>
+    95|    <div class="rg"><div class="rg-t">🔶 正极材料 — 决定电池容量的核心</div>
+    96|      <div class="mk"><a href="nev/company/?ticker=300769.SZ" target="_blank">德方纳米</a> <span>— 磷酸铁锂正极龙头（市占率~20%），自研液相法，深度绑定宁德时代/比亚迪</span></div>
+    97|      <div class="mk"><a href="nev/company/?ticker=300073.SZ" target="_blank">当升科技</a> <span>— 高镍正极龙头（NCM811/NCA），海外客户占比高（LG/SKI/三星）</span></div>
+    98|      <div class="mk"><a href="nev/company/?ticker=688005.SH" target="_blank">容百科技</a> <span>— 超高镍单晶正极，全球首推NCM9系，配套宁德时代/中创新航</span></div>
+    99|    </div>
+   100|    <div class="rg"><div class="rg-t">🔶 电解液 & 隔膜 — "血液"与"屏障"</div>
+   101|      <div class="mk"><a href="nev/company/?ticker=002709.SZ" target="_blank">天赐材料</a> <span>— 全球电解液龙头（市占率约35%），一体化六氟磷酸锂（LiPF6）布局</span></div>
+   102|      <div class="mk"><a href="nev/company/?ticker=002407.SZ" target="_blank">多氟多</a> <span>— 六氟磷酸锂龙头，钠离子电池电解质+新型锂盐（LiFSI）布局领先</span></div>
+   103|      <div class="mk"><a href="nev/company/?ticker=002812.SZ" target="_blank">恩捷股份</a> <span>— 全球湿法隔膜第一（份额超30%），上海+无锡+匈牙利全球产能</span></div>
+   104|    </div>
+   105|  </div>
+   106|</div>
+   107|
+   108|<!-- STEP 2: Power Battery -->
+   109|<div class="step" onclick="this.classList.toggle('open')">
+   110|  <div class="step-h">
+   111|    <div class="em">🔋</div>
+   112|    <div class="ti"><div class="sn">STEP 2 · 核心</div><div class="nm">动力电池</div><div class="sb">电芯 · 电池包 · BMS</div></div>
+   113|    <div class="ar">▸</div>
+   114|  </div>
+   115|  <div class="step-b">
+   116|    <div class="tip tip-y"><b>🎯 通俗理解：</b>新能源汽车最关键的灵魂部件，成本占整车约40%。电芯经过串并联组成模组，再集成电池包，BMS（电池管理系统）负责监控和保护每一颗电芯。CTP（无模组）/CTC（电池底盘一体化）是降本增效的大趋势。</div>
+   117|    <div class="tip tip-b"><b>🤖 竞争格局：中韩日三足鼎立，中国绝对领先。</b>宁德时代全球份额37%连续8年第一，比亚迪刀片电池市占率持续提升至16%。韩系（LG/三星/SKI）在欧美市场仍有优势，日系（松下）专注圆柱路线。固态电池预计2027-2028年进入量产，中国电池厂（宁德/比亚迪/国轩）与日本（丰田/松下）处于同一起跑线。</div>
+   118|    <div class="rg"><div class="rg-t">🇨🇳 大陆 — 全球动力电池中心</div>
+   119|      <div class="mk"><a href="nev/company/?ticker=300750.SZ" target="_blank">宁德时代</a> <span>— 全球绝对龙头（37%），麒麟/神行/钠离子/凝聚态/固态全路线布局</span></div>
+   120|      <div class="mk"><a href="nev/company/?ticker=002594.SZ" target="_blank">比亚迪（刀片电池）</a> <span>— 全球第二（16%），刀片CTP结构，垂直整合自产自用+外供</span></div>
+   121|      <div class="mk"><a href="nev/company/?ticker=06821.HK" target="_blank">中创新航</a> <span>— 国内第三（~8%），广汽埃安核心供应商，OS电池技术独特</span></div>
+   122|      <div class="mk"><a href="nev/company/?ticker=002074.SZ" target="_blank">国轩高科</a> <span>— 大众系电池厂（大众中国持股26%），固态电池技术储备丰富</span></div>
+   123|    </div>
+   124|    <div class="rg"><div class="rg-t">🌍 海外 — 韩日主导</div>
+   125|      <div class="mk"><a href="nev/company/?ticker=LGRD.N" target="_blank">LG新能源</a> <span>— 全球第三、韩系第一，软包+圆柱技术领先，配套特斯拉/通用/大众</span></div>
+   126|      <div class="mk"><a href="nev/company/?ticker=6752.T" target="_blank">松下电池</a> <span>— 圆柱电池先驱（1865→2170→4680），特斯拉核心供应商</span></div>
+   127|    </div>
+   128|  </div>
+   129|</div>
+   130|
+   131|<!-- STEP 3: Electric Drive -->
+   132|<div class="step" onclick="this.classList.toggle('open')">
+   133|  <div class="step-h">
+   134|    <div class="em">⚡</div>
+   135|    <div class="ti"><div class="sn">STEP 3 · 动力总成</div><div class="nm">电驱系统</div><div class="sb">电机 · 电控 · 减速器</div></div>
+   136|    <div class="ar">▸</div>
+   137|  </div>
+   138|  <div class="step-b">
+   139|    <div class="tip tip-y"><b>🎯 通俗理解：</b>电驱系统 = 电机（产生动力）+ 电控（控制电流/电压）+ 减速器（调速增扭）。三合一集成是主流趋势（体积缩小20%，成本降低15%）。扁线油冷电机+SiC电控是下一代技术方向。</div>
+   140|    <div class="tip tip-b"><b>🤖 国产化现状：</b>中国电驱系统国产化率约70%。汇川技术（小鹏/理想供应商）和比亚迪（自研）是本土龙头。IGBT模块已较成熟（时代电气/比亚迪半导），但高端SiC MOSFET芯片（1200V+）仍由英飞凌、ST、Wolfspeed主导，国产替代窗口期在2025-2027年。</div>
+   141|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   142|      <div class="mk"><a href="nev/company/?ticker=300124.SZ" target="_blank">汇川技术</a> <span>— 国内电驱系统龙头（市占率~25%），三合一电驱总成，深度配套小鹏/理想</span></div>
+   143|      <div class="mk"><a href="nev/company/?ticker=002196.SZ" target="_blank">方正电机</a> <span>— 驱动电机主要供应商，配套五菱/吉利/零跑，扁线电机量产</span></div>
+   144|      <div class="mk"><a href="nev/company/?ticker=688187.SH" target="_blank">时代电气</a> <span>— 中车旗下，车规级IGBT/SiC模块国产替代龙头，配套特斯拉/比亚迪</span></div>
+   145|      <div class="mk"><a href="nev/company/?ticker=600741.SH" target="_blank">华域汽车</a> <span>— 上汽系大型零部件集团，覆盖电驱+热管理+智驾多环节</span></div>
+   146|    </div>
+   147|  </div>
+   148|</div>
+   149|
+   150|<!-- STEP 4: Thermal & E/E -->
+   151|<div class="step" onclick="this.classList.toggle('open')">
+   152|  <div class="step-h">
+   153|    <div class="em">🌡️</div>
+   154|    <div class="ti"><div class="sn">STEP 4 · 保障系统</div><div class="nm">热管理 & 电子电气</div><div class="sb">电池/电机/座舱热控 · 高压连接 · 继电器</div></div>
+   155|    <div class="ar">▸</div>
+   156|  </div>
+   157|  <div class="step-b">
+   158|    <div class="tip tip-y"><b>🎯 通俗理解：</b>热管理决定电池安全和寿命（液冷板/直冷板/热泵），电子电气系统是车的"血管和神经"（高压连接器/继电器/熔断器/OBC/DC-DC）。</div>
+   159|    <div class="tip tip-b"><b>🤖 三大趋势：</b>①热泵系统替代PTC加热（冬季续航提升10-20%）②SiC OBC/DC-DC提升充电效率 ③高压平台（800V→1200V）要求继电器/连接器升级。</div>
+   160|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   161|      <div class="mk"><a href="nev/company/?ticker=002050.SZ" target="_blank">三花智控</a> <span>— 全球热管理零部件龙头，电子膨胀阀/水冷板/热泵系统，特斯拉/大众核心供应商</span></div>
+   162|      <div class="mk"><a href="nev/company/?ticker=601689.SH" target="_blank">拓普集团</a> <span>— Tier0.5一体化供应商（底盘+热管理+轻量化），深度绑定特斯拉/华为系</span></div>
+   163|      <div class="mk"><a href="nev/company/?ticker=600885.SH" target="_blank">宏发股份</a> <span>— 全球继电器龙头，高压继电器国内份额超30%，通过UL/TÜV认证</span></div>
+   164|    </div>
+   165|  </div>
+   166|</div>
+   167|
+   168|<!-- STEP 5: Autonomous Driving -->
+   169|<div class="step" onclick="this.classList.toggle('open')">
+   170|  <div class="step-h">
+   171|    <div class="em">🧠</div>
+   172|    <div class="ti"><div class="sn">STEP 5 · 智能化</div><div class="nm">智能驾驶</div><div class="sb">芯片 · 传感器 · 算法 · 高精地图</div></div>
+   173|    <div class="ar">▸</div>
+   174|  </div>
+   175|  <div class="step-b">
+   176|    <div class="tip tip-y"><b>🎯 通俗理解：</b>让车自己"看"和"想"的系统——摄像头/雷达/激光雷达是眼睛，AI芯片是大脑，软件算法是经验。L2（辅助驾驶）已普及，L3（有条件的自动驾驶）2024年起在中国陆续获批上路，L4/L5仍需时间。</div>
+   177|    <div class="tip tip-b"><b>🤖 中国vs美国格局：</b>芯片端英伟达/高通/Mobileye三强主导，中国地平线/黑芝麻在追赶。传感器端中国已领先——禾赛科技激光雷达全球份额第一。华为ADS系统被认为国内最强全栈方案。高精地图方面四维图新/百度份额领跑。</div>
+   178|    <div class="rg"><div class="rg-t">🔶 芯片 & 方案</div>
+   179|      <div class="mk"><a href="nev/company/?ticker=NVDA.N" target="_blank">英伟达（NVIDIA）</a> <span>— 全球智驾芯片龙头，Orin/Thor芯片搭载于蔚来/小鹏/理想/比亚迪高端车型</span></div>
+   180|      <div class="mk"><a href="nev/company/?ticker=QCOM.N" target="_blank">高通（Qualcomm）</a> <span>— Snapdragon Ride+8295座舱芯片，智驾+座舱双线布局</span></div>
+   181|      <div class="mk"><a href="nev/company/?ticker=HTHT.N" target="_blank">Mobileye</a> <span>— 全球ADAS视觉方案领导者，EyeQ芯片装机量超1.5亿</span></div>
+   182|    </div>
+   183|    <div class="rg"><div class="rg-t">🔶 传感器</div>
+   184|      <div class="mk"><a href="nev/company/?ticker=HSAI.N" target="_blank">禾赛科技（Hesai）</a> <span>— 全球激光雷达出货量第一（份额40%），AT128获理想/长安等定点</span></div>
+   185|    </div>
+   186|  </div>
+   187|</div>
+   188|
+   189|<!-- STEP 6: Smart Cockpit -->
+   190|<div class="step" onclick="this.classList.toggle('open')">
+   191|  <div class="step-h">
+   192|    <div class="em">📱</div>
+   193|    <div class="ti"><div class="sn">STEP 6 · 人机交互</div><div class="nm">智能座舱 & 车联网</div><div class="sb">座舱域控 · OS · HMI · T-Box</div></div>
+   194|    <div class="ar">▸</div>
+   195|  </div>
+   196|  <div class="step-b">
+   197|    <div class="tip tip-y"><b>🎯 通俗理解：</b>座舱就是驾驶舱的"智能大脑"——控制仪表盘、中控屏、语音助手、HUD抬头显示、后排娱乐等。高通8295芯片+Android Automotive是当前主流方案。车联网（T-Box/V2X）让车与云/路/人/其他车互联。</div>
+   198|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   199|      <div class="mk"><a href="nev/company/?ticker=002920.SZ" target="_blank">德赛西威</a> <span>— 国内智能座舱龙头，第三代座舱域控（高通8295），深度配套理想/小鹏/大众</span></div>
+   200|      <div class="mk"><a href="nev/company/?ticker=300496.SZ" target="_blank">中科创达</a> <span>— 座舱OS/中间件领导者，Android Automotive+QNX集成优化，绑定高通/ARM</span></div>
+   201|      <div class="mk"><a href="nev/company/?ticker=002405.SZ" target="_blank">四维图新</a> <span>— 高精地图龙头（90%高速覆盖），同时布局座舱芯片（杰发科技）</span></div>
+   202|    </div>
+   203|  </div>
+   204|</div>
+   205|
+   206|<!-- STEP 7: Body & Chassis -->
+   207|<div class="step" onclick="this.classList.toggle('open')">
+   208|  <div class="step-h">
+   209|    <div class="em">🔩</div>
+   210|    <div class="ti"><div class="sn">STEP 7 · 结构工程</div><div class="nm">车身 & 底盘</div><div class="sb">轻量化 · 一体化压铸 · 悬挂</div></div>
+   211|    <div class="ar">▸</div>
+   212|  </div>
+   213|  <div class="step-b">
+   214|    <div class="tip tip-y"><b>🎯 通俗理解：</b>纯电车比燃油车重20-30%（因电池重约500kg），所以轻量化极其重要。一体化压铸（Giga Casting）把原本几十个零件一次铸成一个，降低40%成本+30%重量。特斯拉率先使用，蔚来/小鹏/理想快速跟进。</div>
+   215|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   216|      <div class="mk"><a href="nev/company/?ticker=002101.SZ" target="_blank">广东鸿图</a> <span>— 国内大型压铸龙头，6000-9000T超大型一体压铸，特斯拉/蔚来后底板供应商</span></div>
+   217|      <div class="mk"><a href="nev/company/?ticker=600933.SH" target="_blank">爱柯迪</a> <span>— 铝合金精密压铸龙头，三电壳体/副车架轻量化，客户覆盖大众/特斯拉</span></div>
+   218|      <div class="mk"><a href="nev/company/?ticker=601689.SH" target="_blank">拓普集团</a> <span>— 轻量化底盘（副车架/控制臂）+空悬系统，Tier0.5模式</span></div>
+   219|    </div>
+   220|  </div>
+   221|</div>
+   222|
+   223|<!-- STEP 8: Vehicle Manufacturing -->
+   224|<div class="step" onclick="this.classList.toggle('open')">
+   225|  <div class="step-h">
+   226|    <div class="em">🚗</div>
+   227|    <div class="ti"><div class="sn">STEP 8 · 终端</div><div class="nm">整车制造</div><div class="sb">乘用车 · 商用车</div></div>
+   228|    <div class="ar">▸</div>
+   229|  </div>
+   230|  <div class="step-b">
+   231|    <div class="tip tip-y"><b>🎯 通俗理解：</b>把电池、电机、电控、座舱、底盘等所有部件组装成一台完整的车——这是品牌+制造综合实力的体现。</div>
+   232|    <div class="tip tip-b"><b>🤖 全球格局：</b>中国电动车产量占全球60%+，比亚迪全球销量第二（纯电+插混约190万辆），特斯拉第一（约210万辆纯电）。新势力（蔚来/理想/小鹏/零跑）在20-50万元市场深耕。传统品牌（吉利/长城/长安/广汽）加速电动化转型。</div>
+   233|    <div class="rg"><div class="rg-t">🏭 全球主要车企</div>
+   234|      <div class="mk"><a href="nev/company/?ticker=1211.HK" target="_blank">比亚迪股份（BYD）</a> <span>— 全球EV销量第二（190万辆），王朝/海洋/腾势/仰望/方程豹全价格带+全栈自研</span></div>
+   235|      <div class="mk"><a href="nev/company/?ticker=TSLA.N" target="_blank">特斯拉（Tesla）</a> <span>— 全球纯电第一（210万辆），4680/FSD/一体化压铸三箭齐发，向AI公司转型</span></div>
+   236|      <div class="mk"><a href="nev/company/?ticker=9866.HK" target="_blank">蔚来（NIO）</a> <span>— 中国高端纯电代表（均价45万），换电网络唯一规模化的中国品牌</span></div>
+   237|      <div class="mk"><a href="nev/company/?ticker=2015.HK" target="_blank">理想汽车（Li Auto）</a> <span>— 增程式销量第一（50万辆），精准家庭SUV定位，毛利率行业领先</span></div>
+   238|    </div>
+   239|  </div>
+   240|</div>
+   241|
+   242|<!-- STEP 9: Charging -->
+   243|<div class="step" onclick="this.classList.toggle('open')">
+   244|  <div class="step-h">
+   245|    <div class="em">🔌</div>
+   246|    <div class="ti"><div class="sn">STEP 9 · 基础设施</div><div class="nm">充电 & 换电</div><div class="sb">充电桩 · 换电站 · 光储充</div></div>
+   247|    <div class="ar">▸</div>
+   248|  </div>
+   249|  <div class="step-b">
+   250|    <div class="tip tip-y"><b>🎯 通俗理解：</b>充电焦虑是制约EV普及的头号障碍。充电桩分为慢充（7kW，过夜充）和快充（120-480kW，20-80%约30分钟）。超充（480kW+）和换电（3分钟满电）是两大解决方案。中国公共充电桩保有量全球最大（超200万台）。</div>
+   251|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   252|      <div class="mk"><a href="nev/company/?ticker=300001.SZ" target="_blank">特锐德（特来电）</a> <span>— 中国最大充电运营商，公共充电桩市占率约30%，覆盖360+城市</span></div>
+   253|      <div class="mk"><a href="nev/company/?ticker=688663.SH" target="_blank">科士达</a> <span>— 充电桩模块+整桩龙头，布局光储充一体化方案</span></div>
+   254|    </div>
+   255|  </div>
+   256|</div>
+   257|
+   258|<!-- STEP 10: Battery Recycling -->
+   259|<div class="step" onclick="this.classList.toggle('open')">
+   260|  <div class="step-h">
+   261|    <div class="em">♻️</div>
+   262|    <div class="ti"><div class="sn">STEP 10 · 循环经济</div><div class="nm">电池回收 & 梯次利用</div><div class="sb">湿法/火法回收 · 储能梯次</div></div>
+   263|    <div class="ar">▸</div>
+   264|  </div>
+   265|  <div class="step-b">
+   266|    <div class="tip tip-y"><b>🎯 通俗理解：</b>动力电池退役（5-8年）后仍然有70-80%的容量——可以拆解回收锂/钴/镍等贵金属（湿法回收率可达95%+），或降级用作储能设备（梯次利用）。2025-2026年是中国第一批动力电池退役高峰期，市场空间超千亿元。</div>
+   267|    <div class="tip tip-b"><b>🤖 政策与格局：</b>中国工信部对电池回收企业实施白名单管理（已发布5批）。目前规范企业回收率仍较低（约25%），大量退役电池流向小作坊，存在环保和安全隐患。随着法规趋严，龙头企业份额将持续提升。</div>
+   268|    <div class="rg"><div class="rg-t">🏭 主要厂商</div>
+   269|      <div class="mk"><a href="nev/company/?ticker=300457.SZ" target="_blank">格林美</a> <span>— 国内最大动力电池回收企业，年处理量超10万吨，钴镍锰锂全回收链</span></div>
+   270|    </div>
+   271|  </div>
+   272|</div>
+   273|
+   274|<!-- Summary -->
+   275|<div class="sm">
+   276|  <b>🎯 总结：从矿山到车轮，谁做什么？</b><br><br>
+   277|  <b style="color:#D4880F">⛏️ STEP 0 原材料</b><br>
+   278|  锂：🇨🇳 赣锋/天齐 · 🇺🇸 雅保 · 🇨🇱 SQM &nbsp;|&nbsp; 钴/镍：🇨🇳 华友钴业<br><br>
+   279|  <b style="color:#2980B9">🧪 STEP 1 电池材料</b><br>
+   280|  正极：🇨🇳 德方纳米(LFP)/当升(高镍)/容百(超高镍)<br>
+   281|  电解液：🇨🇳 天赐(全球第一) · 多氟多(LiPF6)<br>
+   282|  隔膜：🇨🇳 恩捷(湿法全球第一)<br><br>
+   283|  <b style="color:#C0392B">🔋 STEP 2 动力电池</b><br>
+   284|  🇨🇳 宁德时代(37%全球第一) · 比亚迪(16%) · 中创新航 · 国轩<br>
+   285|  🇰🇷 LG新能源(全球第三) · 🇯🇵 松下(圆柱先驱)<br><br>
+   286|  <b style="color:#E67E22">⚡ STEP 3 电驱系统</b><br>
+   287|  🇨🇳 汇川技术(25%电驱份额) · 时代电气(IGBT/SiC国产替代)<br><br>
+   288|  <b style="color:#16A085">🌡️ STEP 4 热管理 & 电气</b><br>
+   289|  🇨🇳 三花智控(全球热管理龙头) · 拓普集团 · 宏发(继电器全球第一)<br><br>
+   290|  <b style="color:#8E44AD">🧠 STEP 5 智能驾驶</b><br>
+   291|  🇺🇸 英伟达(Orin/Thor) · 高通(Snapdragon Ride) · Mobileye(EyeQ)<br>
+   292|  🇨🇳 禾赛科技(激光雷达全球第一)<br><br>
+   293|  <b>📱 STEP 6 智能座舱</b><br>
+   294|  🇨🇳 德赛西威(座舱龙头) · 中科创达(OS) · 四维图新(高精地图)<br><br>
+   295|  <b>🔩 STEP 7 车身 & 底盘</b><br>
+   296|  🇨🇳 广东鸿图(一体化压铸) · 爱柯迪(轻量化) · 拓普(底盘)<br><br>
+   297|  <b>🚗 STEP 8 整车</b><br>
+   298|  🇺🇸 特斯拉(纯电第一) · 🇨🇳 比亚迪(全栈自研) · 蔚来(换电) · 理想(增程)<br><br>
+   299|  <b>🔌 STEP 9 充电 & 换电</b><br>
+   300|  🇨🇳 特来电(充电运营第一) · 科士达(设备)<br><br>
+   301|  <b>♻️ STEP 10 电池回收</b><br>
+   302|  🇨🇳 格林美(回收龙头) · 华友循环
+   303|</div>
+   304|
+   305|</body>
+   306|</html>
+   307|
