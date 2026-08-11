@@ -84,7 +84,7 @@ _Fully static site — HTML + JSON + Markdown, hosted on GitHub Pages._
 
 ## 更新记录 · Changelog
 
-- **2026-08** · SuperNode Hub v0.4：价值环节与公司身份证联动 · _Value Map linked to Company Passports_
+- **2026-08** · SuperNode Hub v0.4：产业链导航、系统结构对比、价值环节与公司身份证顺向联动
 - **2026-08** · SuperNode Hub v0.1–v0.3：拓扑实验室、公司身份证与价值地图上线
 - **2026-04** · 公司详情页系统上线，覆盖 82 家公司 · _Company-level pages launched, 82 firms indexed_
 - **2026-04** · 产业链图谱 v1 · _Supply chain map v1_
