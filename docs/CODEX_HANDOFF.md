@@ -81,6 +81,12 @@ Added:
 - Architecture filters: NVIDIA / Open / China / Cross-architecture.
 - The repository README now links directly to the public SuperNode page.
 
+Usability revision kept within v0.4:
+- Section 02 was rebuilt as an interactive industry-chain navigator that explains what each layer does, where it sits in the system and what to study next.
+- Section 03 was rebuilt as a reader-oriented system comparison. It explicitly separates the Scale-up boundary, compute side, Scale-up fabric, connection medium, system support and external Scale-out network.
+- The six topology anchors now include plain-language summaries and a comparison table instead of relying on abstract rack-box counts.
+- Value Map now appears as Section 04 before Company Passport as Section 05, creating a forward reading path: choose a value component, understand the mechanism, then view matching companies.
+
 Current public page title contains `SuperNode Hub v0.4`.
 
 ## 5. Named topology anchors
@@ -143,8 +149,8 @@ Never label a company an NVIDIA/Huawei supplier without public evidence or expli
 
 Seed public names currently include global and China-listed examples across compute, switching/networking, optics, PCB and cooling.
 
-Next logical improvement:
-Connect Value Map components directly to filtered Company Passports so clicking “Optics” or “Liquid Cooling” shows relevant companies and the specific driver being tracked.
+Current interaction:
+Value Map components filter Company Passports directly. The page order intentionally places Value Map before Company Passport so component clicks move forward rather than backward.
 
 ## 8. Private research model
 
@@ -207,9 +213,7 @@ Specific caution:
 
 ## 10. Next roadmap
 
-Recommended next public version: v0.5.
-
-Primary candidates:
+After the v0.4 usability revision is stable, primary candidates include:
 - More explicit topology diagrams for NVL72 / A3 384 / NVL576 / Atlas950.
 - Source registry / citations view.
 - Version changelog.
