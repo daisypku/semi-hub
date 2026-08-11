@@ -1,6 +1,6 @@
 {
   "updated": "2026-08-11",
-  "method": "Public company passports use only public product/disclosure evidence. Route/exposure labels are coarse research classifications (S3) and do not assert undisclosed customer relationships.",
+  "method": "Public company passports use only public product/disclosure evidence. Route/exposure labels and Value Map links are coarse research classifications (S3) and do not assert undisclosed customer relationships.",
   "companies": [
     {
       "ticker": "NVDA",
@@ -12,6 +12,13 @@
       "chain_label": "NVIDIA 架构核心",
       "role": "架构核心",
       "thesis": "从 GPU 到 NVLink/NVSwitch、网络与软件的整栈系统；Scale-up 域由 72 向 576，并在路线图指向 1,152 + CPO。",
+      "value_links": [
+        {"component": "accelerator", "driver": "GPU 数量与代际直接决定系统计算价值。"},
+        {"component": "hbm", "driver": "GPU 平台升级同步推动每卡 HBM 容量与带宽。"},
+        {"component": "scaleup", "driver": "NVLink/NVSwitch 是 NVIDIA 扩大 Scale-up 域的核心互联。"},
+        {"component": "scaleout", "driver": "NVIDIA 网络产品连接超节点与更大的 AI 集群。"},
+        {"component": "software", "driver": "CUDA 与通信软件共同影响系统 goodput 和利用率。"}
+      ],
       "track": "NVL72/NVL576 出货、NVLink 域、CPO、tokens/W 与 token/$",
       "tier": "S1",
       "source_label": "NVIDIA NVLink",
@@ -27,6 +34,13 @@
       "chain_label": "开放算力链",
       "role": "架构核心",
       "thesis": "Helios 以 72×MI455X、UALink、UEC 和 OCP 推进开放 rack-scale AI 基础设施。",
+      "value_links": [
+        {"component": "accelerator", "driver": "MI455X 是 Helios rack-scale 系统的计算核心。"},
+        {"component": "hbm", "driver": "Helios 平台的内存价值随 MI455X 与 HBM4 配置升级。"},
+        {"component": "scaleup", "driver": "UALink 承担开放 rack-scale 域内的 Scale-up 互联。"},
+        {"component": "scaleout", "driver": "UEC/Ethernet 路线连接更大规模的开放 AI 集群。"},
+        {"component": "software", "driver": "开放软件栈与集体通信效率决定系统有效吞吐。"}
+      ],
       "track": "MI455X/Helios 量产、UALink adoption、scale-up/out bandwidth、HBM4",
       "tier": "S1",
       "source_label": "AMD Helios",
@@ -42,6 +56,11 @@
       "chain_label": "跨架构基础设施",
       "role": "交换/CPO核心",
       "thesis": "Tomahawk 6 已进入量产，102.4T 单芯片同时面向 scale-up / scale-out，并提供 CPO 选项。",
+      "value_links": [
+        {"component": "scaleup", "driver": "102.4T 交换芯片公开面向 Ethernet Scale-up fabric。"},
+        {"component": "scaleout", "driver": "Tomahawk 6 同时承载 AI 集群 Scale-out 交换容量升级。"},
+        {"component": "cpo", "driver": "Tomahawk 6 提供 CPO 选项，应对高速电链路功耗与密度约束。"}
+      ],
       "track": "102.4T ramp、200G SerDes、scale-up Ethernet、CPO attach rate",
       "tier": "S1",
       "source_label": "Broadcom Tomahawk 6",
@@ -57,6 +76,11 @@
       "chain_label": "跨架构基础设施",
       "role": "DSP/光互联",
       "thesis": "1.6T 光 DSP、AEC DSP、coherent-lite 与 Photonic Fabric 覆盖 AI 数据中心多个距离层级。",
+      "value_links": [
+        {"component": "aec", "driver": "AEC DSP 位于被动铜与光连接之间的过渡距离层级。"},
+        {"component": "optics", "driver": "1.6T 光 DSP 支撑 AI 数据中心高速可插拔光模块升级。"},
+        {"component": "cpo", "driver": "Photonic Fabric 布局对应光学互联向交换芯片侧靠近。"}
+      ],
       "track": "1.6T DSP ramp、DSP power/bit、Photonic Fabric、CPO/scale-up optics",
       "tier": "S1",
       "source_label": "Marvell 1.6T optical DSP",
@@ -72,6 +96,9 @@
       "chain_label": "开放/以太网链",
       "role": "Scale-out 网络",
       "thesis": "Etherlink 面向 AI 无损以太网，围绕负载均衡、拥塞控制和 UEC 兼容演进。",
+      "value_links": [
+        {"component": "scaleout", "driver": "Etherlink 以无损以太网承载 AI backend 的 Scale-out 通信。"}
+      ],
       "track": "800G/1.6T switch mix、AI backend deployments、Ethernet vs IB share",
       "tier": "S1",
       "source_label": "Arista Etherlink",
@@ -87,6 +114,10 @@
       "chain_label": "跨架构基础设施",
       "role": "电源/液冷",
       "thesis": "AI 高密度机柜把供电与液冷变成系统约束；Vertiv 已发布面向 GB300 NVL72 的 142kW/rack 参考架构。",
+      "value_links": [
+        {"component": "power", "driver": "142kW/rack 参考架构体现高密度 AI 机柜的供电升级。"},
+        {"component": "cooling", "driver": "高热密度 rack 同时推动液冷与热管理系统价值提升。"}
+      ],
       "track": "kW/rack、MW deployment、liquid cooling mix、HVDC/UPS/busbar",
       "tier": "S1",
       "source_label": "Vertiv GB300 reference design",
@@ -102,6 +133,9 @@
       "chain_label": "全球 AI 光互联",
       "role": "光模块",
       "thesis": "公开产品组合覆盖 800G 与 1.6T AI/数据中心光模块；公开标签只确认产品能力，不推断未披露具体客户。",
+      "value_links": [
+        {"component": "optics", "driver": "800G/1.6T 产品能力对应 AI 数据中心可插拔光连接速率升级。"}
+      ],
       "track": "800G→1.6T mix、per-lane speed、SiPh/LPO/CPO roadmap、capacity",
       "tier": "S1",
       "source_label": "InnoLight AI/Data Center Networking",
@@ -117,6 +151,9 @@
       "chain_label": "全球 AI 光互联",
       "role": "光模块",
       "thesis": "2026 年公开展示 1.6T DR4 与 12.8T XPO，直接指向 scale-up / scale-out 的更高密度光连接。",
+      "value_links": [
+        {"component": "optics", "driver": "1.6T DR4 与 12.8T XPO 对应更高带宽密度的光连接。"}
+      ],
       "track": "1.6T ramp、XPO/CPO path、power/module、AI DC capacity",
       "tier": "S1",
       "source_label": "Eoptolink OFC 2026",
@@ -132,6 +169,10 @@
       "chain_label": "国产 + 全球 AI 光链",
       "role": "硅光/光模块",
       "thesis": "公开布局 800G/1.6T/3.2T、硅光、LPO 与 CPO 外置激光源，强调核心光芯片自主化。",
+      "value_links": [
+        {"component": "optics", "driver": "800G 至 3.2T 产品布局对应 AI 光连接的代际升级。"},
+        {"component": "cpo", "driver": "公开的 CPO 外置激光源布局对应共封装光学价值环节。"}
+      ],
       "track": "800G/1.6T scale、3.2T/CPO、self-developed SiPh、domestic/global mix",
       "tier": "S1",
       "source_label": "华工科技 AI 底座方案",
@@ -147,6 +188,9 @@
       "chain_label": "国产算力链",
       "role": "数据中心网络",
       "thesis": "公开数据中心网络方案支持高密度 400GE/800GE，并覆盖从百卡到十万卡级 AI 加速卡互联。",
+      "value_links": [
+        {"component": "scaleout", "driver": "400GE/800GE 数据中心网络承载大规模 AI 集群 Scale-out 互联。"}
+      ],
       "track": "400G/800G ports、RoCE/lossless Ethernet、switch capacity、domestic AI capex",
       "tier": "S1",
       "source_label": "中兴优智数据中心网络",
@@ -162,6 +206,10 @@
       "chain_label": "国产算力链",
       "role": "交换机",
       "thesis": "公司在 2026 业绩说明会称 400G/800G 数据中心交换机收入占比持续提升；400G LPO 光模块已规模交付。",
+      "value_links": [
+        {"component": "scaleout", "driver": "400G/800G 数据中心交换机对应 AI 集群端口速率升级。"},
+        {"component": "optics", "driver": "公开披露的 400G LPO 交付对应低功耗高速光连接。"}
+      ],
       "track": "400G/800G switch mix、800G optics qualification、1.6T LPO samples",
       "tier": "S1",
       "source_label": "深交所互动易 · 2025年度业绩说明会",
@@ -177,6 +225,9 @@
       "chain_label": "国产 + 跨架构",
       "role": "液冷",
       "thesis": "面向下一代 AI 基础设施公开展示全链条与两相液冷，液冷从局部部署向更大规模演进。",
+      "value_links": [
+        {"component": "cooling", "driver": "全链条与两相液冷产品对应 AI 机柜热密度上升。"}
+      ],
       "track": "liquid cooling revenue、CDU/cold plate mix、MW deployments、gross margin",
       "tier": "S1",
       "source_label": "英维克 2026 Open AI Infra Summit",
@@ -192,6 +243,9 @@
       "chain_label": "AI PCB 基础设施",
       "role": "高速 PCB",
       "thesis": "公司公开表示 AI 驱动的服务器、数据存储和高速网络基础设施需求是 PCB 结构性增长的重要驱动。",
+      "value_links": [
+        {"component": "pcb", "driver": "AI 服务器与高速网络推动高层数、高速材料 PCB 的结构升级。"}
+      ],
       "track": "AI/network PCB mix、layers/material grade、capacity utilization、Thailand ramp",
       "tier": "S1",
       "source_label": "深交所互动易 · 2024年度业绩说明会",
