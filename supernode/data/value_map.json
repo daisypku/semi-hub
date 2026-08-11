@@ -1,0 +1,371 @@
+{
+  "updated": "2026-08-11",
+  "methodology": "Public Value Map. Intensity 1-5 is an S3 structural research index, not BOM dollars, revenue growth or valuation. Exact quantities and ASPs belong in private research-core.",
+  "topology_order": [
+    "nv72",
+    "amd72",
+    "hw384",
+    "nv576",
+    "ualink1024",
+    "hw8192"
+  ],
+  "topology_labels": {
+    "nv72": "NVL72",
+    "amd72": "Helios72",
+    "hw384": "A3·384",
+    "nv576": "NVL576",
+    "ualink1024": "UALink≤1024",
+    "hw8192": "Atlas950·8192"
+  },
+  "components": [
+    {
+      "id": "accelerator",
+      "icon": "🧠",
+      "name": "AI Accelerator",
+      "layer": "compute",
+      "elasticity": "linear",
+      "public_thesis": "系统总算力首先随 GPU/NPU 数量扩张；但不同代际芯片价格和性能不可用同一单位直接横比。",
+      "total_system": "强线性：更多加速器通常意味着更高系统计算价值。",
+      "per_accel": "规模本身不必然抬升单卡价值；主要由芯片代际、良率、封装与供需决定。",
+      "track": [
+        "accelerator count",
+        "ASP",
+        "yield",
+        "FP8/FP4 useful throughput"
+      ],
+      "intensity": {
+        "nv72": 5,
+        "amd72": 5,
+        "hw384": 5,
+        "nv576": 5,
+        "ualink1024": 5,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "hbm",
+      "icon": "🧊",
+      "name": "HBM / Memory",
+      "layer": "compute",
+      "elasticity": "generation",
+      "public_thesis": "HBM 更像“代际升级”而非“节点越大单卡越多”：每 GPU/NPU 的容量、带宽和堆叠层数随平台升级。",
+      "total_system": "卡数 × 每卡 HBM 容量共同决定系统内存价值。",
+      "per_accel": "主要由 HBM 世代和每卡配置推动，而非超节点规模单独推动。",
+      "track": [
+        "GB per accelerator",
+        "TB/s per accelerator",
+        "HBM generation",
+        "stack height"
+      ],
+      "intensity": {
+        "nv72": 5,
+        "amd72": 5,
+        "hw384": 4,
+        "nv576": 5,
+        "ualink1024": 4,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "scaleup",
+      "icon": "🔀",
+      "name": "Scale-up Switch / Fabric",
+      "layer": "network",
+      "elasticity": "superlinear",
+      "public_thesis": "域扩大后，交换 radix、层级、端口与容错的重要性上升；从单 rack 到 multi-rack 是最关键的结构变化之一。",
+      "total_system": "通常随加速器数量和 fabric 层级共同增长。",
+      "per_accel": "可能结构性上升：大域需要更多交换层级/端口/冗余，但具体取决于拓扑。",
+      "track": [
+        "switch radix",
+        "fabric layers",
+        "bandwidth/GPU",
+        "switch-to-compute ratio"
+      ],
+      "source_label": "NVIDIA NVL576 two-layer NVLink",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-pod-seven-chips-five-rack-scale-systems-one-ai-supercomputer/",
+      "intensity": {
+        "nv72": 4,
+        "amd72": 4,
+        "hw384": 5,
+        "nv576": 5,
+        "ualink1024": 5,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "scaleout",
+      "icon": "🌐",
+      "name": "NIC / DPU / Scale-out Network",
+      "layer": "network",
+      "elasticity": "linear",
+      "public_thesis": "Scale-out 负责超节点之间的更大集群。它更受集群规模、端口速率和 oversubscription 设计影响。",
+      "total_system": "随节点数量/集群规模扩张，端口和交换容量通常增加。",
+      "per_accel": "未必随 scale-up 域变大而上升，甚至可能因更大 scale-up 域减少部分跨节点通信。",
+      "track": [
+        "NIC per node",
+        "800G/1.6T ports",
+        "IB vs Ethernet",
+        "oversubscription"
+      ],
+      "intensity": {
+        "nv72": 3,
+        "amd72": 4,
+        "hw384": 3,
+        "nv576": 3,
+        "ualink1024": 4,
+        "hw8192": 3
+      }
+    },
+    {
+      "id": "copper",
+      "icon": "🟤",
+      "name": "Copper / DAC",
+      "layer": "optics",
+      "elasticity": "shift",
+      "public_thesis": "短距离仍有成本、功耗和时延优势；但跨 rack 的高带宽 scale-up 会逐步压缩纯铜可覆盖距离。",
+      "total_system": "柜内/短距仍随端口扩容，但结构占比可能下降。",
+      "per_accel": "大规模 multi-rack 域中，纯铜份额存在被 AEC/光替代的风险。",
+      "track": [
+        "reach",
+        "lane rate",
+        "cable gauge",
+        "share vs AEC/optics"
+      ],
+      "intensity": {
+        "nv72": 5,
+        "amd72": 4,
+        "hw384": 4,
+        "nv576": 3,
+        "ualink1024": 3,
+        "hw8192": 2
+      }
+    },
+    {
+      "id": "aec",
+      "icon": "🔌",
+      "name": "AEC / Active Electrical",
+      "layer": "optics",
+      "elasticity": "shift",
+      "public_thesis": "AEC 位于被动铜和光之间，适合一定距离/速率区间；未来价值取决于高速电链路还能延伸多远。",
+      "total_system": "可能在过渡距离层级获得增量。",
+      "per_accel": "取决于 rack 结构、距离、功耗预算和 SerDes 代际。",
+      "track": [
+        "reach",
+        "DSP power",
+        "200G/lane",
+        "attach rate"
+      ],
+      "intensity": {
+        "nv72": 2,
+        "amd72": 2,
+        "hw384": 3,
+        "nv576": 3,
+        "ualink1024": 4,
+        "hw8192": 3
+      }
+    },
+    {
+      "id": "optics",
+      "icon": "💡",
+      "name": "Pluggable / Direct Optics",
+      "layer": "optics",
+      "elasticity": "superlinear",
+      "public_thesis": "当 scale-up 跨 rack、跨柜连接增多，光从 scale-out 配套进入 scale-up 核心链路。NVL576 与 Atlas 950 都提供了公开锚点。",
+      "total_system": "卡数增加 + 跨柜链路增加，系统光连接总量具备双重驱动。",
+      "per_accel": "在跨 rack 比例和光化率上升时可能结构性提高，但不能脱离具体拓扑直接给固定“只/GPU”。",
+      "track": [
+        "optical links/GPU",
+        "800G→1.6T→3.2T",
+        "reach",
+        "power/bit"
+      ],
+      "source_label": "Huawei Atlas 950 all-optical inter-cabinet",
+      "source_url": "https://www.huawei.com/en/news/2025/9/hc-xu-keynote-speech",
+      "intensity": {
+        "nv72": 2,
+        "amd72": 2,
+        "hw384": 3,
+        "nv576": 5,
+        "ualink1024": 4,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "cpo",
+      "icon": "🔮",
+      "name": "CPO / Optical I/O",
+      "layer": "optics",
+      "elasticity": "shift",
+      "public_thesis": "当高速电链路功耗/距离成为瓶颈，光引擎向交换芯片靠近。NVIDIA 最新 NVLink 路线图已明确 CPO connectivity。",
+      "total_system": "仍处早期，价值取决于渗透率与替代哪一层连接。",
+      "per_accel": "若 CPO 进入大规模 scale-up fabric，单卡对应的光学价值结构可能改变，而非简单增加模块数量。",
+      "track": [
+        "CPO deployment",
+        "external laser",
+        "fiber attach",
+        "serviceability"
+      ],
+      "source_label": "NVIDIA NVLink roadmap + CPO",
+      "source_url": "https://developer.nvidia.com/blog/nvidia-nvlink-the-scale-up-network-for-ai-factories/",
+      "intensity": {
+        "nv72": 1,
+        "amd72": 1,
+        "hw384": 1,
+        "nv576": 2,
+        "ualink1024": 3,
+        "hw8192": 2
+      }
+    },
+    {
+      "id": "pcb",
+      "icon": "🧱",
+      "name": "PCB / CCL / Connectors",
+      "layer": "pcb",
+      "elasticity": "generation",
+      "public_thesis": "价值驱动来自 SerDes 速率、损耗、层数、板面积与连接器规格升级，而不是仅仅“多几张卡”。",
+      "total_system": "计算板、交换板和背板数量随系统扩大。",
+      "per_accel": "代际上可能因更高频材料、层数和高速连接器而抬升。",
+      "track": [
+        "material grade",
+        "layers",
+        "board area",
+        "112G/224G SerDes"
+      ],
+      "intensity": {
+        "nv72": 4,
+        "amd72": 4,
+        "hw384": 4,
+        "nv576": 4,
+        "ualink1024": 4,
+        "hw8192": 4
+      }
+    },
+    {
+      "id": "power",
+      "icon": "⚡",
+      "name": "Power Delivery",
+      "layer": "power",
+      "elasticity": "linear",
+      "public_thesis": "总供电容量首先跟计算功耗走；高功率密度再带来 busbar、power shelf、UPS/HVDC 等架构升级。",
+      "total_system": "MW 级总容量大体随计算规模增长。",
+      "per_accel": "受芯片功耗和供电效率影响；“每卡电力基础设施价值”更多是密度/架构问题。",
+      "track": [
+        "kW/rack",
+        "MW/site",
+        "conversion stages",
+        "busbar/HVDC"
+      ],
+      "source_label": "Vertiv GB300 NVL72 142kW reference",
+      "source_url": "https://www.vertiv.com/en-emea/about/news-and-events/news-releases/vertiv-develops-energy-efficient-cooling-and-power-reference-architecture-for-the-nvidia-gb300-nvl72/",
+      "intensity": {
+        "nv72": 5,
+        "amd72": 5,
+        "hw384": 5,
+        "nv576": 5,
+        "ualink1024": 5,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "cooling",
+      "icon": "❄️",
+      "name": "Liquid Cooling",
+      "layer": "power",
+      "elasticity": "superlinear",
+      "public_thesis": "高功率密度把液冷从“选配”变成系统约束；价值单位更适合用 kW/rack 或 MW/site，而非简单按服务器台数。",
+      "total_system": "总热负载越大，CDU、冷板、manifold、换热等容量越高。",
+      "per_accel": "高密度 rack 可能提升单卡对应的冷却系统复杂度与价值。",
+      "track": [
+        "liquid cooling penetration",
+        "CDU kW",
+        "cold plate",
+        "facility water loop"
+      ],
+      "source_label": "Vertiv 142kW/rack architecture",
+      "source_url": "https://www.vertiv.com/en-emea/about/news-and-events/news-releases/vertiv-develops-energy-efficient-cooling-and-power-reference-architecture-for-the-nvidia-gb300-nvl72/",
+      "intensity": {
+        "nv72": 5,
+        "amd72": 5,
+        "hw384": 5,
+        "nv576": 5,
+        "ualink1024": 5,
+        "hw8192": 5
+      }
+    },
+    {
+      "id": "software",
+      "icon": "🧩",
+      "name": "Software / Reliability",
+      "layer": "software",
+      "elasticity": "superlinear",
+      "public_thesis": "域越大，故障率、调度、collective、路由和容错复杂度上升；goodput 而非峰值 FLOPS 决定真实经济性。",
+      "total_system": "工程投入与运维复杂度随规模增长。",
+      "per_accel": "大规模域中每卡的有效利用更依赖软件与可靠性，经济价值可能非线性。",
+      "track": [
+        "MFU",
+        "goodput",
+        "MTBF",
+        "job completion time",
+        "token/$"
+      ],
+      "intensity": {
+        "nv72": 4,
+        "amd72": 4,
+        "hw384": 5,
+        "nv576": 5,
+        "ualink1024": 5,
+        "hw8192": 5
+      }
+    }
+  ],
+  "validation_questions": [
+    {
+      "title": "Scale-up 交换",
+      "questions": [
+        "实际有几层 fabric？",
+        "每层 switch radix / port speed？",
+        "交换柜/计算柜比例是否随规模变化？"
+      ]
+    },
+    {
+      "title": "光互联",
+      "questions": [
+        "哪些链路必须跨 rack/柜？",
+        "铜/AEC/光的距离边界？",
+        "每条链路速率与冗余如何设计？"
+      ]
+    },
+    {
+      "title": "Power / Cooling",
+      "questions": [
+        "kW/rack 与 MW/site？",
+        "液冷覆盖哪些热源？",
+        "供电级数和 HVDC/BBU 架构？"
+      ]
+    },
+    {
+      "title": "PCB / Signal",
+      "questions": [
+        "SerDes 是 112G 还是 224G/lane？",
+        "交换板层数/面积如何变化？",
+        "材料等级和连接器 ASP 是否升级？"
+      ]
+    },
+    {
+      "title": "软件效率",
+      "questions": [
+        "峰值利用率/MFU？",
+        "all-to-all / all-reduce 实测效率？",
+        "故障恢复后 goodput 损失多少？"
+      ]
+    },
+    {
+      "title": "商业化",
+      "questions": [
+        "测试→量产的时间表？",
+        "真实部署套数/客户类型？",
+        "价值量变化来自数量、ASP还是份额？"
+      ]
+    }
+  ]
+}
