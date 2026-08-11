@@ -16,6 +16,15 @@
         "unit": "rack",
         "detail": "72 Rubin / Blackwell-family GPUs in one NVLink rack-scale domain (generation-dependent)."
       },
+      "reader": {
+        "plain": "把 72 张 GPU 和柜内 NVLink / NVSwitch 看成一台整柜级计算机。",
+        "scope": "单机柜 Scale-up",
+        "compute": "1 个 72-GPU 计算柜",
+        "fabric": "柜内 NVLink / NVSwitch",
+        "between": "没有跨计算柜的 Scale-up 连接",
+        "media": "柜内高速铜连接为主；光更多承担 Scale-out",
+        "change": "研究单位从单台服务器升级为整柜的计算、电源、液冷和线缆协同。"
+      },
       "facts": [
         "NVLink Switch provides all-to-all GPU communication across the rack.",
         "Vera Rubin NVL72 aggregate NVLink bandwidth: 260 TB/s.",
@@ -49,6 +58,15 @@
         "switch": 0,
         "unit": "rack",
         "detail": "72 MI455X GPUs in AMD Helios using UALink over Ethernet (UALoE)."
+      },
+      "reader": {
+        "plain": "同样是 72-GPU 整柜，但用 UALink、UEC 和 OCP 组成开放的 rack-scale 路线。",
+        "scope": "单机柜 Scale-up",
+        "compute": "1 个 72-GPU Helios 计算柜",
+        "fabric": "柜内 UALink scale-up fabric",
+        "between": "没有跨计算柜的固定公开拓扑",
+        "media": "柜内短距电连接为主；具体实现由系统设计决定",
+        "change": "开放标准可能扩大交换、连接器和光互联的供应商选择。"
       },
       "facts": [
         "72 × AMD Instinct MI455X GPUs.",
@@ -84,6 +102,15 @@
         "unit": "cabinet",
         "detail": "12 compute cabinets + 4 bus equipment cabinets."
       },
+      "reader": {
+        "plain": "12 个计算柜通过 4 个总线柜组成一个 384-NPU 的多柜 Scale-up 系统。",
+        "scope": "多机柜 Scale-up",
+        "compute": "12 个计算柜",
+        "fabric": "4 个总线设备柜",
+        "between": "计算柜与总线柜共同构成超节点",
+        "media": "公开资料确认多柜互联；具体铜/光比例未公开",
+        "change": "交换柜、布线和跨柜可靠性开始成为系统本体，而不是外围配套。"
+      },
       "facts": [
         "Maximum 384 NPUs interconnected to work as one computer.",
         "12 compute cabinets + 4 bus equipment cabinets.",
@@ -117,6 +144,15 @@
         "switch": 2,
         "unit": "rack",
         "detail": "Eight 72-GPU MGX NVL racks; two-layer all-to-all NVLink topology."
+      },
+      "reader": {
+        "plain": "把 8 个 72-GPU 计算柜连成一个 576-GPU 的跨柜 NVLink 计算域。",
+        "scope": "跨 8 柜 Scale-up",
+        "compute": "8 个 72-GPU 计算柜",
+        "fabric": "两层 all-to-all NVLink fabric",
+        "between": "跨柜仍属于 Scale-up，不是普通 Scale-out",
+        "media": "域内同时使用铜连接和 direct optical connection",
+        "change": "光互联第一次明确进入 NVIDIA 跨柜 Scale-up 域，交换和软件复杂度同步提高。"
       },
       "facts": [
         "Eight 72-GPU racks form one 576-GPU NVLink domain.",
@@ -152,6 +188,15 @@
         "unit": "accelerator",
         "detail": "UALink 1.0 supports up to 1,024 accelerators; implementation topology is vendor-dependent."
       },
+      "reader": {
+        "plain": "这是协议能够覆盖的规模上限，不是一台已经定义好机柜和线缆数量的产品。",
+        "scope": "协议上限，不是固定机器",
+        "compute": "最多 1,024 个 accelerators",
+        "fabric": "厂商自行实现的 UALink fabric",
+        "between": "机柜数和交换层级没有统一答案",
+        "media": "铜、AEC、光的边界取决于实际实现",
+        "change": "研究必须先找到具体产品拓扑，不能从 1,024 直接推算 BOM。"
+      },
       "facts": [
         "UALink 1.0 enables 200G per lane scale-up connectivity.",
         "Maximum scale-up domain: 1,024 accelerators within an AI computing pod.",
@@ -185,6 +230,15 @@
         "switch": 32,
         "unit": "cabinet",
         "detail": "128 compute cabinets + 32 interconnect cabinets; 160 cabinets total; inter-cabinet all-optical interconnect."
+      },
+      "reader": {
+        "plain": "128 个计算柜和 32 个互联柜组成 8,192-NPU 超节点，柜间明确采用全光互联。",
+        "scope": "数据中心级 Scale-up",
+        "compute": "128 个计算柜",
+        "fabric": "32 个互联柜",
+        "between": "160 柜共同组成一个大 Scale-up 域",
+        "media": "柜间 all-optical interconnect",
+        "change": "研究单位从服务器 BOM 转向机柜、MW、光互联、可靠性和有效 token 经济性。"
       },
       "facts": [
         "8,192 Ascend 950DT NPUs.",
