@@ -8,7 +8,12 @@ CCL · PCB · IC Substrate · CoWoS · Optical Communication · Glass Substrate
 >
 > _A structured research hub covering the upstream of AI hardware — supply-chain maps, company deep dives, and ongoing coverage of key nodes._
 
-### 🔗 [进入在线知识库 · Enter Live Site](https://daisypku.github.io/semi-hub/diagram002.html)
+## 在线地图 · Live Maps
+
+- 🧠 [超节点产业链地图 · SuperNode Hub](https://daisypku.github.io/semi-hub/supernode/)
+- 🧱 [CCL / PCB / 封装 / 光通信产业链图谱](https://daisypku.github.io/semi-hub/diagram002.html)
+
+SuperNode Hub 是 AI 硬件研究图谱的顶层系统入口；原有产业链图谱作为 PCB、CCL、封装与光互联子地图继续维护。
 
 ---
 
@@ -59,7 +64,10 @@ _Enter from the [supply chain map](https://daisypku.github.io/semi-hub/diagram00
 
 ```
 semi-hub/
-├── diagram002.html                      产业链总览 · Supply chain overview
+├── diagram002.html                      CCL / PCB / packaging / optics sub-map
+├── supernode/
+│   ├── index.html                       超节点产业链地图 · SuperNode Hub
+│   └── data/                            拓扑、公司身份证与价值地图数据
 └── company/
     ├── index.html                       公司详情页模板 · Company page template
     ├── HOWTO.md                         维护手册 · Maintenance guide
@@ -76,6 +84,8 @@ _Fully static site — HTML + JSON + Markdown, hosted on GitHub Pages._
 
 ## 更新记录 · Changelog
 
+- **2026-08** · SuperNode Hub v0.4：价值环节与公司身份证联动 · _Value Map linked to Company Passports_
+- **2026-08** · SuperNode Hub v0.1–v0.3：拓扑实验室、公司身份证与价值地图上线
 - **2026-04** · 公司详情页系统上线，覆盖 82 家公司 · _Company-level pages launched, 82 firms indexed_
 - **2026-04** · 产业链图谱 v1 · _Supply chain map v1_
 
@@ -86,3 +96,4 @@ _Fully static site — HTML + JSON + Markdown, hosted on GitHub Pages._
 本仓库内容为个人研究整理，不构成任何投资建议。引用第三方数据均已在原始页面标注来源。
 
 _This repository contains personal research notes. It does not constitute investment advice. All third-party data citations are attributed on their respective pages._
+
