@@ -40,4 +40,3 @@ For changes to `/supernode/`:
 
 ## Working style
 Prefer small, reviewable commits. For meaningful revisions, update the visible version number and the handoff changelog.
-
