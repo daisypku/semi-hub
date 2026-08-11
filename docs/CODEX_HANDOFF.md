@@ -226,4 +226,3 @@ Primary candidates:
 - JSON schema remains readable and maintainable.
 - Version updated from v0.3 to v0.4.
 - `docs/CODEX_HANDOFF.md` changelog updated.
-
