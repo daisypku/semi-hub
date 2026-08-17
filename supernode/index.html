@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>\n<!-- deploy-refresh: 2026-08-17 retry-2 -->
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -88,4 +88,3 @@ async function loadValueMap(){try{const d=await fetch('./data/value_map.json?v=0
 document.querySelectorAll('.value-tab').forEach(b=>b.onclick=()=>{document.querySelectorAll('.value-tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.value-view').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById('value-'+b.dataset.valueview).classList.add('active')});
 document.querySelectorAll('.step-h').forEach(x=>x.onclick=()=>x.parentElement.classList.toggle('open'));document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-layer]').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.layer=b.dataset.layer;renderCompanies()});document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-route]').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.route=b.dataset.route;renderCompanies()});document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value;renderCompanies()});renderChain();loadTopo();loadCompanies();loadValueMap();
 </script></body></html>
-
