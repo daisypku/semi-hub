@@ -1,6 +1,6 @@
 {
-  "updated": "2026-08-11",
-  "note": "Public topology dataset. Facts are sourced from vendor/standards documentation; qualitative value-driver scores are S3 research framing, not vendor specifications.",
+  "updated": "2026-08-17",
+  "note": "Public topology dataset. Facts are sourced from vendor/standards documentation; qualitative value-driver scores are S3 research framing. Public third-party architecture observations are labeled separately and do not replace vendor confirmation.",
   "topologies": [
     {
       "id": "nv72",
@@ -137,8 +137,8 @@
       "size": "576 GPU",
       "route": "NVIDIA",
       "tone": "nv",
-      "status": "announced next-generation",
-      "headline": "8×72 GPU 跨 Rack：Scale-up 第一次明确把 direct optical connection 带入 NVLink 域",
+      "status": "announced roadmap; optical implementation still evolving",
+      "headline": "8×72 GPU 跨 Rack：官方确认两层 all-to-all 与铜+直接光连接，具体光学形态仍在演进",
       "layout": {
         "compute": 8,
         "switch": 2,
@@ -151,18 +151,27 @@
         "compute": "8 个 72-GPU 计算柜",
         "fabric": "两层 all-to-all NVLink fabric",
         "between": "跨柜仍属于 Scale-up，不是普通 Scale-out",
-        "media": "域内同时使用铜连接和 direct optical connection",
-        "change": "光互联第一次明确进入 NVIDIA 跨柜 Scale-up 域，交换和软件复杂度同步提高。"
+        "media": "架内保留铜连接，跨柜引入 direct optical connection；可插拔光还是 CPO 尚未完全公开定案",
+        "change": "光互联第一次明确进入 NVIDIA 跨柜 Scale-up 域；研究重点从“有没有光”转向“光放在哪一层、采用何种封装、何时量产”。"
       },
       "facts": [
-        "Eight 72-GPU racks form one 576-GPU NVLink domain.",
-        "Two-layer all-to-all NVLink topology.",
-        "Uses copper and direct optical connections across the domain."
+        "NVIDIA confirms that eight MGX NVL racks, each with 72 Rubin Ultra GPUs, form one 576-GPU NVLink domain.",
+        "NVIDIA confirms a new two-layer all-to-all NVLink topology using copper and direct optical connections.",
+        "Polyphe is NVIDIA's functional GB200-based prototype used to demonstrate the multi-rack NVL576 architecture."
       ],
       "implications": [
         "Cross-rack scale-up is a major structural step for optics: optics is no longer only a scale-out story.",
-        "Two-layer all-to-all architecture raises the value of switch fabric, reliability and topology-aware software."
+        "Two-layer all-to-all architecture raises the value of switch fabric, reliability and topology-aware software.",
+        "Do not turn the roadmap into a fixed optics BOM: pluggable optics versus CPO, volume timing and final rack implementation remain open variables."
       ],
+      "research_note": {
+        "tier": "S2 公开研究",
+        "title": "SemiAnalysis · GTC 2026 NVL576 架构拆解",
+        "summary": "SemiAnalysis 将 NVL576 解读为 8 个 Oberon 形态的 72-GPU 机柜：架内 Scale-up 继续使用铜，柜间通过第二层 NVLink 光互联。其研究判断倾向 Rubin Ultra NVL576 在柜间采用 CPO。",
+        "caution": "SemiAnalysis 同时明确指出 NVIDIA 尚未最终确认柜间采用可插拔光还是 CPO；其报道认为当前 Blackwell Polyphe 原型使用可插拔光，并将 Rubin Ultra NVL576 视为可能的早期/低量测试载体。这不是量产 BOM、出货量或供应商份额确认。",
+        "source_label": "SemiAnalysis · GTC 2026 – The Inference Kingdom Expands",
+        "source_url": "https://newsletter.semianalysis.com/p/nvidia-the-inference-kingdom-expands"
+      },
       "drivers": {
         "scaleup": 5,
         "optics": 5,
@@ -268,3 +277,4 @@
     "source_url": "https://developer.nvidia.com/blog/nvidia-nvlink-the-scale-up-network-for-ai-factories/"
   }
 }
+
