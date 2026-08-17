@@ -84,6 +84,7 @@ _Fully static site — HTML + JSON + Markdown, hosted on GitHub Pages._
 
 ## 更新记录 · Changelog
 
+- **2026-08-17** · SuperNode Hub v0.4：02 改为左侧八环节/右侧详情布局；NVL576 增加 S1 官方事实与 S2 公开研究观察分层
 - **2026-08** · SuperNode Hub v0.4：产业链导航、系统结构对比、价值环节与公司身份证顺向联动
 - **2026-08** · SuperNode Hub v0.1–v0.3：拓扑实验室、公司身份证与价值地图上线
 - **2026-04** · 公司详情页系统上线，覆盖 82 家公司 · _Company-level pages launched, 82 firms indexed_
@@ -96,3 +97,4 @@ _Fully static site — HTML + JSON + Markdown, hosted on GitHub Pages._
 本仓库内容为个人研究整理，不构成任何投资建议。引用第三方数据均已在原始页面标注来源。
 
 _This repository contains personal research notes. It does not constitute investment advice. All third-party data citations are attributed on their respective pages._
+
