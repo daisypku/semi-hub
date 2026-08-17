@@ -1,6 +1,6 @@
 # CODEX_HANDOFF.md — SuperNode Hub
 
-Last updated: 2026-08-11
+Last updated: 2026-08-17
 Owner / research framework: DaisyPKU
 Public repo: `daisypku/semi-hub`
 
@@ -86,6 +86,12 @@ Usability revision kept within v0.4:
 - Section 03 was rebuilt as a reader-oriented system comparison. It explicitly separates the Scale-up boundary, compute side, Scale-up fabric, connection medium, system support and external Scale-out network.
 - The six topology anchors now include plain-language summaries and a comparison table instead of relying on abstract rack-box counts.
 - Value Map now appears as Section 04 before Company Passport as Section 05, creating a forward reading path: choose a value component, understand the mechanism, then view matching companies.
+
+Follow-up revision on 2026-08-17, still within v0.4:
+- Section 02 now uses a master-detail layout: all eight industry-chain layers remain visible in a left column while the selected layer's explanation appears on the right.
+- The NVL576 card separates NVIDIA-confirmed S1 architecture facts from a clearly labeled SemiAnalysis S2 public research observation.
+- Publicly confirmed NVL576 anchors now include eight 72-GPU MGX NVL racks, a two-layer all-to-all NVLink topology, copper plus direct optical connections, and the functional GB200-based Polyphe prototype.
+- Pluggable optics versus CPO, volume timing and final implementation remain explicitly unresolved; no fixed optics BOM is published.
 
 Current public page title contains `SuperNode Hub v0.4`.
 
@@ -230,3 +236,4 @@ After the v0.4 usability revision is stable, primary candidates include:
 - JSON schema remains readable and maintainable.
 - Version updated from v0.3 to v0.4.
 - `docs/CODEX_HANDOFF.md` changelog updated.
+
