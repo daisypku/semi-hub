@@ -1,6 +1,6 @@
 # CODEX_HANDOFF.md — SuperNode Hub
 
-Last updated: 2026-08-17
+Last updated: 2026-09-02
 Owner / research framework: DaisyPKU
 Public repo: `daisypku/semi-hub`
 
@@ -93,7 +93,14 @@ Follow-up revision on 2026-08-17, still within v0.4:
 - Publicly confirmed NVL576 anchors now include eight 72-GPU MGX NVL racks, a two-layer all-to-all NVLink topology, copper plus direct optical connections, and the functional GB200-based Polyphe prototype.
 - Pluggable optics versus CPO, volume timing and final implementation remain explicitly unresolved; no fixed optics BOM is published.
 
-Current public page title contains `SuperNode Hub v0.4`.
+### v0.4.1
+Updated CCL/PCB reading flow without changing `diagram002.html`:
+- The top-level SuperNode page now gives PCB/CCL readers a short entry ticket: rate, distance and material.
+- Section 04 presents PCB/CCL in three layers: 30-second framing, 2-minute system context and deep-read handoff.
+- The detailed materials, company and chain content stays in the linked CCL / PCB sub-map instead of being repeated at the SuperNode level.
+- Public framing avoids turning the SuperNode page into a long directory while preserving the full deep-read path.
+
+Current public page title contains `SuperNode Hub v0.4.1`.
 
 ## 5. Named topology anchors
 
@@ -236,4 +243,3 @@ After the v0.4 usability revision is stable, primary candidates include:
 - JSON schema remains readable and maintainable.
 - Version updated from v0.3 to v0.4.
 - `docs/CODEX_HANDOFF.md` changelog updated.
-
