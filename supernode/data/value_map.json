@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-11",
+  "updated": "2026-09-02",
   "methodology": "Public Value Map. Intensity 1-5 is an S3 structural research index, not BOM dollars, revenue growth or valuation. Exact quantities and ASPs belong in private research-core.",
   "topology_order": [
     "nv72",
@@ -222,14 +222,14 @@
       "name": "PCB / CCL / Connectors",
       "layer": "pcb",
       "elasticity": "generation",
-      "public_thesis": "价值驱动来自 SerDes 速率、损耗、层数、板面积与连接器规格升级，而不是仅仅“多几张卡”。",
-      "total_system": "计算板、交换板和背板数量随系统扩大。",
-      "per_accel": "代际上可能因更高频材料、层数和高速连接器而抬升。",
+      "public_thesis": "从超节点看 PCB/CCL，先问速率、距离、材料三件事；它不是材料清单，而是高速信号能否稳定走完的问题。",
+      "total_system": "计算板、交换板、背板和连接器随系统结构扩展，但读者先看信号路径，不先数物料。",
+      "per_accel": "单卡结构价值主要在 SerDes 速率、铜/光边界和高速材料认证发生变化时抬升。",
       "track": [
+        "112G/224G SerDes",
+        "copper reach",
         "material grade",
-        "layers",
-        "board area",
-        "112G/224G SerDes"
+        "certification / pricing"
       ],
       "intensity": {
         "nv72": 4,
